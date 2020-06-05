@@ -1,0 +1,236 @@
+/*
+Author: Valerio Maggio (@leriomaggio)
+http://github.com/leriomaggio
+
+
+    ---------------------------------
+    Code Mirror - Code Cell Highlight
+    ---------------------------------
+
+    Define the Style for Code **and** Markdown editors (Themes)
+    Theme files are all located in the "themes" folder, and the
+    different styles for the Code and Markdown editors are
+    distinguished by a common prefix in the file names:
+
+        --> Code editors Themes: "themes/code_*"
+        --> Markdown Editor Themes: "themes/md_*"
+
+    Styles can be imported as separate CSS modules.
+
+    Current stylesheet (editor.css) defines the CSS rules
+    for notebook tags and classes. These rules are
+    all based to colors defined in external Theme files.
+
+    This would ease the definition of other custom CSS Editor themes
+*/
+
+/* Code Editor theme */
+@import url("themes/code_material_theme.css");
+/* Markdown Editor theme */
+@import url("themes/md_material_theme.css");
+
+/*
+    =================
+    Code Editor Theme
+    =================
+*/
+div.output_error pre,
+div.output_result pre,
+div.output_stream pre {
+    color: var(--code-text-color) !important;
+}
+
+.cm-s-ipython.CodeMirror {
+    background: var(--code-background-color);
+    color: var(--code-text-color);
+}
+
+.cm-s-ipython div.CodeMirror-selected {
+    cursor: pointer;
+    background: var(--selection-background-color);
+}
+
+.cm-s-ipython .CodeMirror-gutters {
+    background: var(--gutter-background);
+    border-right: 0;
+}
+
+.cm-s-ipython .CodeMirror-linenumber {
+    color: var(--line-numbers);
+}
+
+.cm-s-ipython .CodeMirror-cursor {
+    border-left: 1px solid var(--cursor) !important;
+}
+
+.cm-s-ipython span.cm-bracket {
+    /*color: #828282;*/
+    color: var(--bracket);
+}
+
+span.CodeMirror-matchingbracket {
+    text-decoration: underline !important;
+    text-decoration-color: var(--matching-bracket) !important;
+    color: var(--matching-bracket) !important;
+}
+
+.cm-s-ipython span.cm-keyword {
+    color: var(--keywords);
+}
+
+.cm-s-ipython span.cm-variable {
+    color: var(--variables);
+}
+
+.cm-s-ipython span.cm-variable-2 {
+    color: var(--variables2);
+}
+
+.cm-s-ipython span.cm-def {
+    color: var(--def);
+}
+
+.cm-s-ipython span.cm-property {
+    color: var(--property);
+}
+
+.cm-s-ipython span.cm-meta {
+    color: var(--meta);
+}
+
+.cm-s-ipython span.cm-attribute {
+    color: var(--attribute);
+}
+
+.cm-s-ipython span.cm-builtin {
+    color: var(--builtin)
+}
+
+.cm-s-ipython span.cm-string {
+    color: var(--strings);
+}
+
+.cm-s-ipython span.cm-comment {
+    color: var(--comments);
+}
+
+.cm-s-ipython span.cm-operator {
+    color: var(--operator);
+}
+
+.cm-s-ipython span.cm-number {
+    color: var(--numbers);
+}
+
+.cm-s-ipython span.cm-type {
+    color: var(--types);
+}
+
+/*
+    Dataframe Colors
+    ----------------
+    Adapt Dataframe table to comply with the theme
+*/
+
+table.dataframe {
+    color: var(--dataframe) !important;
+}
+
+table.dataframe tbody tr th {
+    background-color: var(--df-bg);
+}
+
+table.dataframe tbody tr:hover {
+    background-color: var(--df-tr-hover);
+}
+
+table.dataframe td, table.dataframe th {
+    border: 1px solid var(--df-border);
+}
+
+table.dataframe > th:not(:empty) {
+    background-color: var(--df-th-bg);
+}
+
+table.dataframe tr:nth-child(2) th:empty,
+table.dataframe tr:nth-child(2) th:empty {
+    border-right: 1px dotted var(--df-border-right);
+}
+
+table.dataframe thead tr th:not(:empty) {
+    color: var(--df-thead);
+    border-bottom:  1px solid var(--df-thead-border);
+}
+
+/* ANSI colors
+   stdout / stderr color customisation */
+
+span.ansi-green-fg {
+    /*color: var(--green);*/
+    color: var(--keywords);
+}
+
+span.ansi-green-intense-fg{
+    color: var(--dark-grey);
+}
+
+span.ansi-red-fg {
+    color: var(--red);
+}
+
+span.ansi-cyan-fg {
+    color: var(--cyan);
+}
+
+span.ansi-blue-fg {
+    color: var(--blue);
+}
+
+/* ----------------------------------- */
+
+/*
+    ======================
+    Markdown Editor Theme
+    ======================
+*/
+
+div.text_cell.unrendered pre {
+    color: var(--editor-text) !important;
+}
+
+span.cm-header {
+    color: var(--header) !important;
+    font-weight: 500;
+}
+
+span.cm-quote {
+    color: var(--quote) !important;
+}
+
+span.cm-string.cm-url {
+    color: var(--link) !important;
+}
+
+span.cm-string {
+   color: var(--string) !important;
+}
+
+span.cm-link {
+    color: var(--link) !important;
+}
+
+span.cm-attribute {
+    color: var(--attribute) !important;
+}
+
+span.cm-tag {
+    color: var(--tag) !important;
+}
+
+span.cm-delimiter {
+    color: var(--delimiter) !important;
+}
+
+span.cm-comment {
+    color: var(--monospace) !important;
+}
