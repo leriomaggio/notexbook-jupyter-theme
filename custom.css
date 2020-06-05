@@ -235,7 +235,7 @@ a.item_link {
 }
 
 .prompt {
-    font-family: 'mono-code', monospace !important;
+    font-family: "mono-code", monospace !important;
     font-style: normal;
     font-size: 1rem;
     text-align: right;
@@ -420,7 +420,7 @@ div.output_html {
 div.output_html {
     font-size: 1.5rem;
     font-weight: normal;
-    font-family: 'mono-code', monospace;
+    font-family: "mono-code", monospace;
     padding-bottom: 15px;
     padding-top: 10px;
 }
@@ -486,7 +486,7 @@ div.cell.edit_mode {
 
 /* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
-    --text-mono-font: 'mono-code', monospace;
+    --text-mono-font: "mono-code", monospace;
     --text-mono-font-size: 15px;
     --text-mono-line-height: 1.6;
 
@@ -618,7 +618,7 @@ div.text_cell_render pre code {
 
     --text-mono-line-height: 1.3;
 
-    font-size: .9em !important;
+    font-size: 1em !important;
     padding: 1rem 1.5rem;
     display: block !important;
     color: var(--code-text-color) !important;
