@@ -259,6 +259,10 @@ div#notebook {
     color: var(--kernel-disconnected);
 }
 
+#notification_area {
+    font-family: var(--text-font);
+}
+
 #notification_kernel {
     color: #fff;
     background-color: var(--kernel-idle);
