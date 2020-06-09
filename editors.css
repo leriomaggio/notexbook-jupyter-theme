@@ -23,9 +23,9 @@ http://github.com/leriomaggio
 
     This would ease the definition of other custom CSS Editor themes
 */
-
 /* Code Editor theme */
 @import url("themes/code_material_theme.css");
+
 /* Markdown Editor theme */
 @import url("themes/md_material_theme.css");
 
@@ -110,6 +110,10 @@ span.CodeMirror-matchingbracket {
     color: var(--strings);
 }
 
+.cm-s-ipython span.cm-string-2 {
+    color: var(--strings2);
+}
+
 .cm-s-ipython span.cm-comment {
     color: var(--comments);
 }
@@ -124,6 +128,308 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-type {
     color: var(--types);
+}
+
+/*
+    Pygments CSS (replacement) for HTML export
+    ===========================================
+
+    Original Pygments CSS rewrite thanks to @rubik
+    https://github.com/jupyter/nbconvert/issues/447#issuecomment-270766965
+*/
+
+.highlight .hll, div.highlight > pre {
+    background-color: var(--code-background-color) !important;
+    color: var(--code-text-color) !important;
+}
+
+/* Comment */
+.highlight .c {
+    color: var(--comments);
+}
+
+/* Error */
+.highlight .err {
+    color: #960050;
+    background-color: #1e0010;
+}
+
+/* Keyword */
+.highlight .k {
+    color: var(--keywords);
+    font-weight: 700;
+}
+
+/* Literal */
+.highlight .l {
+    color: var(--numbers);
+}
+
+/* Name */
+.highlight .n {
+    color: var(--code-text-color);
+}
+
+/* HACK:
+fix Interpreter mismatch pygments vs codemirror
+mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
+*/
+.highlight .o + .n {
+    color: var(--property);
+}
+
+/* Operator */
+.highlight .o {
+    color: var(--code-text-color);
+    /*font-weight: bold; */
+}
+
+/* Punctuation */
+.highlight .p {
+    color: var(--text-mono-color);
+}
+
+/* Comment.Multiline */
+.highlight .cm {
+    color: var(--comments);
+}
+
+/* Comment.Preproc */
+.highlight .cp {
+    color: var(--meta);
+}
+
+.highlight .cpf {
+    color: var(--meta);
+    font-style: normal;
+}
+
+/* Comment.Single */
+.highlight .c1 {
+    color: var(--comments);
+}
+
+/* Comment.Special */
+.highlight .cs {
+    color: var(--comments);
+}
+
+/* @ Generic.Deleted */
+.highlight .gd {
+    color: var(--red);
+}
+
+/* Generic.Emph */
+.highlight .ge {
+    font-style: italic
+}
+
+/* @ Generic.Inserted */
+.highlight .gi {
+    color: #a6e22e
+}
+
+/* Generic.Strong */
+.highlight .gs {
+    font-weight: bold
+}
+
+/* @ Generic.Subheading */
+.highlight .gu {
+    color: #75715e
+}
+
+/* */
+
+/* Keyword.Constant */
+.highlight .kc {
+    color: var(--keywords);
+}
+
+/* Keyword.Declaration */
+.highlight .kd {
+    color: var(--keywords);
+}
+
+/* Keyword.Namespace */
+.highlight .kn {
+    color: var(--keywords);
+}
+
+/* Keyword.Pseudo */
+.highlight .kp {
+    color: var(--keywords);
+}
+
+/* Keyword.Reserved */
+.highlight .kr {
+    color: var(--keywords);
+}
+
+/* Keyword.Type */
+.highlight .kt {
+    color: var(--types);
+}
+
+/* Literal.Date */
+.highlight .ld {
+    color: var(--numbers)
+}
+
+/* Literal.Number */
+.highlight .m {
+    color: var(--numbers);
+}
+
+/* Literal.String */
+.highlight .s {
+    color: var(--string);
+}
+
+/* Name.Attribute */
+.highlight .na {
+    color: var(--property);
+}
+
+/* Name.Builtin */
+.highlight .nb {
+    color: var(--builtin);
+}
+
+/* Name.Class */
+.highlight .nc {
+    color: var(--def);
+    font-weight: normal;
+}
+
+/* @ Name.Constant */
+.highlight .no {
+    color: var(--variables2);
+}
+
+/* Name.Decorator */
+.highlight .nd {
+    color: var(--builtin);
+}
+
+/* @ Name.Entity */
+.highlight .ni {
+    color: var(--variables2);
+}
+
+/* Name.Exception */
+.highlight .ne {
+    color: var(--code-text-color);
+    font-weight: normal;
+}
+
+/* Name.Function */
+.highlight .nf, .highlight .fm {
+    color: var(--def);
+}
+
+/* @ Name.Label */
+.highlight .nl {
+    color: var(--comments);
+}
+
+/* Name.Namespace */
+.highlight .nn {
+    color: var(--code-text-color);
+    font-weight: normal !important;
+}
+
+/* @ Name.Other */
+.highlight .nx {
+    color: var(--code-text-color);
+}
+
+/* @ Name.Property */
+.highlight .py {
+    color: var(--property);
+}
+
+/* @ Name.Tag */
+.highlight .nt {
+    color: var(--tag);
+}
+
+/* @ Name.Variable */
+.highlight .nv {
+    color:  var(--variables);
+}
+
+/* Operator.Word */
+.highlight .ow {
+    color: var(--operator);
+}
+
+/* @ Text.Whitespace */
+.highlight .w {
+    color: var(--code-background-color);
+
+}
+
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+    color: var(--numbers);
+}
+
+/* Literal.String.Backtick */
+.highlight .sb {
+    color: var(--strings2);
+}
+
+.highlight .sc,  /* Literal.String.Char */
+.highlight .sd,  /* Literal.String.Doc */
+.highlight .s2,  /* Literal.String.Double */
+.highlight .sh,  /* Literal.String.Heredoc */
+.highlight .si,  /* Literal.String.Interpol */
+.highlight .sx,  /* Literal.String.Other */
+.highlight .sr,  /* Literal.String.Regex */
+.highlight .s1,  /* Literal.String.Single */
+.highlight .ss  /* Literal.String.Symbol */
+{
+    color: var(--strings);
+    font-style: normal;
+}
+
+/* Literal.String.Escape */
+.highlight .se {
+    color: var(--red);
+}
+
+/* Name.Builtin.Pseudo */
+.highlight .bp {
+    color: var(--variables2);
+}
+
+/* Name.Variable.Class */
+.highlight .vc {
+    color: var(--variables);
+}
+
+/* Name.Variable.Global */
+.highlight .vg {
+    color: var(--variables2);
+}
+
+/* Name.Variable.Instance */
+.highlight .vi {
+    color: var(--code-text-color);
+}
+
+/* Literal.Number.Integer.Long */
+.highlight .il {
+    color: var(--numbers);
 }
 
 /*
@@ -214,6 +520,10 @@ span.cm-string.cm-url {
 span.cm-string {
    color: var(--string) !important;
 }
+/* Sometimes useful in Mono code Highlighting*/
+span.cm-string-2 {
+    color: var(--strings2) !important;
+}
 
 span.cm-link {
     color: var(--link) !important;
@@ -232,5 +542,5 @@ span.cm-delimiter {
 }
 
 span.cm-comment {
-    color: var(--monospace) !important;
+    color: var(--comments) !important;
 }

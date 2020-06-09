@@ -41,6 +41,7 @@ Repo: https://github.com/rainglow/vscode/
     --builtin: var(--dark-purple);
     --attribute: var(--code-text-color);
     --strings: var(--yellow);
+    --strings2: var(--lilac);
     --comments: var(--lilac);
     --operator: var(--blue);
     --numbers: var(--dark-orange);
