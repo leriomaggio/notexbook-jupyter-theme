@@ -23,12 +23,12 @@ http://github.com/leriomaggio
     --text-head-font: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --text-head-color: rgb(56, 56, 56);
 
-    --text-mono-font: 'mono', "Menlo", monospace;
+    --text-mono-font: 'mono-code', "Menlo", monospace;
     --text-mono-color: #828282;
-    --text-mono-font-size: 14px;
+    --text-mono-font-size: 15px;
     --text-mono-line-height: 1.5;
 
-    --mono-md-bg: #F2F2F2;
+    --mono-md-bg: var(--code-background-color);
 
     --link-color: #2875d9;
     --del-color: #d43133;
@@ -395,7 +395,6 @@ div.output_area pre, div.output_subarea {
 
 div.output_area pre {
     --text-mono-font: "mono-code", monospace !important;
-    --text-mono-font-size: 15px !important;
 
     padding-bottom: 15px;
     padding-top: 10px;
@@ -418,7 +417,7 @@ div.output_html {
 
 
 div.output_html {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: normal;
     font-family: "mono-code", monospace;
     padding-bottom: 15px;
@@ -487,7 +486,6 @@ div.cell.edit_mode {
 /* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
     --text-mono-font: "mono-code", monospace;
-    --text-mono-font-size: 15px;
     --text-mono-line-height: 1.6;
 
     font-family: var(--text-mono-font) !important;
@@ -592,7 +590,8 @@ div.text_cell_render pre, div.text_cell_render code {
 
 /* Monospace Code - no code syntax highlight*/
 div.text_cell_render pre {
-    background-color: #F2F2F2 !important;
+    /* hack: using code background colour here to allow for compatibility */
+    background-color: var(--code-background-color) !important;
     font-family: var(--text-mono-font) !important;
     letter-spacing: .25px;
 }
