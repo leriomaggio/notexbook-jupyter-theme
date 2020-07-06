@@ -1,0 +1,38 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/texbook-jupyter-theme
+License: BSD 3 Clause
+
+ ======================================================
+
+    Custom Theme for Markdown Editor
+    based on Source code visualiser
+    built-in Typora.
+ */
+
+:root {
+    /* Color Palette */
+    --pink: #d14187;
+    --dark-grey: rgb(56, 56, 56);
+    --darker-grey: rgb(51, 51, 51);
+    --taupe: #a99f9f;
+    --light-orange: #be7716;
+    --light-red: #a34343;
+    --grey-blue: #48599b;
+    --dark-bg: #252a2f;
+    --dirty-white: #8d8e8f;
+
+    /*  Editor Theme  */
+    --editor-text: var(--darker-grey);
+    --header: var(--pink);
+    --quote: var(--taupe);
+    --link: var(--light-orange);
+    --attribute: var(--darker-grey);
+    --tag: var(--light-red);
+    --delimiter: var(--grey-blue);
+    --monospace: var(--dark-grey);
+    --string: var(--grey-blue)
+}
+
+
+
