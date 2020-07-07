@@ -1,0 +1,243 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/texbook-jupyter-theme
+License: BSD 3 Clause
+
+ ======================================================
+                         FONTS
+
+    FONT WEIGHT MAP:
+    ----------------
+    100: Ultra Light
+    200: Thin
+    300: Light
+    400: Regular (normal)
+    500: Medium
+    600: Semi-bold
+    700: Bold
+    800: Heavy
+    900: Black
+
+    Font faces:
+        - md-text    (CMUSerif)
+        - md-mono    (CMUTypewriter)
+        - mono-code  (Hasklig)
+        - mono-md    (Hack)
+ ======================================================  */
+
+/* Roboto Slab */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/*
+ -- Markdown EDIT (LaTex) Serif --
+ */
+
+/* Normal Normal */
+@font-face {
+    font-family: 'md-text';
+    font-style: normal;
+    font-weight: normal;
+    src: url('{{ fonts_path }}/md-text/cmunrm.ttf') format('truetype');
+}
+
+/* Normal Italic */
+@font-face {
+    font-family: 'md-text';
+    font-style: italic;
+    font-weight: normal;
+    src: url('{{ fonts_path }}/md-text/cmunti.ttf') format('truetype');
+}
+
+/* Bold Normal */
+@font-face {
+    font-family: 'md-text';
+    font-style: normal;
+    font-weight: bold;
+    src: url('{{ fonts_path }}/md-text/cmunbx.ttf')  format('truetype');
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'md-text';
+    font-style: italic;
+    font-weight: bold;
+    src: url('{{ fonts_path }}/md-text/cmunbi.ttf') format('truetype');
+}
+
+/* Normal Oblique */
+@font-face {
+    font-family: 'md-text';
+    font-weight: normal;
+    font-style: oblique;
+    src: url('{{ fonts_path }}/md-text/CMUSerif-RomanSlanted.otf') format('opentype');
+}
+
+
+/* Bold Oblique */
+@font-face {
+    font-family: 'md-text';
+    font-weight: bold;
+    font-style: oblique;
+    src: url('{{ fonts_path }}/md-text/CMUSerif-BoldSlanted.otf') format('opentype');
+}
+
+/* Decorated: Normal Italic */
+@font-face {
+    font-family: 'md-decorated';
+    font-weight: normal;
+    font-style: italic;
+    src: url('{{ fonts_path }}/md-text/CMUSerif-UprightItalic.otf') format('opentype');
+}
+
+/* Decorated: Normal Oblique */
+@font-face {
+    font-family: 'md-decorated';
+    font-weight: normal;
+    font-style: oblique;
+    src: url('{{ fonts_path }}/md-text/CMUClassicalSerif-Italic.otf') format('opentype');
+}
+
+/* Bold Condensed */
+@font-face {
+    font-family: 'md-condensed';
+    font-weight: bold;
+    font-style: normal;
+    src: url('{{ fonts_path }}/md-text/CMUSerif-BoldNonextended.otf') format('opentype');
+}
+
+/*
+ -- Markdown (LaTex) Mono --
+ */ /* Light Normal */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: 300;
+    font-style: normal;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-Light.otf') format('opentype');
+}
+
+/* Light Oblique */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: 300;
+    font-style: oblique;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-LightOblique.otf') format('opentype');
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: 300;
+    font-style: italic;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-LightOblique.otf') format('opentype');
+}
+
+/* Normal Normal */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: normal;
+    font-style: normal;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-Regular.otf') format('opentype');
+}
+
+/* Normal Oblique */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: normal;
+    font-style: oblique;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-Oblique.otf') format('opentype');
+}
+
+/* Normal Italic */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: normal;
+    font-style: italic;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-Italic.otf') format('opentype');
+}
+
+/* Bold Normal */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: bold;
+    font-style: normal;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-Bold.otf') format('opentype');
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'md-mono';
+    font-weight: bold;
+    font-style: italic;
+    src: url('{{ fonts_path }}/md-mono/CMUTypewriter-BoldItalic.otf') format('opentype');
+}
+
+/*
+-- Hasklig (mono) --
+ */
+/* Normal Normal */
+@font-face {
+    font-family: "mono-code";
+    font-weight: normal;
+    font-style: normal;
+    src: url("{{ fonts_path }}/hasklig/Hasklig-Regular.otf") format('opentype');
+}
+
+/* Normal Italic */
+@font-face {
+    font-family: "mono-code";
+    font-weight: normal;
+    font-style: italic;
+    src: url("{{ fonts_path }}/hasklig/Hasklig-It.otf") format('opentype');
+}
+
+/* Bold Normal */
+@font-face {
+    font-family: "mono-code";
+    font-weight: Bold;
+    font-style: normal;
+    src: url("{{ fonts_path }}/hasklig/Hasklig-Medium.otf") format('opentype');
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "mono-code";
+    font-weight: Bold;
+    font-style: italic;
+    src: url("{{ fonts_path }}/hasklig/Hasklig-MediumIt.otf") format('opentype');
+}
+
+/*
+-- Hack (mono-md) --
+*/
+/* Normal Normal */
+@font-face {
+    font-family: "mono-md";
+    font-weight: normal;
+    font-style: normal;
+    src: url("{{ fonts_path }}/hack/Hack-Regular.ttf") format("truetype")
+}
+
+/* Normal Italic */
+@font-face {
+    font-family: "mono-md";
+    font-weight: normal;
+    font-style: italic;
+    src: url("{{ fonts_path }}/hack/Hack-Italic.ttf") format("truetype")
+}
+
+/* Bold Normal */
+@font-face {
+    font-family: "mono-md";
+    font-weight: bold;
+    font-style: normal;
+    src: url("{{ fonts_path }}/hack/Hack-Bold.ttf") format("truetype")
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "mono-md";
+    font-weight: bold;
+    font-style: italic;
+    src: url("{{ fonts_path }}/hack/Hack-BoldItalic.ttf") format("truetype")
+}
