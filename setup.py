@@ -67,7 +67,7 @@ with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
 setup(
     name="texbook_theme",
     version=VERSION,
-    license="newBSD",
+    license=LICENSE,
     description=(
         "IPython magic function to dynamically enable the TeXBook"
         "Jupyter Notebook Theme without manually copying resource files in "
