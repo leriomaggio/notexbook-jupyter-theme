@@ -25,9 +25,9 @@ License: BSD 3 Clause
     --text-notebook-ui-header-font: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --text-head-color: rgb(56, 56, 56);
 
-    --text-markdown-render-mono-font: 'mono-code', "Menlo", monospace;
+    --text-markdown-render-mono-font: {{ mono_font }}, 'mono-code', "Menlo", monospace;
     --text-mono-color: #828282;
-    --text-mono-font-size: 15px;
+    --text-mono_font_size: {{ mono_font_size }};
     --text-mono-line-height: 1.5;
 
     --mono-md-bg: var(--code-background-color);
@@ -105,7 +105,7 @@ code, kbd, pre, samp {
     font-family: var(--text-markdown-render-mono-font) !important;
     color: var(--text-mono-color) !important;
     font-weight: 500;
-    font-size: var(--text-mono-font-size) !important;
+    font-size: var(--text-mono_font_size) !important;
     line-height: var(--text-mono-line-height) !important;
 }
 
@@ -237,7 +237,7 @@ a.item_link {
 }
 
 .prompt {
-    font-family: "mono-code", monospace !important;
+    font-family: {{ mono_font }}, "mono-code", monospace !important;
     font-style: normal;
     font-size: 1rem;
     text-align: right;
@@ -400,7 +400,7 @@ div.output_area pre, div.output_subarea {
 }
 
 div.output_area pre {
-    --text-markdown-render-mono-font: "mono-code", monospace !important;
+    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", monospace !important;
 
     padding-bottom: 15px;
     padding-top: 10px;
@@ -425,7 +425,7 @@ div.output_html {
 div.output_html {
     font-size: 1.3rem;
     font-weight: normal;
-    font-family: "mono-code", monospace;
+    font-family: {{ mono_font }}, "mono-code", monospace;
     padding-bottom: 15px;
     padding-top: 10px;
 }
@@ -491,16 +491,16 @@ div.cell.edit_mode {
 
 /* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
-    --text-markdown-render-mono-font: "mono-code", monospace;
+    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", monospace;
     --text-mono-line-height: 1.6;
 
     font-family: var(--text-markdown-render-mono-font) !important;
-    font-size: var(--text-mono-font-size) !important;
+    font-size: var(--text-mono_font_size) !important;
     line-height: var(--text-mono-line-height) !important;
 }
 
 div.CodeMirror-linenumber {
-    --text-mono-font-size: 12px !important;
+    --text-mono_font_size: 12px !important;
 }
 
 /* -- MARKDOWN CELLS (Edit) -- */
@@ -509,10 +509,10 @@ div.CodeMirror-linenumber {
 div.text_cell.unrendered pre {
     /* general font rule */
     --text-markdown-render-mono-font: "mono-md", "mono-code", Menlo, monospace;
-    --text-mono-font-size: 15px;
+    --text-mono_font_size: {{ mono_font_size }};
 
     font-family: var(--text-markdown-render-mono-font)  !important;
-    font-size: var(--text-mono-font-size) !important;
+    font-size: var(--text-mono_font_size) !important;
 }
 
 /* md cell headers (edit) */

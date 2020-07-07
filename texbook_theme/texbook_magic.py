@@ -59,6 +59,20 @@ class TeXbookTheme(Magics):
         default=settings.DEFAULT_EDITOR_THEME,
         dest="md_theme",
     )
+    @argument(
+        "-mf",
+        "--mono-font",
+        help="Selected Mono Font. Default: Hasklig",
+        default="mono-code",
+        dest="mono_font",
+    )
+    @argument(
+        "-mfs",
+        "--mono-font-size",
+        help="Selected Mono Font size. Default: 15px",
+        default="15px",
+        dest="mono_font_size",
+    )
     @line_magic
     def TeXbook_theme(self, line):
         """
@@ -67,15 +81,23 @@ class TeXbookTheme(Magics):
         """
         args = parse_argstring(self.TeXbook_theme, line)
         code_theme, md_theme = args.code_theme, args.md_theme
+        mono_font, mono_font_size = args.mono_font, args.mono_font_size
+        if not mono_font_size.endswith("px"):
+            mono_font_size = "{}px".format(mono_font_size.strip())
         theme_css = self._load_TeXbook_template(
-            code_theme_name=code_theme, md_theme_name=md_theme
+            mono_font=mono_font,
+            mono_font_size=mono_font_size,
+            code_theme_name=code_theme,
+            md_theme_name=md_theme,
         )
         template = self.template_env.get_template(settings.TEXBOOK_HTML_TEMPLATE)
         theme_style_tag = template.render(textbook_css=theme_css)
 
         return HTML(theme_style_tag)
 
-    def _load_TeXbook_template(self, code_theme_name, md_theme_name):
+    def _load_TeXbook_template(
+        self, mono_font, mono_font_size, code_theme_name, md_theme_name
+    ):
         md_theme_css = settings.EDITOR_THEMES["markdown"][md_theme_name]
         cd_theme_css = settings.EDITOR_THEMES["code"][code_theme_name]
 
@@ -84,6 +106,8 @@ class TeXbookTheme(Magics):
             cd_theme = cd_theme_file.read()
             t = self.template_env.get_template(settings.TEXBOOK_CSS)
             return t.render(
+                mono_font=mono_font,
+                mono_font_size=mono_font_size,
                 fonts_path=settings.TEXBOOK_RESOURCES_FONTS_URL,
                 code_theme=cd_theme,
                 md_theme=md_theme,
