@@ -21,12 +21,13 @@ class ToggleNbServerExtensionCommand(Command):
     description = "Toggle TexBook Notebook Server File Handlers extension"
 
     def initialize_options(self):
-        pass
+        return
 
     def finalize_options(self):
-        pass
+        return
 
     def run(self):
+        self.announce("Toggle Notebook Server Extension")
         try:
             from notebook.serverextensions import toggle_serverextension_python
         except ImportError:
@@ -53,10 +54,10 @@ class TeXbookThemeInstall(install):
 
     def run(self):
         install.run(self)
-        self.run_command("toggle-nbserver-extension")
+        self.run_command("toggle_serverextension")
 
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 setup(
     name="texbook_theme",
@@ -74,8 +75,13 @@ setup(
     include_package_data=True,
     install_requires=["notebook", "ipython>=7.0", "jupyter", "jinja2", "tornado"],
     cmdclass={
-        "toggle-nbserver-extension": ToggleNbServerExtensionCommand,
+        "toggle_serverextension": ToggleNbServerExtensionCommand,
         "install": TeXbookThemeInstall,
+    },
+    entry_points={
+        "distutils.commands": [
+            "toggle_serverextension = ToggleNbServerExtensionCommand"
+        ]
     },
     long_description="""
         IPython magic function to dynamically enable the TeXBook 
