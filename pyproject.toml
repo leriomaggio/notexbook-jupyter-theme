@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 [build-system]
-requires = ["setuptools", "notebook"]
+requires = ["setuptools", "notebook", "jupyter", "ipython"]
 build-backend = "setuptools.build_meta"
 
 # Requirements
