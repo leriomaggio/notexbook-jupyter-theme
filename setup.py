@@ -71,7 +71,7 @@ setup(
     url="https://github.com/leriomaggio/texbook_jupyter_theme_magic",
     packages=find_packages(exclude=[]),
     include_package_data=True,
-    install_requires=["notebook", "ipython", "jupyter", "jinja2", "tornado"],
+    install_requires=["notebook", "ipython>=7.0", "jupyter", "jinja2", "tornado"],
     cmdclass={
         "toggle-nbserver-extension": ToggleNbServerExtensionCommand,
         "install": TeXbookThemeInstall,
