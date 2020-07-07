@@ -5,14 +5,15 @@
 #
 # License: BSD 3 clause
 
+import os
+import logging
 from setuptools import setup, find_packages
 from setuptools.command.install import install
-
-
 from distutils.cmd import Command
-import logging
+
 
 logger = logging.getLogger(__name__)
+CURRENT_FOLDER = os.path.abspath(os.path.dirname(__file__))
 
 
 class ToggleNbServerExtensionCommand(Command):
@@ -59,6 +60,10 @@ class TeXbookThemeInstall(install):
 
 VERSION = "0.1.1"
 
+with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
+    long_description = f.read()
+
+
 setup(
     name="texbook_theme",
     version=VERSION,
@@ -83,8 +88,6 @@ setup(
             "toggle_serverextension = ToggleNbServerExtensionCommand"
         ]
     },
-    long_description="""
-        IPython magic function to dynamically enable the TeXBook 
-        Jupyter Notebook Theme without manually copying resource files in 
-        the default custom folder""",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
 )
