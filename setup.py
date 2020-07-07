@@ -1,6 +1,7 @@
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
+# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
 #
 # License: BSD 3 clause
 
