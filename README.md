@@ -1,2 +1,2 @@
-# texbook-jupyter-theme
-TeXbook Jupyter Notebook Theme
+# $\TeX$book Jupyter Notebook Theme
+
