@@ -12,24 +12,24 @@ License: BSD 3 Clause
 
 :root {
     /* Color Palette */
-    --red: #C0392B;
-    --yellow: #A8601A;
-    --black: #212121;
-    --grey: #9E9E9E;
-    --blue: #1565C0;
-    --dark-blue: #01579B;
-    --light-blue: #78909c;
+    --md-red: #C0392B;
+    --md-yellow: #A8601A;
+    --md-black: #212121;
+    --md-grey: #9E9E9E;
+    --md-blue: #1565C0;
+    --md-dark-blue: #01579B;
+    --md-light-blue: #78909c;
 
     /*  Editor Theme  */
-    --editor-text: var(--black);
-    --header: var(--dark-blue);
-    --quote: var(--grey);
-    --link: var(--blue);
-    --attribute: var(--red);
-    --tag: var(--yellow);
-    --string: var(--yellow);
-    --delimiter: var(--black);
-    --monospace: var(--light-blue);
+    --editor-text: var(--md-black);
+    --header: var(--md-dark-blue);
+    --quote: var(--md-grey);
+    --link: var(--md-blue);
+    --attribute: var(--md-red);
+    --tag: var(--md-yellow);
+    --string: var(--md-yellow);
+    --delimiter: var(--md-black);
+    --monospace: var(--md-light-blue);
 }
 
 

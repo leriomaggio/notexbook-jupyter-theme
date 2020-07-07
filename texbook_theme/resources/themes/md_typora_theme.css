@@ -12,26 +12,26 @@ License: BSD 3 Clause
 
 :root {
     /* Color Palette */
-    --pink: #d14187;
-    --dark-grey: rgb(56, 56, 56);
-    --darker-grey: rgb(51, 51, 51);
-    --taupe: #a99f9f;
-    --light-orange: #be7716;
-    --light-red: #a34343;
-    --grey-blue: #48599b;
-    --dark-bg: #252a2f;
-    --dirty-white: #8d8e8f;
+    --md-pink: #d14187;
+    --md-dark-grey: rgb(56, 56, 56);
+    --md-darker-grey: rgb(51, 51, 51);
+    --md-taupe: #a99f9f;
+    --md-light-orange: #be7716;
+    --md-light-red: #a34343;
+    --md-grey-blue: #48599b;
+    --md-dark-bg: #252a2f;
+    --md-dirty-white: #8d8e8f;
 
     /*  Editor Theme  */
-    --editor-text: var(--darker-grey);
-    --header: var(--pink);
-    --quote: var(--taupe);
-    --link: var(--light-orange);
-    --attribute: var(--darker-grey);
-    --tag: var(--light-red);
-    --delimiter: var(--grey-blue);
-    --monospace: var(--dark-grey);
-    --string: var(--grey-blue)
+    --editor-text: var(--md-darker-grey);
+    --header: var(--md-pink);
+    --quote: var(--md-taupe);
+    --link: var(--md-light-orange);
+    --attribute: var(--md-darker-grey);
+    --tag: var(--md-light-red);
+    --delimiter: var(--md-grey-blue);
+    --monospace: var(--md-dark-grey);
+    --string: var(--md-grey-blue)
 }
 
 
