@@ -68,7 +68,7 @@ setup(
     ),
     author="Valerio Maggio",
     author_email="valeriomaggio@gmail.com",
-    url="https://github.com/leriomaggio/texbook_jupyter_theme_magic",
+    url="https://github.com/leriomaggio/texbook-jupyter-theme/",
     packages=find_packages(exclude=[]),
     include_package_data=True,
     install_requires=["notebook", "ipython>=7.0", "jupyter", "jinja2", "tornado"],
