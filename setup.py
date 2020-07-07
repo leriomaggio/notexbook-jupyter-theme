@@ -1,9 +1,14 @@
+# encoding: utf-8
+
+# ------------------------------------------------------------------------
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
 # Code: https://github.com/leriomaggio/texbook-jupyter-theme/
 #
-# License: BSD 3 clause
+# License: Apache License 2.0
+# ------------------------------------------------------------------------
+
 
 import os
 import logging
@@ -58,7 +63,7 @@ class TeXbookThemeInstall(install):
         self.run_command("toggle_serverextension")
 
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
