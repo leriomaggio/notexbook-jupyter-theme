@@ -1,3 +1,14 @@
+"""
+IPython magic to enable the TeXbook Theme into a Jupyter notebook.
+
+The (line) magic allows for some customisation in the themes to use
+for code and markdown editors.
+Different themes allow for different colour palettes.
+More information on the supported themes, and corresponding
+colour palettes can be found here:
+https://leriomaggio.github.io/texbook-jupyter-theme/#Code-Editor
+"""
+
 from . import settings
 from IPython.core.magic import Magics
 from IPython.core.magic import magics_class
@@ -12,7 +23,15 @@ from jinja2 import FileSystemLoader, Environment
 @magics_class
 class TeXBookTheme(Magics):
     """
-    IPython Line Magic
+    IPython (line) magic to enable the TeXbook theme
+    in a Jupyter notebook.
+
+    The magic allows for some customisation in the
+    themes used for code and markdown editors
+    (default theme: Material Design Light theme).
+
+    For information:
+    `%TeXbook_theme?`
     """
 
     def __init__(self, *args, **kwargs):
@@ -41,22 +60,22 @@ class TeXBookTheme(Magics):
         dest="md_theme",
     )
     @line_magic
-    def texbook_theme(self, line):
+    def TeXbook_theme(self, line):
         """
         IPython magic function to trigger the activation
         of the TeXBook-Jupyter theme in the notebook.
         """
         args = parse_argstring(self.texbook_theme, line)
         code_theme, md_theme = args.code_theme, args.md_theme
-        texbook_css = self._load_texbook_template(
+        theme_css = self._load_TeXbook_template(
             code_theme_name=code_theme, md_theme_name=md_theme
         )
         template = self.template_env.get_template(settings.TEXBOOK_HTML_TEMPLATE)
-        texbook_style = template.render(textbook_css=texbook_css)
+        theme_style_tag = template.render(textbook_css=theme_css)
 
-        return HTML(texbook_style)
+        return HTML(theme_style_tag)
 
-    def _load_texbook_template(self, code_theme_name, md_theme_name):
+    def _load_TeXbook_template(self, code_theme_name, md_theme_name):
         md_theme_css = settings.EDITOR_THEMES["markdown"][md_theme_name]
         cd_theme_css = settings.EDITOR_THEMES["code"][code_theme_name]
 
