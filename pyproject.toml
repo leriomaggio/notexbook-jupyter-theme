@@ -19,13 +19,11 @@ classifiers = [
 ]
 
 [build-system]
-#requires = ["flit_core >=2,<4", "notebook"]
-#build-backend = "flit_core.buildapi"
 requires = ["setuptools", "notebook"]
 build-backend = "setuptools.build_meta"
 
 # Requirements
-[dependecies]
+[dependencies]
 ipython = "^7.0"
 jupyter = "^6.0"
 notebook = "^6.0"
