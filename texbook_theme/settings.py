@@ -1,3 +1,14 @@
+# encoding: utf-8
+
+# ------------------------------------------------------------------------
+# Valerio Maggio <@leriomaggio> 2020
+# IPython magic function to enable TeXBook Jupyter notebook Theme
+# Author: Valerio Maggio <github.com/leriomaggio>
+# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+#
+# License: Apache License 2.0
+# ------------------------------------------------------------------------
+
 import os
 
 
@@ -10,7 +21,7 @@ RESOURCES_FOLDER = os.path.join(BASE_FOLDER, "resources")
 FONTS_FOLDER = os.path.join(RESOURCES_FOLDER, "fonts")
 EDITOR_THEMES_FOLDER = os.path.join(RESOURCES_FOLDER, "themes")
 
-#
+# Editor Themes
 EDITOR_THEMES = {
     "markdown": {
         "material": os.path.join(EDITOR_THEMES_FOLDER, "md_material_theme.css"),
