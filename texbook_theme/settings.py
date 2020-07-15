@@ -45,4 +45,4 @@ TEXBOOK_CSS = "texbook_theme_css.jinja2"
 TEXBOOK_HTML_TEMPLATE = "texbook_theme.html"
 
 # Resource Fonts URL
-TEXBOOK_RESOURCES_FONTS_URL = "/TeXbook_theme/resources/fonts"
+TEXBOOK_RESOURCES_FONTS_URL = "texbook_theme/resources/fonts"
