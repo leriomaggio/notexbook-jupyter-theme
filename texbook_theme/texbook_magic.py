@@ -119,7 +119,7 @@ class TeXbookTheme(Magics):
             return t.render(
                 mono_font=mono_font,
                 mono_font_size=mono_font_size,
-                fonts_path=settings.TEXBOOK_RESOURCES_FONTS_URL,
+                fonts_url=settings.TEXBOOK_RESOURCES_FONTS_URL,
                 code_theme=cd_theme,
                 md_theme=md_theme,
             )
