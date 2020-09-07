@@ -9,28 +9,28 @@
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
 
-import os
+from pathlib import Path
+import pkg_resources
 
 
 # -------
 # Folders
 # -------
-BASE_FOLDER = os.path.abspath(os.path.dirname(__file__))
-TEMPLATES_FOLDER = os.path.join(BASE_FOLDER, "templates")
-RESOURCES_FOLDER = os.path.join(BASE_FOLDER, "resources")
-FONTS_FOLDER = os.path.join(RESOURCES_FOLDER, "fonts")
-EDITOR_THEMES_FOLDER = os.path.join(RESOURCES_FOLDER, "themes")
+TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "templates"))
+RESOURCES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "resources"))
+FONTS_FOLDER = RESOURCES_FOLDER / "fonts"
+EDITOR_THEMES_FOLDER = RESOURCES_FOLDER / "themes"
 
 # Editor Themes
 EDITOR_THEMES = {
     "markdown": {
-        "material": os.path.join(EDITOR_THEMES_FOLDER, "md_material_theme.css"),
-        "typora": os.path.join(EDITOR_THEMES_FOLDER, "md_typora_theme.css"),
+        "material": EDITOR_THEMES_FOLDER / "md_material_theme.css",
+        "typora": EDITOR_THEMES_FOLDER / "md_typora_theme.css",
     },
     "code": {
-        "material": os.path.join(EDITOR_THEMES_FOLDER, "code_material_theme.css"),
-        "github": os.path.join(EDITOR_THEMES_FOLDER, "code_github_theme.css"),
-        "crisp": os.path.join(EDITOR_THEMES_FOLDER, "code_crisp_theme.css"),
+        "material": EDITOR_THEMES_FOLDER / "code_material_theme.css",
+        "github": EDITOR_THEMES_FOLDER / "code_github_theme.css",
+        "crisp": EDITOR_THEMES_FOLDER / "code_crisp_theme.css",
     },
 }
 
@@ -45,4 +45,4 @@ TEXBOOK_CSS = "texbook_theme_css.jinja2"
 TEXBOOK_HTML_TEMPLATE = "texbook_theme.html"
 
 # Resource Fonts URL
-TEXBOOK_RESOURCES_FONTS_URL = "texbook_theme/resources/fonts"
+TEXBOOK_RESOURCES_FONTS_URL = "/texbook_theme/resources/fonts"
