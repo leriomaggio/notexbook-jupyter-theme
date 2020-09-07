@@ -43,7 +43,7 @@ class ToggleNbServerExtensionCommand(Command):
         else:
             try:
                 toggle_serverextension_python(
-                    "texbook_theme.nbserver_resource_handler",
+                    "texbook.nbserver_resource_handler",
                     user=True,
                     sys_prefix=True,
                     enabled=True,
@@ -61,6 +61,11 @@ class TeXbookThemeInstall(install):
     def run(self):
         install.run(self)
         self.run_command("toggle_serverextension")
+        self.announce(
+            "If you are installing this package in a Jupyter notebook, "
+            "the Notebook server should be restarted in order to enable "
+            "the server extension to load resources."
+        )
 
 
 VERSION = "0.1.2"
@@ -70,7 +75,7 @@ with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
 
 
 setup(
-    name="texbook_theme",
+    name="texbook",
     version=VERSION,
     description=(
         "IPython magic function to dynamically enable the TeXBook"

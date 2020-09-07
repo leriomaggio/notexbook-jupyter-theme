@@ -1,5 +1,5 @@
 [project]
-name = "texbook_theme"
+name = "texbook"
 version = "0.1.2"
 author = "Valerio Maggio"
 author-email = "valeriomaggio@gmail.com"
@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 [build-system]
-requires = ["setuptools", "notebook", "jupyter", "ipython"]
+requires = ["setuptools", "notebook", "ipython"]
 build-backend = "setuptools.build_meta"
 
 # Requirements
@@ -36,7 +36,6 @@ line-length = 88
 target_version = ['py36']
 include = '\.pyi?$'
 exclude = '''
-
 (
   /(
       \.eggs         # exclude a few common directories in the
@@ -50,8 +49,6 @@ exclude = '''
     | build
     | dist
   )/
-  | foo.py           # also separately exclude a file named foo.py in
-                     # the root of the project
 )
 '''
 

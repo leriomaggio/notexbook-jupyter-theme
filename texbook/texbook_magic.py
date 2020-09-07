@@ -32,7 +32,7 @@ from jinja2 import FileSystemLoader, Environment
 
 
 @magics_class
-class TeXbookTheme(Magics):
+class TeXbook(Magics):
     """
     IPython (line) magic to enable the TeXbook theme
     in a Jupyter notebook.
@@ -46,7 +46,7 @@ class TeXbookTheme(Magics):
     """
 
     def __init__(self, *args, **kwargs):
-        super(TeXbookTheme, self).__init__(*args, **kwargs)
+        super(TeXbook, self).__init__(*args, **kwargs)
         template_loader = FileSystemLoader(
             [settings.TEMPLATES_FOLDER, settings.RESOURCES_FOLDER]
         )
@@ -126,4 +126,4 @@ class TeXbookTheme(Magics):
 
 
 def load_ipython_extension(ipython):
-    ipython.register_magics(TeXbookTheme)
+    ipython.register_magics(TeXbook)
