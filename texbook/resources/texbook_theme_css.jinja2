@@ -7,6 +7,7 @@ License: Apache License 2.0
 */
 
 {% include "fonts_css.jinja2" %}
+{% include "fonts_css_loca_html.jinja2" %}
 {% include "editors_css.jinja2" %}
 {% include "dataframe_css.jinja2" %}
 
@@ -25,7 +26,7 @@ License: Apache License 2.0
     --text-notebook-ui-header-font: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --text-head-color: rgb(56, 56, 56);
 
-    --text-markdown-render-mono-font: {{ mono_font }}, 'mono-code', "Menlo", monospace;
+    --text-markdown-render-mono-font: {{ mono_font }}, 'mono-code', 'mono-code-local', "Menlo", monospace;
     --text-mono-color: #828282;
     --text-mono_font_size: {{ mono_font_size }};
     --text-mono-line-height: 1.5;
@@ -212,7 +213,7 @@ a.item_link {
 
 #notebook {
     padding-top: 0;
-    font-family: "md-text", "Times New Roman", serif;
+    font-family: "md-text", "md-text-local", "Times New Roman", serif;
 }
 
 #site {
@@ -237,7 +238,7 @@ a.item_link {
 }
 
 .prompt {
-    font-family: {{ mono_font }}, "mono-code", monospace !important;
+    font-family: {{ mono_font }}, "mono-code", "mono-code-local", monospace !important;
     font-style: normal;
     font-size: 1rem;
     text-align: right;
@@ -400,7 +401,7 @@ div.output_area pre, div.output_subarea {
 }
 
 div.output_area pre {
-    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", monospace !important;
+    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", "mono-code-local", monospace !important;
 
     padding-bottom: 15px;
     padding-top: 10px;
@@ -425,10 +426,11 @@ div.output_html {
 div.output_html {
     font-size: 1.3rem;
     font-weight: normal;
-    font-family: {{ mono_font }}, "mono-code", monospace;
+    font-family: {{ mono_font }}, "mono-code", "mono-code-local", monospace;
     padding-bottom: 15px;
     padding-top: 10px;
 }
+
 div.output_html > iframe, div.output_area {
     margin-left: 3rem;
 }
@@ -491,7 +493,7 @@ div.cell.edit_mode {
 
 /* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
-    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", monospace;
+    --text-markdown-render-mono-font: {{ mono_font }}, "mono-code", "mono-code-local", monospace;
     --text-mono-line-height: 1.6;
 
     font-family: var(--text-markdown-render-mono-font) !important;
@@ -508,7 +510,7 @@ div.CodeMirror-linenumber {
 /* md cell */
 div.text_cell.unrendered pre {
     /* general font rule */
-    --text-markdown-render-mono-font: "mono-md", "mono-code", Menlo, monospace;
+    --text-markdown-render-mono-font: "mono-md", "mono-md-local", "mono-code", "mono-code-local", Menlo, monospace;
     --text-mono_font_size: {{ mono_font_size }};
 
     font-family: var(--text-markdown-render-mono-font)  !important;
@@ -519,7 +521,7 @@ div.text_cell.unrendered pre {
 .cm-header-1, .cm-header-2, .cm-header-3,
 .cm-header-4, .cm-header-5, .cm-header-6 {
     /* general font rule */
-    --text-notebook-ui-header-font: "mono-md", "mono-code", Menlo, monospace;
+    --text-notebook-ui-header-font: "mono-md", "mono-md-local", "mono-code", "mono-code-local", Menlo, monospace;
     font-family: var(--text-notebook-ui-header-font) !important;
 }
 
@@ -534,10 +536,10 @@ div.text_cell.unrendered pre {
 
 div.text_cell_render {
     /* general font rule */
-    --text-ui-font: "md-text", "Times New Roman", serif;
+    --text-ui-font: "md-text", "md-text-local", "Times New Roman", serif;
     --text-font-size: 19px;
     --text-color: var(--darker-grey);
-    --text-markdown-render-mono-font: "md-mono", "mono-code", Menlo, monospace;
+    --text-markdown-render-mono-font: "md-mono", "md-mono-local", "mono-code", "mono-code-local", Menlo, monospace;
 
     font-family: var(--text-ui-font) !important;
     font-size: var(--text-font-size) !important;

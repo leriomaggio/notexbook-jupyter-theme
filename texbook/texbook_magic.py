@@ -120,6 +120,7 @@ class TeXbook(Magics):
                 mono_font=mono_font,
                 mono_font_size=mono_font_size,
                 fonts_url=settings.TEXBOOK_RESOURCES_FONTS_URL,
+                fonts_local_path=settings.FONTS_FOLDER,
                 code_theme=cd_theme,
                 md_theme=md_theme,
             )
