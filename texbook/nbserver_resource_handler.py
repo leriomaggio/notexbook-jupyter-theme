@@ -20,13 +20,15 @@ This extension will be automatically installed
 as a part of the post-install behaviour.
 """
 
-from tornado.web import StaticFileHandler
+from tornado.web import StaticFileHandler, RedirectHandler
 from . import settings
 
 
 def load_jupyter_server_extension(nb_server_app):
     web_app = nb_server_app.web_app
     host_pattern = ".*$"
+    static_url = r"%s/(.*)" % settings.FONTS_FOLDER
+    resource_nb_url = "%s/{0}" % settings.TEXBOOK_RESOURCES_FONTS_URL
     web_app.add_handlers(
         host_pattern,
         [
@@ -34,6 +36,7 @@ def load_jupyter_server_extension(nb_server_app):
                 r"{}/(.*)".format(settings.TEXBOOK_RESOURCES_FONTS_URL),
                 StaticFileHandler,
                 {"path": settings.FONTS_FOLDER},
-            )
+            ),
+            (static_url, RedirectHandler, {"url": resource_nb_url},),
         ],
     )
