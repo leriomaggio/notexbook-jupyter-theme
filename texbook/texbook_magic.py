@@ -23,7 +23,7 @@ https://leriomaggio.github.io/texbook-jupyter-theme/#Code-Editor
 from . import settings
 from IPython.core.magic import Magics
 from IPython.core.magic import magics_class
-from IPython.core.magic import line_magic
+from IPython.core.magic import line_cell_magic
 from IPython.core.magic_arguments import argument
 from IPython.core.magic_arguments import magic_arguments
 from IPython.core.magic_arguments import parse_argstring
@@ -84,7 +84,7 @@ class TeXbook(Magics):
         default="15px",
         dest="mono_font_size",
     )
-    @line_magic
+    @line_cell_magic
     def TeXbook_theme(self, line):
         """
         IPython magic function to trigger the activation
@@ -95,7 +95,7 @@ class TeXbook(Magics):
         mono_font, mono_font_size = args.mono_font, args.mono_font_size
         if not mono_font_size.endswith("px"):
             mono_font_size = "{}px".format(mono_font_size.strip())
-        theme_css = self._load_TeXbook_template(
+        theme_css = self._load_texbook_theme_template(
             mono_font=mono_font,
             mono_font_size=mono_font_size,
             code_theme_name=code_theme,
@@ -106,7 +106,7 @@ class TeXbook(Magics):
 
         return HTML(theme_style_tag)
 
-    def _load_TeXbook_template(
+    def _load_texbook_theme_template(
         self, mono_font, mono_font_size, code_theme_name, md_theme_name
     ):
         md_theme_css = settings.EDITOR_THEMES["markdown"][md_theme_name]
