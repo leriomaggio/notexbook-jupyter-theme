@@ -534,7 +534,7 @@ div.text_cell_render {
     /* general font rule */
     --text-font: "md-text", "Times New Roman", serif;
     --text-font-size: 18px;
-    --text-color: var(--darker-grey);
+    --text-color: var(--texbook-dark-grey);
     --text-mono-font: "md-mono", "mono-code", Menlo, monospace;
 
     font-family: var(--text-font) !important;
