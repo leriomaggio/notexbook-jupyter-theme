@@ -138,7 +138,8 @@ Markdown MathJax Customisation
 
 /*This customisation only applies to Math Display showing the font bigger than normal*/
 .MathJax_Display {
-    font-size: 4rem;
+    font-size: 2.2rem;
+    /*color: rgb(83, 83, 83) !important;*/
 }
 
 /*
@@ -168,7 +169,7 @@ Markdown MathJax Customisation
 /* Keyword */
 .highlight .k {
     color: var(--keywords);
-    font-weight: 700;
+    font-weight: bold;
 }
 
 /* Literal */
@@ -192,12 +193,11 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator */
 .highlight .o {
     color: var(--code-text-color);
-    /*font-weight: bold; */
 }
 
 /* Punctuation */
 .highlight .p {
-    color: var(--text-mono-color);
+    color: var(--txb-ui-mono-color);
 }
 
 /* Comment.Multiline */
