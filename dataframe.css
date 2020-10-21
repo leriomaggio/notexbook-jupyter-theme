@@ -19,7 +19,7 @@ table.dataframe {
     border-collapse: collapse;
     border: none;
     margin-left: 20px !important;
-    font-size: var(--text-mono-font-size) !important;
+    font-size: var(--txb-ui-mono-font-size) !important;
 }
 
 table.dataframe thead {
