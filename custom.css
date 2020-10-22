@@ -7,6 +7,7 @@ License: Apache License 2.0
 @import url("fonts.css");
 @import url("editors.css");
 @import url("dataframe.css");
+@import url("html_export.css");
 
 
 /* ======================================================
@@ -71,22 +72,6 @@ License: Apache License 2.0
 
     --cell-display-border: #009489;
     --cell-edit-border: #d43133;
-
-    /* Jupyter Lab Integration (Light Theme) */
-    --jp-content-font-color1: var(--txbk-content-color);
-    --jp-content-font-family: var(--txbk-content-font-family);
-    --jp-content-line-height: var(--txbk-content-line-height);
-    --jp-content-link-color: var(--link-color);
-    --jp-content-font-size: var(--txbk-content-font-size);
-
-    --jp-code-font-size: var(--txbk-ui-mono-font-size);
-    --jp-code-line-height: var(--txbk-ui-mono-line-height);
-    --jp-code-padding: 5px;
-    --jp-code-font-family-default: var(--txbk-code-font-family);
-    --jp-code-font-family: var(--jp-code-font-family-default);
-    --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
-    --jp-content-heading-font-weight: 500;
-    --jp-content-heading-line-height: 1;
 }
 
 html {
@@ -411,9 +396,9 @@ div.cell.selected div.input:before {
 /* Cell Input and Output */
 
 div.input_prompt {
-    color: #888;
+    color: #aba9a9;
     font-style: normal !important;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 /* FIX: Fixing Empty cell output in HTML export */
@@ -618,6 +603,7 @@ div.text_cell_render h6 {
     border-bottom: 1px solid rgb(204, 204, 204);
 }
 
+div.text_cell_render p,
 div.text_cell_render pre,
 div.text_cell_render code {
     font-size: 1em !important;
@@ -629,7 +615,6 @@ div.text_cell_render pre {
     /* hack: using code background colour here to allow for compatibility */
     background-color: var(--code-background-color) !important;
     font-family: var(--txbk-content-mono-font-family) !important;
-    /*letter-spacing: .25px;*/
 }
 
 div.text_cell_render p {
@@ -664,7 +649,6 @@ div.text_cell_render pre code {
     word-wrap: break-word;
     word-break: normal;
 }
-
 
 div.text_cell_render blockquote {
     --txbk-ui-color: #6f6f6f !important;
