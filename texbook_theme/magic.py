@@ -1,3 +1,14 @@
+# encoding: utf-8
+
+# ------------------------------------------------------------------------
+# Valerio Maggio <@leriomaggio> 2020
+# IPython magic function to enable TeXBook Jupyter notebook Theme
+# Author: Valerio Maggio <github.com/leriomaggio>
+# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+#
+# License: Apache License 2.0
+# ------------------------------------------------------------------------
+
 """
 IPython magic to enable the TeXbook Theme into a Jupyter notebook.
 
@@ -31,7 +42,7 @@ class TeXbookTheme(Magics):
     (default theme: Material Design Light theme).
 
     For information:
-    `%TeXbook_theme?`
+    `%teXify_notebook?`
     """
 
     def __init__(self, *args, **kwargs):
@@ -62,29 +73,29 @@ class TeXbookTheme(Magics):
     @argument(
         "-mf",
         "--mono-font",
-        help="Selected Mono Font. Default: Hasklig",
-        default="mono-code",
+        help="Selected Mono Font. Default: Fira Code",
+        default="Fira Code",
         dest="mono_font",
     )
     @argument(
         "-mfs",
         "--mono-font-size",
-        help="Selected Mono Font size. Default: 15px",
-        default="15px",
+        help="Selected Mono Font size. Default: 16px",
+        default="16px",
         dest="mono_font_size",
     )
     @line_magic
-    def TeXbook_theme(self, line):
+    def texify(self, line):
         """
         IPython magic function to trigger the activation
         of the TeXBook-Jupyter theme in the notebook.
         """
-        args = parse_argstring(self.TeXbook_theme, line)
+        args = parse_argstring(self.texify, line)
         code_theme, md_theme = args.code_theme, args.md_theme
         mono_font, mono_font_size = args.mono_font, args.mono_font_size
         if not mono_font_size.endswith("px"):
             mono_font_size = "{}px".format(mono_font_size.strip())
-        theme_css = self._load_TeXbook_template(
+        theme_css = self._load_texbook_theme_template(
             mono_font=mono_font,
             mono_font_size=mono_font_size,
             code_theme_name=code_theme,
@@ -95,7 +106,7 @@ class TeXbookTheme(Magics):
 
         return HTML(theme_style_tag)
 
-    def _load_TeXbook_template(
+    def _load_texbook_theme_template(
         self, mono_font, mono_font_size, code_theme_name, md_theme_name
     ):
         md_theme_css = settings.EDITOR_THEMES["markdown"][md_theme_name]
@@ -108,7 +119,8 @@ class TeXbookTheme(Magics):
             return t.render(
                 mono_font=mono_font,
                 mono_font_size=mono_font_size,
-                fonts_path=settings.TEXBOOK_RESOURCES_FONTS_URL,
+                # fonts_url=settings.TEXBOOK_RESOURCES_FONTS_URL,
+                # fonts_local_path=settings.FONTS_FOLDER,
                 code_theme=cd_theme,
                 md_theme=md_theme,
             )

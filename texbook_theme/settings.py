@@ -1,25 +1,35 @@
-import os
+# encoding: utf-8
+
+# ------------------------------------------------------------------------
+# Valerio Maggio <@leriomaggio> 2020
+# IPython magic function to enable TeXBook Jupyter notebook Theme
+# Author: Valerio Maggio <github.com/leriomaggio>
+# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+#
+# License: Apache License 2.0
+# ------------------------------------------------------------------------
+
+from pathlib import Path
+import pkg_resources
 
 
 # -------
 # Folders
 # -------
-BASE_FOLDER = os.path.abspath(os.path.dirname(__file__))
-TEMPLATES_FOLDER = os.path.join(BASE_FOLDER, "templates")
-RESOURCES_FOLDER = os.path.join(BASE_FOLDER, "resources")
-FONTS_FOLDER = os.path.join(RESOURCES_FOLDER, "fonts")
-EDITOR_THEMES_FOLDER = os.path.join(RESOURCES_FOLDER, "themes")
+TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "templates"))
+RESOURCES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "resources"))
+EDITOR_THEMES_FOLDER = RESOURCES_FOLDER / "themes"
 
-#
+# Editor Themes
 EDITOR_THEMES = {
     "markdown": {
-        "material": os.path.join(EDITOR_THEMES_FOLDER, "md_material_theme.css"),
-        "typora": os.path.join(EDITOR_THEMES_FOLDER, "md_typora_theme.css"),
+        "material": EDITOR_THEMES_FOLDER / "md_material_theme.css",
+        "typora": EDITOR_THEMES_FOLDER / "md_typora_theme.css",
     },
     "code": {
-        "material": os.path.join(EDITOR_THEMES_FOLDER, "code_material_theme.css"),
-        "github": os.path.join(EDITOR_THEMES_FOLDER, "code_github_theme.css"),
-        "crisp": os.path.join(EDITOR_THEMES_FOLDER, "code_crisp_theme.css"),
+        "material": EDITOR_THEMES_FOLDER / "code_material_theme.css",
+        "github": EDITOR_THEMES_FOLDER / "code_github_theme.css",
+        "crisp": EDITOR_THEMES_FOLDER / "code_crisp_theme.css",
     },
 }
 
@@ -32,6 +42,3 @@ MD_EDITOR_THEME_CHOICES = list(EDITOR_THEMES["markdown"].keys())
 # -------------------
 TEXBOOK_CSS = "texbook_theme_css.jinja2"
 TEXBOOK_HTML_TEMPLATE = "texbook_theme.html"
-
-# Resource Fonts URL
-TEXBOOK_RESOURCES_FONTS_URL = "/TeXbook_theme/resources/fonts"

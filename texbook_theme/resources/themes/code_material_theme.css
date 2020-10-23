@@ -1,7 +1,7 @@
 /*
 Author: Valerio Maggio < @leriomaggio >
 Code: https://github.com/leriomaggio/texbook-jupyter-theme
-License: BSD 3 Clause
+License: Apache License 2.0
 
  ======================================================
 
@@ -14,7 +14,7 @@ Repo: https://github.com/JonaDuran/Material-Light-Theme/
     /* Color Palette */
     --white: #ffffff;
     --light-white: #FAFAFA;
-    --black: #212121;
+    --black: #24292E;
     --dark-blue : #01579B11;
     --dark-blue-2: #01579B22;
     --blue: #1565C0;

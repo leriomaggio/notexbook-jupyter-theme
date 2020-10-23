@@ -1,7 +1,7 @@
 /*
 Author: Valerio Maggio < @leriomaggio >
 Code: https://github.com/leriomaggio/texbook-jupyter-theme
-License: BSD 3 Clause
+License: Apache License 2.0
 
  ======================================================
 
@@ -14,7 +14,7 @@ License: BSD 3 Clause
     /* Color Palette */
     --md-red: #C0392B;
     --md-yellow: #A8601A;
-    --md-black: #212121;
+    --md-black: #24292E;
     --md-grey: #9E9E9E;
     --md-blue: #1565C0;
     --md-dark-blue: #01579B;

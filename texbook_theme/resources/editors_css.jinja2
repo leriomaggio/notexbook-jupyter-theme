@@ -1,7 +1,7 @@
 /*
 Author: Valerio Maggio < @leriomaggio >
 Code: https://github.com/leriomaggio/texbook-jupyter-theme
-License: BSD 3 Clause
+License: Apache License 2.0
 
 ======================================================
 
@@ -33,7 +33,6 @@ License: BSD 3 Clause
 {% endblock %}
 
 /* Markdown Editor theme */
-
 {% block markdown_editor_theme %}
     {{ md_theme }}
 {% endblock %}
@@ -85,6 +84,7 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-keyword {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 .cm-s-ipython span.cm-variable {
@@ -129,6 +129,7 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-operator {
     color: var(--operator);
+    font-weight: 500 !important;
 }
 
 .cm-s-ipython span.cm-number {
@@ -137,6 +138,18 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-type {
     color: var(--types);
+}
+
+/*
+==============================
+Markdown MathJax Customisation
+==============================
+*/
+
+/*This customisation only applies to Math Display showing the font bigger than normal*/
+.MathJax_Display {
+    font-size: 2.2rem;
+    /*color: rgb(83, 83, 83) !important;*/
 }
 
 /*
@@ -166,7 +179,7 @@ span.CodeMirror-matchingbracket {
 /* Keyword */
 .highlight .k {
     color: var(--keywords);
-    font-weight: 700;
+    font-weight: 500 !important;
 }
 
 /* Literal */
@@ -190,12 +203,12 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator */
 .highlight .o {
     color: var(--code-text-color);
-    /*font-weight: bold; */
+    font-weight: 500 !important;
 }
 
 /* Punctuation */
 .highlight .p {
-    color: var(--text-mono-color);
+    color: var(--txb-ui-mono-color);
 }
 
 /* Comment.Multiline */
@@ -240,7 +253,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 
 /* Generic.Strong */
 .highlight .gs {
-    font-weight: bold
+    font-weight: 500 !important;
 }
 
 /* @ Generic.Subheading */
@@ -253,31 +266,37 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Keyword.Constant */
 .highlight .kc {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Declaration */
 .highlight .kd {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Namespace */
 .highlight .kn {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Pseudo */
 .highlight .kp {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Reserved */
 .highlight .kr {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Type */
 .highlight .kt {
     color: var(--types);
+    font-weight: 500 !important;
 }
 
 /* Literal.Date */
@@ -308,7 +327,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Name.Class */
 .highlight .nc {
     color: var(--def);
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 /* @ Name.Constant */
@@ -329,7 +348,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Name.Exception */
 .highlight .ne {
     color: var(--code-text-color);
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 /* Name.Function */
@@ -371,6 +390,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator.Word */
 .highlight .ow {
     color: var(--operator);
+    font-weight: 500 !important;
 }
 
 /* @ Text.Whitespace */
