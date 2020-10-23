@@ -77,6 +77,7 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-keyword {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 .cm-s-ipython span.cm-variable {
@@ -121,6 +122,7 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-operator {
     color: var(--operator);
+    font-weight: 500 !important;
 }
 
 .cm-s-ipython span.cm-number {
@@ -170,7 +172,7 @@ Markdown MathJax Customisation
 /* Keyword */
 .highlight .k {
     color: var(--keywords);
-    font-weight: bold;
+    font-weight: 500 !important;
 }
 
 /* Literal */
@@ -194,6 +196,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator */
 .highlight .o {
     color: var(--code-text-color);
+    font-weight: 500 !important;
 }
 
 /* Punctuation */
@@ -243,7 +246,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 
 /* Generic.Strong */
 .highlight .gs {
-    font-weight: bold
+    font-weight: 500 !important;
 }
 
 /* @ Generic.Subheading */
@@ -256,31 +259,37 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Keyword.Constant */
 .highlight .kc {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Declaration */
 .highlight .kd {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Namespace */
 .highlight .kn {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Pseudo */
 .highlight .kp {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Reserved */
 .highlight .kr {
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 /* Keyword.Type */
 .highlight .kt {
     color: var(--types);
+    font-weight: 500 !important;
 }
 
 /* Literal.Date */
@@ -311,7 +320,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Name.Class */
 .highlight .nc {
     color: var(--def);
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 /* @ Name.Constant */
@@ -332,7 +341,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Name.Exception */
 .highlight .ne {
     color: var(--code-text-color);
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 /* Name.Function */
@@ -374,6 +383,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator.Word */
 .highlight .ow {
     color: var(--operator);
+    font-weight: 500 !important;
 }
 
 /* @ Text.Whitespace */
@@ -486,6 +496,7 @@ table.dataframe thead tr th:not(:empty) {
 span.ansi-green-fg {
     /*color: var(--green);*/
     color: var(--keywords);
+    font-weight: 500 !important;
 }
 
 span.ansi-green-intense-fg{
