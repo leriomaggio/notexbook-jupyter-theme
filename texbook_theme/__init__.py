@@ -9,8 +9,8 @@
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
-from texbook.texbook_magic import *
+from texbook_theme.magic import *
 
-__all__ = ["texbook_magic", "nbserver_resource_handler"]
+__all__ = ["magic", "__version__"]

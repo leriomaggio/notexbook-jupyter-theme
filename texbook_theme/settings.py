@@ -16,9 +16,8 @@ import pkg_resources
 # -------
 # Folders
 # -------
-TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("texbook", "templates"))
-RESOURCES_FOLDER = Path(pkg_resources.resource_filename("texbook", "resources"))
-FONTS_FOLDER = RESOURCES_FOLDER / "fonts"
+TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "templates"))
+RESOURCES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "resources"))
 EDITOR_THEMES_FOLDER = RESOURCES_FOLDER / "themes"
 
 # Editor Themes
@@ -43,6 +42,3 @@ MD_EDITOR_THEME_CHOICES = list(EDITOR_THEMES["markdown"].keys())
 # -------------------
 TEXBOOK_CSS = "texbook_theme_css.jinja2"
 TEXBOOK_HTML_TEMPLATE = "texbook_theme.html"
-
-# Resource Fonts URL
-TEXBOOK_RESOURCES_FONTS_URL = "/texbook/resources/fonts"
