@@ -11,34 +11,39 @@ http://github.com/leriomaggio
 
 */
 
-$.fn.exists = function () {
-    return this.length !== 0;
-}
-
-function customise_anchor_links_click(){
-    $("a[href*='#']").click(function(e) {
-        let $header = $("#header");
+function customise_anchor_links_click() {
+    $("a").on("click", function (e) {
         // Check if header toolbar is visible in the first place
-        if ($header.is(":visible")){
-            let anchor = $(this).attr('href');
-            let $target = $(anchor);
-            if (!$target.exists()){
-                anchor = anchor.substr(1);
-                $target = $("a[name='"+anchor+"'");
+        if (this.hash !== "") {
+            // Remove any existing handler
+            $(this).unbind();
+            // Store hash
+            const hash = this.hash;
+            let t = $(hash);
+            if ((t === undefined) || (t.length === 0)) {
+                let anchor = hash.substr(1);
+                t = $("a[name='" + anchor + "'");
             }
-            //  Check if a match has been found, in the first place.
-            if ($target.exists()){
-                e.preventDefault();  // Inhibit default behaviour
-                let header_height = $header.height();
-                let offset = $target.offset().top - header_height;
-                $('html,body').animate({scrollTop: offset},'slow');
+            if ((t !== undefined) && (t.length > 0)) {
+                // Prevent default anchor click behavior
+                e.preventDefault();
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds
+                // it takes to scroll to the specified area
+                let header_height = $("#header").height();
+                let offset = $(t).offset().top - header_height;
+                $('html, body').animate({
+                    scrollTop: offset
+                }, 800, function () {});
             }
+            // console.log(hash);
+            // console.log(t);
         }
     });
 }
 
 // Trigger the selection when the page is ready
-$(document).ready(function(){
+$(document).ready(function () {
     customise_anchor_links_click();
 });
 
@@ -47,6 +52,6 @@ $(document).ready(function(){
  Markdown cell is rendered -
  so that (possible) newly defined links can be captured.
  */
-$([IPython.events]).on("rendered.MarkdownCell", function(){
+$([IPython.events]).on("rendered.MarkdownCell", function () {
     customise_anchor_links_click();
 });
