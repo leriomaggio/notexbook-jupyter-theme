@@ -85,12 +85,12 @@ class TeXbookTheme(Magics):
         dest="mono_font_size",
     )
     @line_magic
-    def texifyit(self, line):
+    def texify(self, line):
         """
         IPython magic function to trigger the activation
         of the TeXBook-Jupyter theme in the notebook.
         """
-        args = parse_argstring(self.texifyit, line)
+        args = parse_argstring(self.texify, line)
         code_theme, md_theme = args.code_theme, args.md_theme
         mono_font, mono_font_size = args.mono_font, args.mono_font_size
         if not mono_font_size.endswith("px"):

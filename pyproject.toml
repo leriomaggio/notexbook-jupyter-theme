@@ -27,7 +27,6 @@ build-backend = "setuptools.build_meta"
 ipython = "^7.0"
 jupyter = "^6.0"
 notebook = "^6.0"
-tornado = "^5.0"
 jinja2 = "^2.10"
 
 
