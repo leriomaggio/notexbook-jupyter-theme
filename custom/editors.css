@@ -25,10 +25,10 @@ License: Apache License 2.0
     This would ease the definition of other custom CSS Editor themes
 */
 /* Code Editor theme */
-@import url("themes/code_material_theme.css");
+@import url("custom/themes/code_material_theme.css");
 
 /* Markdown Editor theme */
-@import url("themes/md_material_theme.css");
+@import url("custom/themes/md_material_theme.css");
 
 /*
     =================

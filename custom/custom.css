@@ -4,10 +4,10 @@ Code: https://github.com/leriomaggio/texbook-jupyter-theme
 License: Apache License 2.0
 */
 
-@import url("fonts.css");
-@import url("editors.css");
-@import url("dataframe.css");
-@import url("html_export.css");
+@import url("custom/fonts.css");
+@import url("custom/editors.css");
+@import url("custom/dataframe.css");
+@import url("custom/html_export.css");
 
 
 /* ======================================================
