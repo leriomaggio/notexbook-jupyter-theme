@@ -215,7 +215,7 @@ a.item_link {
 .modal-header > h4 {
     font-style: normal !important;
     text-decoration: none !important;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: var(--txbk-ui-font-family) !important;
     margin: 0 !important;
 }
 
@@ -225,19 +225,14 @@ a.item_link {
     font-weight: normal;
 }
 
-#notebook_name {
-    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+div#notebook_name {
+    font-family: var(--txbk-ui-font-family) !important;
     font-weight: normal;
     font-size: 24px;
     padding: 1px 7px 1px 1px;
 }
 
-#notebook {
-    padding-top: 0;
-    font-family: "CMU Serif", "Times New Roman", serif;
-}
-
-#site {
+div#site {
 	overflow: inherit;
     top: 112px;
     position: absolute;
@@ -246,8 +241,10 @@ a.item_link {
 #header {
     display: block;
     position: fixed !important;
+    top: 0;
     width: 100%;
     max-width: 100%;
+    height: fit-content;
     background-color: var(--background-color);
 }
 
@@ -269,6 +266,9 @@ a.item_link {
 div#notebook {
     border-top: none;
     font-size: 1rem;
+    padding: 0 !important;
+    padding-top: 30px !important;
+    font-family: var(--txbk-content-font-family) !important;
 }
 
 .kernel_idle_icon:before {
