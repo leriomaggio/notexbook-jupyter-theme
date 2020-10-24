@@ -15125,6 +15125,7 @@ table.dataframe thead tr th:not(:empty) {
 .rendered_html th {
     font-weight: 500 !important;
 }
+
 :root {
     /* Jupyter Lab Integration (Light Theme) */
     --jp-content-font-color1: var(--txbk-content-color);
@@ -15423,7 +15424,9 @@ div.jp-OutputPrompt {
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
     --txbk-code-font-family: "Fira Code", "Fira Code", monospace;
+
     --txbk-md-font-family: "Hack", "Hack", monospace;
+
     --txbk-code-font-size: 16px;
     --txbk-code-line-height: 1.6;
     --txkb-code-color: var(--code-text-color);
@@ -16305,12 +16308,14 @@ function customise_anchor_links_click() {
             if ((t !== undefined) && (t.length > 0)) {
                 // Prevent default anchor click behavior
                 e.preventDefault();
+
                 const page = $("html, body");
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (800) specifies the number of milliseconds
                 // it takes to scroll to the specified area
                 let header_height = $("#header").height();
                 let offset = $(t).offset().top - header_height;
+
 
                 /*
                  * FIX Scrolling Animation Freeze:

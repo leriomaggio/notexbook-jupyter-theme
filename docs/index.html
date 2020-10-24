@@ -13957,6 +13957,7 @@ table.dataframe thead tr th:not(:empty) {
 .rendered_html th {
     font-weight: 500 !important;
 }
+
 :root {
     /* Jupyter Lab Integration (Light Theme) */
     --jp-content-font-color1: var(--txbk-content-color);
@@ -14247,15 +14248,19 @@ div.jp-OutputPrompt {
     --txbk-content-font-family: "CMU Serif", "Times New Roman", serif;
     --txbk-content-font-size: 19px;
     --txbk-content-color: rgb(51, 51, 51);
+
     --txbk-content-line-height: 1.4;
 
     --txbk-content-mono-font-family: "CMU Typewriter Text", "Fira Code", "Fira Code", monospace;
     --txbk-content-mono-font-size: 16px;
+
     --txkb-content-mono-color: var(--texbook-dark-grey);
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
     --txbk-code-font-family: "Fira Code", "Fira Code", monospace;
+
     --txbk-md-font-family: "Hack", "Hack", monospace;
+
     --txbk-code-font-size: 16px;
     --txbk-code-line-height: 1.6;
     --txkb-code-color: var(--code-text-color);
@@ -15137,12 +15142,15 @@ function customise_anchor_links_click() {
             if ((t !== undefined) && (t.length > 0)) {
                 // Prevent default anchor click behavior
                 e.preventDefault();
+
                 const page = $("html, body");
+
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (800) specifies the number of milliseconds
                 // it takes to scroll to the specified area
                 let header_height = $("#header").height();
                 let offset = $(t).offset().top - header_height;
+
 
                 /*
                  * FIX Scrolling Animation Freeze:
@@ -15157,6 +15165,7 @@ function customise_anchor_links_click() {
                     page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
                 });
                 return false;
+
             }
             //console.log(hash);
             //console.log(t);
@@ -16351,6 +16360,7 @@ height=92
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;ipython-input-13-5162a496210c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> scipy <span class="ansi-green-fg">import</span> linalg
@@ -16364,6 +16374,7 @@ height=92
 <span class="ansi-green-intense-fg ansi-bold">   1036</span>     fdet<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">=</span> get_flinalg_funcs<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;det&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">ValueError</span>: expected square matrix</pre>
+
 </div>
 </div>
 
