@@ -44,10 +44,10 @@ License: Apache License 2.0
     --txbk-content-font-family: "CMU Serif", "Times New Roman", serif;
     --txbk-content-font-size: 19px;
     --txbk-content-color: rgb(51, 51, 51);
-    --txbk-content-line-height: 1.3;
+    --txbk-content-line-height: 1.4;
 
     --txbk-content-mono-font-family: "CMU Typewriter Text", "Fira Code", Menlo, monospace;
-    --txbk-content-mono-font-size: 18px;
+    --txbk-content-mono-font-size: 16px;
     --txkb-content-mono-color: var(--texbook-dark-grey);
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
