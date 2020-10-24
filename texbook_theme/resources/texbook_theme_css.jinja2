@@ -42,18 +42,18 @@ License: Apache License 2.0
 
     /* Content Formatting */
     --txbk-content-font-family: "CMU Serif", "Times New Roman", serif;
-    --txbk-content-font-size: 19px;
+    --txbk-content-font-size: {{ nb_font_size }};
     --txbk-content-color: rgb(51, 51, 51);
-    --txbk-content-line-height: 1.3;
+    --txbk-content-line-height: {{ nb_line_height }};
 
-    --txbk-content-mono-font-family: "CMU Typewriter Text", "{{ mono_font }}", "Fira Code", monospace;
-    --txbk-content-mono-font-size: 18px;
+    --txbk-content-mono-font-family: "CMU Typewriter Text", "{{ code_mono_font }}", "Fira Code", monospace;
+    --txbk-content-mono-font-size: {{ md_mono_font_size }};
     --txkb-content-mono-color: var(--texbook-dark-grey);
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
-    --txbk-code-font-family: "{{ mono_font }}", "Fira Code", monospace;
-    --txbk-md-font-family: "Hack", monospace;
-    --txbk-code-font-size: {{ mono_font_size }};
+    --txbk-code-font-family: "{{ code_mono_font }}", "Fira Code", monospace;
+    --txbk-md-font-family: "{{ md_mono_font }}", "Hack", monospace;
+    --txbk-code-font-size: {{ code_mono_font_size }};
     --txbk-code-line-height: 1.6;
     --txkb-code-color: var(--code-text-color);
     --txbk-code-bgcolor: var(--code-background-color);
