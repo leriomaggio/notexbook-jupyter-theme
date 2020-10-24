@@ -780,6 +780,11 @@ p > [class^='fn']:not(:first-child) {
     text-transform: capitalize;
 }
 
+/* FIX Forcing monospace code to adhere with footnotes rules!*/
+[id^='fn'] code, [class^='fn'] code {
+    font-size: small !important;
+}
+
 /* ------------
     Drop cap
    ------------
