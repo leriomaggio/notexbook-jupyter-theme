@@ -43,9 +43,6 @@ class ThemeConfig(NamedTuple):
     md_mono_font_size: str
     nb_font_size: str
     nb_line_height: Union[str, float]
-    # these two will hold theme content (None initially)
-    code_theme: str = None
-    md_theme: str = None
 
     @staticmethod
     def normalise_fontsize(value):
@@ -55,10 +52,7 @@ class ThemeConfig(NamedTuple):
 
     def as_dict(self):
         fs = self.__class__.__dict__["_fields"]
-        from functools import partial
-
-        get = partial(getattr, object=self, default="")
-        return {k: v for k, v in zip(fs, map(get, fs))}
+        return {k: v for k, v in zip(fs, map(lambda f: getattr(self, f, ""), fs))}
 
 
 def create_config_from(args) -> ThemeConfig:
@@ -149,8 +143,8 @@ class TeXbookTheme(Magics):
     @argument(
         "-mdfs",
         "--md-mono-font-size",
-        help="Selected Mono Font size for Rendered Markdown. Default: 18px",
-        default="18px",
+        help="Selected Mono Font size for Rendered Markdown. Default: 16px",
+        default="16px",
         dest="md_mono_font_size",
     )
     @argument(
@@ -163,8 +157,8 @@ class TeXbookTheme(Magics):
     @argument(
         "-lh",
         "--notebook-line-height",
-        help="Selected Line height for Notebook Content. Default: 1.3",
-        default="1.3",
+        help="Selected Line height for Notebook Content. Default: 1.4",
+        default="1.4",
         dest="nb_line_height",
     )
     @line_magic
@@ -186,10 +180,12 @@ class TeXbookTheme(Magics):
         cd_theme_css = settings.EDITOR_THEMES["code"][config.code_theme_name]
 
         with open(md_theme_css) as md_theme_file, open(cd_theme_css) as cd_theme_file:
-            config.md_theme = md_theme_file.read()
-            config.code_theme = cd_theme_file.read()
+            md_theme = md_theme_file.read()
+            code_theme = cd_theme_file.read()
             t = self.template_env.get_template(settings.TEXBOOK_CSS)
-            return t.render(**config.as_dict())
+            return t.render(
+                code_theme=code_theme, md_theme=md_theme, **config.as_dict()
+            )
 
 
 def load_ipython_extension(ipython):
