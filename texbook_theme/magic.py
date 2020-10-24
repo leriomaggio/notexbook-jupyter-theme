@@ -29,6 +29,62 @@ from IPython.core.magic_arguments import magic_arguments
 from IPython.core.magic_arguments import parse_argstring
 from IPython.core.display import HTML
 from jinja2 import FileSystemLoader, Environment
+from typing import NamedTuple, Union
+
+
+# Using typing.NamedTuple rather than @dataclass for broader
+# compatibility w/ Py3 versions
+class ThemeConfig(NamedTuple):
+    code_theme_name: str
+    md_theme_name: str
+    code_mono_font: str
+    code_mono_font_size: str
+    md_mono_font: str
+    md_mono_font_size: str
+    nb_font_size: str
+    nb_line_height: Union[str, float]
+    # these two will hold theme content (None initially)
+    code_theme: str = None
+    md_theme: str = None
+
+    @staticmethod
+    def normalise_fontsize(value):
+        if not value.endswith("px"):
+            return f"{value.strip()}px"
+        return value.strip()
+
+    def as_dict(self):
+        fs = self.__class__.__dict__["_fields"]
+        from functools import partial
+
+        get = partial(getattr, object=self, default="")
+        return {k: v for k, v in zip(fs, map(get, fs))}
+
+
+def create_config_from(args) -> ThemeConfig:
+    """factory method from command line arguments"""
+    code_theme, md_theme = args.code_theme, args.md_theme
+    code_mono_font, code_mono_font_size = (
+        args.code_mono_font,
+        args.code_mono_font_size,
+    )
+    md_mono_font, md_mono_font_size = args.md_mono_font, args.md_mono_font_size
+    nb_font_size, nb_line_height = args.nb_font_size, args.nb_line_height
+
+    code_mono_font_size = ThemeConfig.normalise_fontsize(code_mono_font_size)
+    md_mono_font_size = ThemeConfig.normalise_fontsize(md_mono_font_size)
+    nb_font_size = ThemeConfig.normalise_fontsize(nb_font_size)
+
+    return ThemeConfig(
+        code_theme_name=code_theme,
+        md_theme_name=md_theme,
+        code_mono_font=code_mono_font,
+        code_mono_font_size=code_mono_font_size,
+        md_mono_font=md_mono_font,
+        md_mono_font_size=md_mono_font_size,
+        nb_line_height=nb_line_height,
+        nb_font_size=nb_font_size,
+    )
 
 
 @magics_class
@@ -41,8 +97,7 @@ class TeXbookTheme(Magics):
     themes used for code and markdown editors
     (default theme: Material Design Light theme).
 
-    For information:
-    `%teXify_notebook?`
+    For information: `%texify?`
     """
 
     def __init__(self, *args, **kwargs):
@@ -71,18 +126,46 @@ class TeXbookTheme(Magics):
         dest="md_theme",
     )
     @argument(
-        "-mf",
-        "--mono-font",
-        help="Selected Mono Font. Default: Fira Code",
+        "-cmf",
+        "--code-mono-font",
+        help="Selected Mono Font for Code Editor. Default: Fira Code",
         default="Fira Code",
-        dest="mono_font",
+        dest="code_mono_font",
     )
     @argument(
-        "-mfs",
-        "--mono-font-size",
-        help="Selected Mono Font size. Default: 16px",
+        "-mmf",
+        "--md-mono-font",
+        help="Selected Mono Font for Markdown Editor. Default: Hack",
+        default="Hack",
+        dest="md_mono_font",
+    )
+    @argument(
+        "-cmfs",
+        "--code-mono-font-size",
+        help="Selected Mono Font size for Code and Markdown Editor. Default: 16px",
         default="16px",
-        dest="mono_font_size",
+        dest="code_mono_font_size",
+    )
+    @argument(
+        "-mdfs",
+        "--md-mono-font-size",
+        help="Selected Mono Font size for Rendered Markdown. Default: 18px",
+        default="18px",
+        dest="md_mono_font_size",
+    )
+    @argument(
+        "-fs",
+        "--notebook-font-size",
+        help="Selected Font size for Rendered Content in Notebook. Default: 19px",
+        default="19px",
+        dest="nb_font_size",
+    )
+    @argument(
+        "-lh",
+        "--notebook-line-height",
+        help="Selected Line height for Notebook Content. Default: 1.3",
+        default="1.3",
+        dest="nb_line_height",
     )
     @line_magic
     def texify(self, line):
@@ -91,39 +174,22 @@ class TeXbookTheme(Magics):
         of the TeXBook-Jupyter theme in the notebook.
         """
         args = parse_argstring(self.texify, line)
-        code_theme, md_theme = args.code_theme, args.md_theme
-        mono_font, mono_font_size = args.mono_font, args.mono_font_size
-        if not mono_font_size.endswith("px"):
-            mono_font_size = "{}px".format(mono_font_size.strip())
-        theme_css = self._load_texbook_theme_template(
-            mono_font=mono_font,
-            mono_font_size=mono_font_size,
-            code_theme_name=code_theme,
-            md_theme_name=md_theme,
-        )
+        config = create_config_from(args)
+        theme_css = self._load_texbook_theme_template(config)
         template = self.template_env.get_template(settings.TEXBOOK_HTML_TEMPLATE)
         theme_style_tag = template.render(textbook_css=theme_css)
 
         return HTML(theme_style_tag)
 
-    def _load_texbook_theme_template(
-        self, mono_font, mono_font_size, code_theme_name, md_theme_name
-    ):
-        md_theme_css = settings.EDITOR_THEMES["markdown"][md_theme_name]
-        cd_theme_css = settings.EDITOR_THEMES["code"][code_theme_name]
+    def _load_texbook_theme_template(self, config: ThemeConfig):
+        md_theme_css = settings.EDITOR_THEMES["markdown"][config.md_theme_name]
+        cd_theme_css = settings.EDITOR_THEMES["code"][config.code_theme_name]
 
         with open(md_theme_css) as md_theme_file, open(cd_theme_css) as cd_theme_file:
-            md_theme = md_theme_file.read()
-            cd_theme = cd_theme_file.read()
+            config.md_theme = md_theme_file.read()
+            config.code_theme = cd_theme_file.read()
             t = self.template_env.get_template(settings.TEXBOOK_CSS)
-            return t.render(
-                mono_font=mono_font,
-                mono_font_size=mono_font_size,
-                # fonts_url=settings.TEXBOOK_RESOURCES_FONTS_URL,
-                # fonts_local_path=settings.FONTS_FOLDER,
-                code_theme=cd_theme,
-                md_theme=md_theme,
-            )
+            return t.render(**config.as_dict())
 
 
 def load_ipython_extension(ipython):
