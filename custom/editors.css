@@ -201,7 +201,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 
 /* Punctuation */
 .highlight .p {
-    color: var(--txb-ui-mono-color);
+    color: var(--code-text-color);
 }
 
 /* Comment.Multiline */
@@ -513,6 +513,10 @@ span.ansi-cyan-fg {
 
 span.ansi-blue-fg {
     color: var(--blue);
+}
+
+span.ansi-bold {
+    font-weight: 500 !important;
 }
 
 /* ----------------------------------- */
