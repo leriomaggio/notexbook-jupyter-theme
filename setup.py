@@ -15,16 +15,12 @@ from setuptools import setup, find_packages
 
 CURRENT_FOLDER = os.path.abspath(os.path.dirname(__file__))
 
-
-VERSION = "0.1.3"
-
 with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
 setup(
     name="notebook-texbook-theme",
-    version=VERSION,
     description=(
         "IPython magic function to dynamically enable the TeXBook"
         "Jupyter Notebook Theme without manually copying resource files in "
