@@ -781,8 +781,8 @@ p > [class^='fn']:not(:first-child) {
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
-[id^='fn'] code, [class^='fn'] code {
-    font-size: small !important;
+div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] > code {
+    font-size: 1em !important;
 }
 
 /* ------------
