@@ -21,7 +21,7 @@ table.dataframe {
     border-collapse: collapse;
     border: none;
     margin-left: 20px !important;
-    font-size: var(--txb-ui-mono-font-size) !important;
+    font-size: var(--txbk-content-mono-font-size) !important;
 }
 
 table.dataframe thead {
@@ -94,4 +94,9 @@ table.dataframe thead tr th:not(:empty) {
     text-align: left;
     font-style: normal;
     padding: 5px 10px;
+}
+
+/* Hacking Font-weight bold capped at 500 */
+.rendered_html th {
+    font-weight: 500 !important;
 }
