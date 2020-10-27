@@ -1,6 +1,8 @@
 # TeXbook  Jupyter Notebook Theme
 
-**Note**: You just hit the `notebook-magic` branch where the `texbook_theme` IPython magic is available and maintained.
+⚠️ **Note**: ⚠️ 
+You just hit the `notebook-magic` branch where the `texbook_theme` IPython magic is available and maintained.
+Jump [here](#magic) for instructions!
 
 ## Prologue:  <img src="https://render.githubusercontent.com/render/math?math=%5Ctextbf%7B%5CTeX%5Ctext%7Bbook%7D%7D">  shall be _thy_ name
 
@@ -108,4 +110,6 @@ To see the **full** list of configuration options :
 <a name="colab"></a>
 ### `TexBook` theme for Google Colaboratory
 
-**AVAILABLE SOON**  
+Instructions on how to install `TeXbook` as a customised theme
+for **Google Colaboratory Notebook** are available 
+[HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/texbook-colab/README.md#colab) 
