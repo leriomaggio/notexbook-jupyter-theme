@@ -1,9 +1,5 @@
 # TeXbook  Jupyter Notebook Theme
 
-⚠️ **Note**: ⚠️ 
-You just hit the `notebook-magic` branch where the `texbook_theme` IPython magic is available and maintained.
-Jump [here](#magic) for instructions!
-
 ## Prologue:  <img src="https://render.githubusercontent.com/render/math?math=%5Ctextbf%7B%5CTeX%5Ctext%7Bbook%7D%7D">  shall be _thy_ name
 
 When I designed this theme, I was aiming towards a notebook experience which had the elegance and sobriety of a `LaTeX`-generated article, perfectly combined with the flexibility and interactivity of Jupyter notebooks.
@@ -87,6 +83,9 @@ into a new notebook cell, and the `TeXbook` theme will be automatically enabled.
 #### Customising the `TeXbook` theme
 
 Current version of the theme allows to customise the following settings:
+Instructions on how to install `TeXbook` as a customised theme
+for **Google Colaboratory Notebook** are available 
+[HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/texbook-colab/README.md#colab)  
 
 - `--code-mono-font`: the font-family used for Code Editor (default: `Fira Code`)
 - `--md-mono-font`: the font-family used for Markdown Editor (default `Hack`)
