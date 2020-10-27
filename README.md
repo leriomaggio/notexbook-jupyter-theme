@@ -36,9 +36,9 @@ The <img src="https://render.githubusercontent.com/render/math?math=%5CTeX%5Ctex
 
 **Last but not least**: to make things even more interesting, the `TeXbook` theme has been made available in three different flavours: 
 
-   	1. **Full-fledged** _custom_ Jupyter notebook theme;
- 	2. `pip-installable` Custom **IPython magic** (`%texify`);
- 	3. Custom theme integration for Google Colaboratory Notebooks (via the [Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) (**still experimental**).
+1. **Full-fledged** _custom_ Jupyter notebook theme;
+2. `pip-installable` Custom **IPython magic** (`%texify`);
+3. Custom theme integration for Google Colaboratory Notebooks (via the [Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) (**still experimental**).
 
 ### Sneak Peek?
 
@@ -57,12 +57,19 @@ Installing and Enabling the `TeXbook` theme for your Jupyter notebooks varies de
 <a name="custom"></a>
 ### Using `TeXbook` as default Jupyter Notebook theme
 
-The `TeXbook` theme is available as a **full-fledged** `custom.css` that can be setup as the default theme for Jupyter notebooks.
+To install and enable `TeXbook` as the **default** Jupyter Notebook theme, it is just necessart to copy the `custom` folder 
+contained in this repository **as-is** in the `JUPYTER_CONFIG_DIR` folder (default `$HOME/.jupyter`):
 
-Installing and enabling the `TeXbook` theme as the **default** Jupyter Notebook theme, it is 
-very simple! Just copy the entire `custom` folder contained in this repository *as-is* in the 
-`JUPYTER_CONFIG_DIR` folder (default `$HOME/.jupyter`).
-See [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files)) for more information.
+```shell script
+cp -R custom $HOME/.jupyter
+```
+
+This will create a `custom` folder within your `JUPYTER_CONFIG_DIR` 
+(see [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files))
+for more details about Jupyter Notebook Directories), that will automatically enable `TeXbook` theme 
+**by default** for all Jupyter notebook. 
+
+See [here](https://stackoverflow.com/questions/32156248/how-do-i-set-custom-css-for-my-ipython-ihaskell-jupyter-notebook/34742362#34742362) for more information on Customising Notebook style.
 
 <a name="magic"></a>
 ### Using `%texify` custom IPython magic
