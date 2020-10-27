@@ -1,6 +1,8 @@
 # TeXbook  Jupyter Notebook Theme
 
-**Note**: You just hit the `custom-css `branch where the **full-fledged** Jupyter Custom theme is available and maintained.
+⚠️ **Note**: ⚠️ 
+You just hit the `custom-css `branch where the **full-fledged** Jupyter Custom theme is available and maintained.
+Jump [here](#custom) for instructions!
 
 ## Prologue:  <img src="https://render.githubusercontent.com/render/math?math=%5Ctextbf%7B%5CTeX%5Ctext%7Bbook%7D%7D">  shall be _thy_ name
 
@@ -81,7 +83,9 @@ are available [HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/n
 <a name="colab"></a>
 ### `TexBook` theme for Google Colaboratory
 
-**AVAILABLE SOON**   
+Instructions on how to install `TeXbook` as a customised theme
+for **Google Colaboratory Notebook** are available 
+[HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/texbook-colab/README.md#colab)  
 
 
 
