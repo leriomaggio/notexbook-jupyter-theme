@@ -1,6 +1,6 @@
 [project]
 name = "notebook-texbook-theme"
-version = "0.2.0"
+version = "0.2.1"
 author = "Valerio Maggio"
 author-email = "valeriomaggio@gmail.com"
 home-page = "http://github.com/leriomaggio/texbook-jupyter-theme"

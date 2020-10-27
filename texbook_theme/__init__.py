@@ -9,7 +9,7 @@
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 from texbook_theme.magic import *
 
