@@ -1,6 +1,9 @@
 # TeXbook  Jupyter Notebook Theme
 
-**Note**: You just hit the `custom-css `branch where the **full-fledged** Jupyter Custom theme is available and maintained.
+⚠️ **Note**: ⚠️
+You just hit the `texbook-colab` branch where the TeXbook Google Colaboratory theme is available and maintained.
+Jump [here](#colab) for instructions!
+
 
 ## Prologue:  <img src="https://render.githubusercontent.com/render/math?math=%5Ctextbf%7B%5CTeX%5Ctext%7Bbook%7D%7D">  shall be _thy_ name
 
@@ -57,19 +60,7 @@ Installing and Enabling the `TeXbook` theme for your Jupyter notebooks varies de
 <a name="custom"></a>
 ### Using `TeXbook` as default Jupyter Notebook theme
 
-To install and enable `TeXbook` as the **default** Jupyter Notebook theme, it is just necessart to copy the `custom` folder 
-contained in this repository **as-is** in the `JUPYTER_CONFIG_DIR` folder (default `$HOME/.jupyter`):
-
-```shell script
-cp -R custom $HOME/.jupyter
-```
-
-This will create a `custom` folder within your `JUPYTER_CONFIG_DIR` 
-(see [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files))
-for more details about Jupyter Notebook Directories), that will automatically enable `TeXbook` theme 
-**by default** for all Jupyter notebook. 
-
-See [here](https://stackoverflow.com/questions/32156248/how-do-i-set-custom-css-for-my-ipython-ihaskell-jupyter-notebook/34742362#34742362) for more information on Customising Notebook style.
+Instructions on how to install `TeXbook` as a **full-fledged** CSS Jupyter Notebook theme are available [HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/custom-css/README.md#custom) 
 
 <a name="magic"></a>
 ### Using `%texify` custom IPython magic
@@ -77,13 +68,44 @@ See [here](https://stackoverflow.com/questions/32156248/how-do-i-set-custom-css-
 Instructions on how to install and enable the `%texify` Jupyter Notebook Extension 
 are available [HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/notebook-magic/README.md#magic)
 
-
 <a name="colab"></a>
 ### `TexBook` theme for Google Colaboratory
 
-**AVAILABLE SOON**   
+An experimental porting of `TeXbook` to **Google Colaboratory** Notebooks is available as a 
+[Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) importable style. 
 
+#### Why Stylus?
 
+The HTML of a Colaboratory notebook is nothing similar to the standard Jupyter notebook HTML structure
+(so the `custom-css` cannot work). In addition, every single Colaboratory Notebook Cell executes and generates
+a new `HTML iframe`, which also makes the `texify` IPython magic pretty much useless.
 
+Therefore, the *only* solution I could resort to was using **Stylus**.
+Unfortunately it is not as customisable and portable as the IPython magic is, but hey?! Better than nothing :)
 
+#### Install TeXbook Colaboratory Theme 
 
+1. Install Stylus Browser Extension (**only available for Mozilla Firefox** and **Google Chrome**)
+    - [Mozilla Firefox Stylus](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/)
+    - [Google Chrome Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en)
+
+2. Import `google_colab_stylus_theme.json` into stylus
+
+    2.1 Alternatively, it is also possible to Copy&Paste the CSS as it is in the Stylus CSS Editor
+        - [Google Chrome Stylus](./google_colab_stylus_chrome.css)
+        - [Mozilla Stylus](./google_colab_stylus_mozilla.css)
+
+3. Enjoy!
+
+#### Customising the Colaboratory 
+
+As the general TeXbook theme, customising the Colaboratory Theme is as easy as tweaking 
+a bunch of CSS variables:
+
+* `--txbk-content-font-size` : Set the font size of the main notebook content;
+* `--txbk-content-line-height` : Set Line height of the main notebook content;
+* `--txbk-code-font-family` : Set the font family for code editor;
+* `--txbk-md-font-family`: Set the font family for markdown editor;
+* `--txbk-code-font-size`: Set the font size for the code editor;
+* `--txbk-content-mono-font-size`: Set the font-size of rendered mono Markdown.
+ 
