@@ -200,6 +200,11 @@ div.jp-RenderedHTMLCommon ol li {
     padding: .8rem !important;
 }
 
+div.jp-RenderedHTMLCommon ul li > code,
+div.jp-RenderedHTMLCommon ol li > code {
+    font-size: .8em !important
+}
+
 div.jp-RenderedHTMLCommon ul ul {
     list-style-type: circle !important;
 }

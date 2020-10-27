@@ -711,6 +711,11 @@ div.text_cell_render ul li, div.text_cell_render ol li {
     padding: .8rem !important;
 }
 
+/*FIX: Forcing Monospace in lists (Issue #6)*/
+div.text_cell_render ul li > code, div.text_cell_render ol li > code {
+    font-size: .8em !important;
+}
+
 div.text_cell_render ul ul {
     list-style-type: circle !important;
 }
@@ -781,7 +786,8 @@ p > [class^='fn']:not(:first-child) {
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
-div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] > code {
+div.text_cell_render p > [id^='fn'] code,
+div.text_cell_render p > [class^='fn']  code {
     font-size: 1em !important;
 }
 
