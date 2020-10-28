@@ -55,7 +55,19 @@ Installing and Enabling the `TeXbook` theme for your Jupyter notebooks varies de
 <a name="custom"></a>
 ### Using `TeXbook` as default Jupyter Notebook theme
 
-Instructions on how to install `TeXbook` as a **full-fledged** CSS Jupyter Notebook theme are available [HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/custom-css/README.md#custom) 
+To install and enable `TeXbook` as the **default** Jupyter Notebook theme, it is just necessart to copy the `custom` folder 
+contained in this repository **as-is** in the `JUPYTER_CONFIG_DIR` folder (default `$HOME/.jupyter`):
+
+```shell script
+cp -R custom $HOME/.jupyter
+```
+
+This will create a `custom` folder within your `JUPYTER_CONFIG_DIR` 
+(see [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files))
+for more details about Jupyter Notebook Directories), that will automatically enable `TeXbook` theme 
+**by default** for all Jupyter notebook. 
+
+See [here](https://stackoverflow.com/questions/32156248/how-do-i-set-custom-css-for-my-ipython-ihaskell-jupyter-notebook/34742362#34742362) for more information on Customising Notebook style.
 
 <a name="magic"></a>
 ### Using `%texify` custom IPython magic
@@ -83,9 +95,6 @@ into a new notebook cell, and the `TeXbook` theme will be automatically enabled.
 #### Customising the `TeXbook` theme
 
 Current version of the theme allows to customise the following settings:
-Instructions on how to install `TeXbook` as a customised theme
-for **Google Colaboratory Notebook** are available 
-[HERE](https://github.com/leriomaggio/texbook-jupyter-theme/blob/texbook-colab/README.md#colab)  
 
 - `--code-mono-font`: the font-family used for Code Editor (default: `Fira Code`)
 - `--md-mono-font`: the font-family used for Markdown Editor (default `Hack`)
@@ -98,7 +107,8 @@ for **Google Colaboratory Notebook** are available
 - `--md-theme`: The Markdown Editor Highlight theme to use (default `Material Design`)
 	- Other available themes are: `typora`
 
-**Example**: `%texify --code-mono-font Monaco` will enable the `TeXbook` theme using the `Monaco` font instead of the default `Fira Code` for code editor.
+**Example**: `%texify --code-mono-font Monaco` will enable the `TeXbook` theme using 
+the `Monaco` font instead of the default `Fira Code` for code editor.
 
 <a name="colab"></a>
 ### `TexBook` theme for Google Colaboratory
