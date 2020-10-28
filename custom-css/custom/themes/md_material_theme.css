@@ -1,0 +1,33 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/texbook-jupyter-theme
+License: Apache License 2.0
+
+    Custom Theme for Markdown Editor
+    based on Material Clear Theme.
+ */
+
+:root {
+    /* Color Palette */
+    --md-red: #C0392B;
+    --md-yellow: #A8601A;
+    --md-black: #24292E;
+    --md-grey: #9E9E9E;
+    --md-blue: #1565C0;
+    --md-dark-blue: #01579B;
+    --md-light-blue: #78909c;
+
+    /*  Editor Theme  */
+    --editor-text: var(--md-black);
+    --header: var(--md-dark-blue);
+    --quote: var(--md-grey);
+    --link: var(--md-blue);
+    --attribute: var(--md-red);
+    --tag: var(--md-yellow);
+    --string: var(--md-yellow);
+    --delimiter: var(--md-black);
+    --monospace: var(--md-light-blue);
+}
+
+
+
