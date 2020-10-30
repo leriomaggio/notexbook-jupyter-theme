@@ -103,7 +103,7 @@ class TeXbookTheme(Magics):
 
     @magic_arguments()
     @argument(
-        "-ct",
+        "-cdth",
         "--code-theme",
         type=str,
         choices=settings.CODE_EDITOR_THEME_CHOICES,
@@ -112,7 +112,7 @@ class TeXbookTheme(Magics):
         dest="code_theme",
     )
     @argument(
-        "-mt",
+        "-mdth",
         "--md-theme",
         choices=settings.MD_EDITOR_THEME_CHOICES,
         help="Markdown Editor Theme",
@@ -120,35 +120,35 @@ class TeXbookTheme(Magics):
         dest="md_theme",
     )
     @argument(
-        "-cmf",
-        "--code-mono-font",
+        "-cdf",
+        "--code-font",
         help="Selected Mono Font for Code Editor. Default: Fira Code",
         default="Fira Code",
         dest="code_mono_font",
     )
     @argument(
-        "-mmf",
-        "--md-mono-font",
+        "-mdf",
+        "--md-font",
         help="Selected Mono Font for Markdown Editor. Default: Hack",
         default="Hack",
         dest="md_mono_font",
     )
     @argument(
-        "-cmfs",
-        "--code-mono-font-size",
+        "-cdfs",
+        "--code-fontsize",
         help="Selected Mono Font size for Code and Markdown Editor. Default: 16px",
         default="16px",
         dest="code_mono_font_size",
     )
     @argument(
         "-mdfs",
-        "--md-mono-font-size",
+        "--md-fontsize",
         help="Selected Mono Font size for Rendered Markdown. Default: 16px",
         default="16px",
         dest="md_mono_font_size",
     )
     @argument(
-        "-fs",
+        "-nbfs",
         "--notebook-font-size",
         help="Selected Font size for Rendered Content in Notebook. Default: 19px",
         default="19px",
@@ -156,7 +156,7 @@ class TeXbookTheme(Magics):
     )
     @argument(
         "-lh",
-        "--notebook-line-height",
+        "--linespread",
         help="Selected Line height for Notebook Content. Default: 1.4",
         default="1.4",
         dest="nb_line_height",
