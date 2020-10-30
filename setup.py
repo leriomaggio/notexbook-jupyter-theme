@@ -4,7 +4,7 @@
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
-# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+# Code: https://github.com/leriomaggio/notexbook-jupyter-theme/
 #
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
@@ -20,15 +20,11 @@ with open(os.path.join(CURRENT_FOLDER, "README.md"), encoding="utf-8") as f:
 
 
 setup(
-    name="notebook-texbook-theme",
-    description=(
-        "IPython magic function to dynamically enable the TeXBook"
-        "Jupyter Notebook Theme without manually copying resource files in "
-        "the default Jupyter custom folder"
-    ),
+    name="notexbook-theme",
+    description="noTeXbook is a Jupyter notebook theme for Latex lovers ❤",
     author="Valerio Maggio",
     author_email="valeriomaggio@gmail.com",
-    url="https://github.com/leriomaggio/texbook-jupyter-theme/",
+    url="https://github.com/leriomaggio/notexbook-jupyter-theme/",
     packages=find_packages(exclude=[]),
     include_package_data=True,
     install_requires=["notebook", "ipython>=7.0", "jupyter", "jinja2"],
