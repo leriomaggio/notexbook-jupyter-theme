@@ -4,13 +4,13 @@
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
-# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+# Code: https://github.com/leriomaggio/notexbook-jupyter-theme/
 #
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
 
 __version__ = "0.2.1"
 
-from texbook_theme.magic import *
+from notexbook.magic import *
 
 __all__ = ["magic", "__version__"]
