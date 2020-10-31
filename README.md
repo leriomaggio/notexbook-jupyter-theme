@@ -14,6 +14,7 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
     - Multiple Editor Themes supported: easy to change and customise (just a few CSS variables to do the trick!)
 - Special Output formatting for `stderr` and `pandas.DataFrame`
 - Extra `ad-hoc` CSS classes for extra formatting use cases (e.g. _footnotes_, _dropcap_)
+  
 
 ### Sneak Peek?
 
@@ -24,11 +25,16 @@ Here is a [**Preview**](https://leriomaggio.github.io/texbook-jupyter-theme/) of
 The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme is available in three different flavours: 
 
 1. `pip`-_installable_ package to embed the theme into notebooks via custom **IPython magic** (`%texify`) ([here ![arrow](https://render.githubusercontent.com/render/math?math=\Downarrow)](#magic));
+
 2. **Full-fledged** _custom_ Jupyter notebook theme (HTML/CSS): ([Link  ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/README.md#custom))
+
 3. (**Experimental**) theme integration for Google Colaboratory Notebooks (via the 
-[Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) ([Link ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/texbook-colab/README.md#colab)).
+    [Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) ([Link ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/texbook-colab/README.md#colab)).
+
+⚠️ Jupyter **Lab** is <ins>supported</ins>, but *still in progress* ! ⚠️
 
 <a name="magic"></a>
+
 ### `notexbook-theme`  and `%texify` 🔮
 
 The `notexbook-theme` package (on [PyPi](https://pypi.org/project/notexbook-theme/)) provides the `noTeXbook` theme as an easy-to-integrate IPython magic (i.e. `%texify`), activated via Jupyter notebook (Python) extension, `notexbook`. So, to use the `noTeXbook` theme in a notebook it will be just a matter of (1) loading the extension; (2) calling the `%texify` IPython magic.
