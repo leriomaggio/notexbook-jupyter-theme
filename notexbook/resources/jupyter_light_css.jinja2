@@ -153,7 +153,6 @@ div.jp-RenderedHTMLCommon table {
     font-size: var(--txbk-content-font-size) !important;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
     overflow: auto;
     break-inside: auto;
     text-align: left;
@@ -176,7 +175,6 @@ div.jp-RenderedHTMLCommon table tbody tr td {
     break-after: auto;
     text-align: left !important;
     vertical-align: middle !important;
-    padding: 0 !important;
 }
 
 div.jp-RenderedHTMLCommon table tr th {
@@ -257,3 +255,77 @@ div.jp-OutputPrompt {
     background: var(--code-background-color);
     color: var(--code-text-color);
 }
+
+/* Img MaxW classes */
+div.jp-RenderedHTMLCommon img.maxw10,
+div.jp-RenderedHTMLCommon p > img.maxw10 {
+    max-width: 10% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw15,
+div.jp-RenderedHTMLCommon p > img.maxw15 {
+    max-width: 15% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw20,
+div.jp-RenderedHTMLCommon p > img.maxw20 {
+    max-width: 20% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw25,
+div.jp-RenderedHTMLCommon p > img.maxw25 {
+    max-width: 25% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw30,
+div.jp-RenderedHTMLCommon p > img.maxw30 {
+    max-width: 30% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw40,
+div.jp-RenderedHTMLCommon p > img.maxw40 {
+    max-width: 40% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw50,
+div.jp-RenderedHTMLCommon p > img.maxw50 {
+    max-width: 50% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw80,
+div.jp-RenderedHTMLCommon p > img.maxw80 {
+    max-width: 80% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw85,
+div.jp-RenderedHTMLCommon p > img.maxw85 {
+    max-width: 85% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw90,
+div.jp-RenderedHTMLCommon p > img.maxw90 {
+    max-width: 90% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw100,
+div.jp-RenderedHTMLCommon p > img.maxw100 {
+    max-width: 100% !important;
+}
+
+/*
+Overlay with Shadow for Code Cell Selected !
+*/
+.jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+    border: none;
+    background: transparent;
+    box-shadow: 0 6px 18px #aaa;
+    z-index: 10;
+    top: -10px;
+}
+
+/* Standard Error */
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] {
+    background: none !important;
+}
+
+
