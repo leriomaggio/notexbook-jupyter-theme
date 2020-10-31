@@ -89,8 +89,6 @@ Let's say you do like `noTeXbook` theme, and you want to use it in your notebook
 %texify --code-font Monaco --linespread 1.3 -nbfs 18
 ```
 
-
-
 To see the **full** list of configuration options :
 
 ```shell
