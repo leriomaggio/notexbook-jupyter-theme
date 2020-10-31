@@ -9,7 +9,7 @@
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
 
-__version__ = "1.0.0-pre0"
+__version__ = "1.0.0"
 
 from notexbook.magic import *
 
