@@ -1,6 +1,6 @@
 [project]
 name = "notexbook-theme"
-version = "0.2.1"
+version = "1.0.0-pre0"
 author = "Valerio Maggio"
 author-email = "valeriomaggio@gmail.com"
 home-page = "http://github.com/leriomaggio/notexbook-jupyter-theme"
