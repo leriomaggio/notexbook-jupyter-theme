@@ -107,7 +107,7 @@ class TeXbookTheme(Magics):
         "--code-theme",
         type=str,
         choices=settings.CODE_EDITOR_THEME_CHOICES,
-        help="Code Editor Theme",
+        help="Colour Theme for Code Editor",
         default=settings.DEFAULT_EDITOR_THEME,
         dest="code_theme",
     )
@@ -115,49 +115,49 @@ class TeXbookTheme(Magics):
         "-mdth",
         "--md-theme",
         choices=settings.MD_EDITOR_THEME_CHOICES,
-        help="Markdown Editor Theme",
+        help="Colour Theme for Markdown Editor",
         default=settings.DEFAULT_EDITOR_THEME,
         dest="md_theme",
     )
     @argument(
         "-cdf",
         "--code-font",
-        help="Selected Mono Font for Code Editor. Default: Fira Code",
+        help="Font family used in Code Editor. Default: Fira Code",
         default="Fira Code",
         dest="code_mono_font",
     )
     @argument(
         "-mdf",
         "--md-font",
-        help="Selected Mono Font for Markdown Editor. Default: Hack",
+        help="Font family used in Markdown Editor. Default: Hack",
         default="Hack",
         dest="md_mono_font",
     )
     @argument(
         "-cdfs",
         "--code-fontsize",
-        help="Selected Mono Font size for Code and Markdown Editor. Default: 16px",
+        help="Font size used in Code and Markdown Editor. Default: 16px",
         default="16px",
         dest="code_mono_font_size",
     )
     @argument(
         "-mdfs",
         "--md-fontsize",
-        help="Selected Mono Font size for Rendered Markdown. Default: 16px",
+        help="Font size of Rendered Markdown monospace. Default: 16px",
         default="16px",
         dest="md_mono_font_size",
     )
     @argument(
         "-nbfs",
         "--notebook-font-size",
-        help="Selected Font size for Rendered Content in Notebook. Default: 19px",
+        help="Font size of Rendered Content in Notebook. Default: 19px",
         default="19px",
         dest="nb_font_size",
     )
     @argument(
         "-lh",
         "--linespread",
-        help="Selected Line height for Notebook Content. Default: 1.4",
+        help="Line height of Notebook Content. Default: 1.4",
         default="1.4",
         dest="nb_line_height",
     )
