@@ -1,3 +1,0 @@
-include LICENSE
-recursive-include texbook_theme/resources *
-include texbook_theme/templates/*

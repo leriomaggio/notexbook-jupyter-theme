@@ -4,7 +4,7 @@
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
-# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+# Code: https://github.com/leriomaggio/notexbook-jupyter-theme/
 #
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
@@ -16,8 +16,8 @@ import pkg_resources
 # -------
 # Folders
 # -------
-TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "templates"))
-RESOURCES_FOLDER = Path(pkg_resources.resource_filename("texbook_theme", "resources"))
+TEMPLATES_FOLDER = Path(pkg_resources.resource_filename("notexbook", "templates"))
+RESOURCES_FOLDER = Path(pkg_resources.resource_filename("notexbook", "resources"))
 EDITOR_THEMES_FOLDER = RESOURCES_FOLDER / "themes"
 
 # Editor Themes
@@ -40,5 +40,5 @@ MD_EDITOR_THEME_CHOICES = list(EDITOR_THEMES["markdown"].keys())
 # -------------------
 # TeXbook Templates
 # -------------------
-TEXBOOK_CSS = "texbook_theme_css.jinja2"
-TEXBOOK_HTML_TEMPLATE = "texbook_theme.html"
+TEXBOOK_CSS = "noTeXbook_theme_css.jinja2"
+TEXBOOK_HTML_TEMPLATE = "noTeXbook_theme.html"

@@ -4,7 +4,7 @@
 # Valerio Maggio <@leriomaggio> 2020
 # IPython magic function to enable TeXBook Jupyter notebook Theme
 # Author: Valerio Maggio <github.com/leriomaggio>
-# Code: https://github.com/leriomaggio/texbook-jupyter-theme/
+# Code: https://github.com/leriomaggio/notexbook-jupyter-theme/
 #
 # License: Apache License 2.0
 # ------------------------------------------------------------------------
@@ -103,61 +103,61 @@ class TeXbookTheme(Magics):
 
     @magic_arguments()
     @argument(
-        "-ct",
+        "-cdth",
         "--code-theme",
         type=str,
         choices=settings.CODE_EDITOR_THEME_CHOICES,
-        help="Code Editor Theme",
+        help="Colour Theme for Code Editor",
         default=settings.DEFAULT_EDITOR_THEME,
         dest="code_theme",
     )
     @argument(
-        "-mt",
+        "-mdth",
         "--md-theme",
         choices=settings.MD_EDITOR_THEME_CHOICES,
-        help="Markdown Editor Theme",
+        help="Colour Theme for Markdown Editor",
         default=settings.DEFAULT_EDITOR_THEME,
         dest="md_theme",
     )
     @argument(
-        "-cmf",
-        "--code-mono-font",
-        help="Selected Mono Font for Code Editor. Default: Fira Code",
+        "-cdf",
+        "--code-font",
+        help="Font family used in Code Editor. Default: Fira Code",
         default="Fira Code",
         dest="code_mono_font",
     )
     @argument(
-        "-mmf",
-        "--md-mono-font",
-        help="Selected Mono Font for Markdown Editor. Default: Hack",
+        "-mdf",
+        "--md-font",
+        help="Font family used in Markdown Editor. Default: Hack",
         default="Hack",
         dest="md_mono_font",
     )
     @argument(
-        "-cmfs",
-        "--code-mono-font-size",
-        help="Selected Mono Font size for Code and Markdown Editor. Default: 16px",
+        "-cdfs",
+        "--code-fontsize",
+        help="Font size used in Code and Markdown Editor. Default: 16px",
         default="16px",
         dest="code_mono_font_size",
     )
     @argument(
         "-mdfs",
-        "--md-mono-font-size",
-        help="Selected Mono Font size for Rendered Markdown. Default: 16px",
+        "--md-fontsize",
+        help="Font size of Rendered Markdown monospace. Default: 16px",
         default="16px",
         dest="md_mono_font_size",
     )
     @argument(
-        "-fs",
+        "-nbfs",
         "--notebook-font-size",
-        help="Selected Font size for Rendered Content in Notebook. Default: 19px",
+        help="Font size of Rendered Content in Notebook. Default: 19px",
         default="19px",
         dest="nb_font_size",
     )
     @argument(
         "-lh",
-        "--notebook-line-height",
-        help="Selected Line height for Notebook Content. Default: 1.4",
+        "--linespread",
+        help="Line height of Notebook Content. Default: 1.4",
         default="1.4",
         dest="nb_line_height",
     )

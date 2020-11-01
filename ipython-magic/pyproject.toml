@@ -1,9 +1,9 @@
 [project]
-name = "notebook-texbook-theme"
-version = "0.2.1"
+name = "notexbook-theme"
+version = "1.0.0"
 author = "Valerio Maggio"
 author-email = "valeriomaggio@gmail.com"
-home-page = "http://github.com/leriomaggio/texbook-jupyter-theme"
+home-page = "http://github.com/leriomaggio/notexbook-jupyter-theme"
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Development Status :: 5 - Production/Stable",
@@ -50,4 +50,3 @@ exclude = '''
   )/
 )
 '''
-
