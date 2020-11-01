@@ -14262,7 +14262,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> texbook_theme
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> notexbook
 </pre></div>
 
      </div>
@@ -14300,13 +14300,13 @@ a.anchor-link {
 <style type="text/css">
     /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 */
 
 /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
  ======================================================
@@ -14348,7 +14348,7 @@ License: Apache License 2.0
 @import url("https://fonts.cdnfonts.com/css/hack?styles=20708,20707,20705,20706");
 /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
 ======================================================
@@ -14379,7 +14379,7 @@ License: Apache License 2.0
 
     /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
  ======================================================
@@ -14446,7 +14446,7 @@ Repo: https://github.com/JonaDuran/Material-Light-Theme/
 
     /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
  ======================================================
@@ -14948,23 +14948,23 @@ table.dataframe thead tr th:not(:empty) {
 
 span.ansi-green-fg {
     /*color: var(--green);*/
-    color: var(--keywords);
+    color: var(--keywords) !important;
 }
 
 span.ansi-green-intense-fg{
-    color: var(--dark-grey);
+    color: var(--dark-grey) !important;
 }
 
 span.ansi-red-fg {
-    color: var(--red);
+    color: var(--red) !important;
 }
 
 span.ansi-cyan-fg {
-    color: var(--cyan);
+    color: var(--cyan) !important;
 }
 
 span.ansi-blue-fg {
-    color: var(--blue);
+    color: var(--blue) !important;
 }
 
 span.ansi-bold {
@@ -15025,7 +15025,7 @@ span.cm-comment {
 }
 /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
    ---------------------------------------
@@ -15280,7 +15280,6 @@ div.jp-RenderedHTMLCommon table {
     font-size: var(--txbk-content-font-size) !important;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
     overflow: auto;
     break-inside: auto;
     text-align: left;
@@ -15303,7 +15302,6 @@ div.jp-RenderedHTMLCommon table tbody tr td {
     break-after: auto;
     text-align: left !important;
     vertical-align: middle !important;
-    padding: 0 !important;
 }
 
 div.jp-RenderedHTMLCommon table tr th {
@@ -15384,6 +15382,80 @@ div.jp-OutputPrompt {
     background: var(--code-background-color);
     color: var(--code-text-color);
 }
+
+/* Img MaxW classes */
+div.jp-RenderedHTMLCommon img.maxw10,
+div.jp-RenderedHTMLCommon p > img.maxw10 {
+    max-width: 10% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw15,
+div.jp-RenderedHTMLCommon p > img.maxw15 {
+    max-width: 15% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw20,
+div.jp-RenderedHTMLCommon p > img.maxw20 {
+    max-width: 20% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw25,
+div.jp-RenderedHTMLCommon p > img.maxw25 {
+    max-width: 25% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw30,
+div.jp-RenderedHTMLCommon p > img.maxw30 {
+    max-width: 30% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw40,
+div.jp-RenderedHTMLCommon p > img.maxw40 {
+    max-width: 40% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw50,
+div.jp-RenderedHTMLCommon p > img.maxw50 {
+    max-width: 50% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw80,
+div.jp-RenderedHTMLCommon p > img.maxw80 {
+    max-width: 80% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw85,
+div.jp-RenderedHTMLCommon p > img.maxw85 {
+    max-width: 85% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw90,
+div.jp-RenderedHTMLCommon p > img.maxw90 {
+    max-width: 90% !important;
+}
+
+div.jp-RenderedHTMLCommon img.maxw100,
+div.jp-RenderedHTMLCommon p > img.maxw100 {
+    max-width: 100% !important;
+}
+
+/*
+Overlay with Shadow for Code Cell Selected !
+*/
+.jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+    border: none;
+    background: transparent;
+    box-shadow: 0 6px 18px #aaa;
+    z-index: 10;
+    top: -10px;
+}
+
+/* Standard Error */
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] {
+    background: none !important;
+}
+
+
 
 
 /* ======================================================
@@ -16369,26 +16441,28 @@ $([IPython.events]).on("rendered.MarkdownCell", function () {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Jupyter-$\TeX$book-Theme">Jupyter $\TeX$book Theme<a class="anchor-link" href="#Jupyter-$\TeX$book-Theme">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This notebook exhibits the main features of the $\TeX$book theme for Jupyter notebooks.
-We start with a <del>bit of a spoiler</del> <em>quick overlook</em> here, and then we go much further in all the nuts and bolts.</p>
+<h1><img src="./logo/notexbook.png" alt="noTeXbook logo"></h1>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="$\TeX\text{book}$-shall-be-thy-name">$\TeX\text{book}$ shall be <em>thy name</em><a class="anchor-link" href="#$\TeX\text{book}$-shall-be-thy-name">&#182;</a></h3><p><span class="drop">W</span>hen I designed this theme, I was aiming towards a notebook experience which had the elegance and sobriety of a $\LaTeX$-generated article, perfectly combined with the flexibility and interactivity of Jupyter.
-And so $\TeX\text{book}$ seemed to be the most obvious solution for a name, a unique <a href="https://www.merriam-webster.com/dictionary/portmanteau">portmanteau</a><a href="#1" title="Pronunciation">$^1$</a>,
-blending together the words $\LaTeX$ and <em>note<strong>book</strong></em>. Incidentally, this is also the name of the 
-<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald E. Knuth</a>'s <a href="http://www.ctex.org/documents/shredder/src/texbook.pdf">book</a> on $\TeX$.</p>
-<p>That was the <strong>omen</strong>. The sign that this name was indeed perfect...</p>
+<p><strong>First things first:</strong>: Thank you so much for getting here (whatever is your <code>referral URL</code>)</p>
+<p>This notebook exhibits the main features of the $\text{no}\TeX\text{book}$ theme for Jupyter notebooks.</p>
+<p>We start with a <del>a spoiler</del> <em>quick overlook</em> here, and then we go much further in details explaining all the nuts and bolts.</p>
+<p>Let's get started, shall we ?</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="$\text{no}\TeX\text{book}$-shall-be-thy-name">$\text{no}\TeX\text{book}$ shall be <em>thy name</em><a class="anchor-link" href="#$\text{no}\TeX\text{book}$-shall-be-thy-name">&#182;</a></h3><p><span class="drop">W</span>hen I designed this theme, I was aiming towards a notebook experience which could bring the elegance and sobriety of a $\LaTeX$-generated article, into the flexibility and interactivity of Jupyter. The name of this project had to immediately convey this idea of integration.
+And so $\text{no}\TeX\text{book}$ seemed to most choice for such a name, a unique <a href="https://www.merriam-webster.com/dictionary/portmanteau">portmanteau</a><a href="#1" title="Pronunciation">$^1$</a>,
+blending together the words  <strong>noTe</strong><del>X</del><strong>book</strong> (<em>no further explanation needed, ed.</em>), and <del>no</del><strong>TeXbook</strong>, the name of <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald E. Knuth</a>'s <a href="http://www.ctex.org/documents/shredder/src/texbook.pdf">book</a> on <code>TeX</code>.</p>
+<p>That was the <strong>omen</strong> $\ldots$</p>
 <blockquote><p>Right!, One!... Two!... Five! <a href="#fn2" title="Monthy Python and the Holy Grail">$^2$</a></p>
 </blockquote>
-<p>The $\TeX\text{book}$ Jupyter notebook theme wishes to pay a tribute of gratitude (in the name, and in the content) to two of the technologies I do use the most as researcher and data scientist.</p>
+<p>The $\text{no}\TeX\text{book}$ Jupyter theme wishes to pay a tribute of gratitude (in the name, and in the content) to two of the technologies I do use the most as researcher, and data scientist.</p>
 <p><span id="fn1"><i>$1$:</i> `port·​man·​teau | \ pȯrt-ˈman-(ˌ)tō`</span>
 <span id="fn2"><i>$2$:</i>[The Holy Hand Granade](https://www.youtube.com/watch?v=xOrgLj9lOwk) - 
     Monthy Python and the Holy Grail</span></p>
@@ -16397,13 +16471,16 @@ blending together the words $\LaTeX$ and <em>note<strong>book</strong></em>. Inc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="$\TeX$book-Theme-in-a-Nutshell">$\TeX$book Theme in a Nutshell<a class="anchor-link" href="#$\TeX$book-Theme-in-a-Nutshell">&#182;</a></h4><ul>
-<li><em>Computer Modern</em> fonts for Markdown typesetting;</li>
-<li><code>Fira Code</code> font for the Code editor;</li>
-<li><code>Hack</code> font for Markdown editor (slightly better for text writing, imho);</li>
-<li><p><code>md</code> and <code>code</code> colour highlight theme based on Material Design colour scheme.</p>
+<h4 id="$\text{no}\TeX\text{book}$-Theme-in-a-Nutshell">$\text{no}\TeX\text{book}$ Theme in a Nutshell<a class="anchor-link" href="#$\text{no}\TeX\text{book}$-Theme-in-a-Nutshell">&#182;</a></h4><ul>
+<li><em>Computer Modern</em> fonts for Markdown typesetting;<ul>
+<li><em>Computer Modern Typesetting</em> for Markdown Mono   </li>
+</ul>
+</li>
+<li><code>Fira Code</code> (<em>open source</em>) font for the <strong>Code</strong> editor (with ligatures support);</li>
+<li><code>Hack</code> (<em>open source</em>) font for <strong>Markdown</strong> editor (slightly better for text writing, <em>ed.</em>);</li>
+<li><p>Colour Syntax highlight themes based on Material Design colour scheme.</p>
 <ul>
-<li><p>plus <strong>easy-to-plug-in</strong> new/extra CSS custom editor themes, e.g. <code>GitHub-Light</code> (see examples)</p>
+<li><p>plus <strong>easy-to-plug-in</strong> new/extra CSS custom editor themes, e.g. <code>GitHub-Light</code> (see examples))</p>
 <div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nextTerm</span><span class="p">;</span>
@@ -16424,20 +16501,19 @@ blending together the words $\LaTeX$ and <em>note<strong>book</strong></em>. Inc
 </li>
 </ul>
 </li>
-<li><p>Extra CSS Classes for Markdown and Code (output) formatting</p>
+<li><p>Special Output formatting for <code>stderr</code> and <code>pandas.DataFrame</code></p>
 </li>
+<li>Extra <code>ad-hoc</code> CSS classes for extra formatting use cases (e.g. <em>footnotes</em>, <em>dropcap</em>)</li>
 </ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
 <p><a name="toc"></a></p>
-<h4 id="$\TeX$book-theme-in-summary">$\TeX$book theme in summary<a class="anchor-link" href="#$\TeX$book-theme-in-summary">&#182;</a></h4><ul>
-<li><a href="#colours">Colour Palette</a><ul>
-<li><a href="#txtcol">Text Colour</a></li>
-</ul>
-</li>
+<h4 id="$\text{no}\TeX\text{book}$-theme-in-summary">$\text{no}\TeX\text{book}$ theme in summary<a class="anchor-link" href="#$\text{no}\TeX\text{book}$-theme-in-summary">&#182;</a></h4><ul>
+<li><a href="#colours">Colour Palette</a></li>
 <li><a href="#fonts">Fonts and Typeface</a></li>
 <li><a href="#Markdown">Markdown</a><ul>
 <li><a href="#Headers">Headers</a>  </li>
@@ -16462,8 +16538,8 @@ blending together the words $\LaTeX$ and <em>note<strong>book</strong></em>. Inc
 <li><a href="#dataframe">Dataframe</a></li>
 </ul>
 </li>
-<li><a href="#misc">Miscellaneous</a></li>
-<li><a href="#credits">Credits</a></li>
+<li><a href="#miscs">Miscellaneous</a></li>
+<li><a href="#Credits">Credits</a></li>
 </ul>
 
 </div>
@@ -16587,11 +16663,15 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a name="txtcol"></a></p>
-<h4 id="Text-Colours">Text Colours<a class="anchor-link" href="#Text-Colours">&#182;</a></h4><p>The palette defined by the $\TeX$book theme for the Notebook UI and Typeface is based on those <code>5</code> 
-colours. In order to be able to use these colours for <strong>text colouring</strong>, special <code>CSS</code> classes are 
-available to be used, i.e. <code>.texbook-&lt;COLOR NAME&gt;</code></p>
-<p>$\rightarrow$ <b class="texbook-torquoise"> Torquoise</b>; 
+<p>Notebook <em>User Interface</em> and general <em>typeface</em> is based on these <code>5</code> colours.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In order to be able to use these colours also for <strong>text colouring</strong>, special <code>CSS</code> classes have been created:</p>
+<p><code>.texbook-&lt;COLOR NAME&gt;</code></p>
+<p>$\rightarrow$ <b class="texbook-turquoise"> Turquoise</b>; 
 <b class="texbook-azure">Azure</b>; <b class="texbook-blue">Blue</b>;
 <b class="texbook-dark-grey">Dark Grey</b>; <b class="texbook-light-grey">Light Grey</b>;
 <b class="texbook-pink">Magenta</b>; <b class="texbook-red">Red</b> $\leftarrow$</p>
@@ -16602,38 +16682,35 @@ available to be used, i.e. <code>.texbook-&lt;COLOR NAME&gt;</code></p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="fonts"></a></p>
-<h2 id="Fonts-and-Typeface">Fonts and Typeface<a class="anchor-link" href="#Fonts-and-Typeface">&#182;</a></h2><p>The $\TeX$book theme typeface design is based on all fonts <strong>open source</strong> and freely available on 
-public <strong>font repositories</strong> (e.g., <a href="https://fonts.google.com/">Google Fonts</a>, 
-<a href="https://www.dafont.com/">DaFont</a>, or <a href="https://www.fontsquirrel.com/">FontSquirrel</a>).
+<h2 id="Fonts-and-Typeface">Fonts and Typeface<a class="anchor-link" href="#Fonts-and-Typeface">&#182;</a></h2><p>All the fonts used in the $\text{no}\TeX\text{book}$ theme typeface design are <strong>open source</strong>, and freely available on public <strong>font repositories</strong> (e.g., <a href="https://fonts.google.com/">Google Fonts</a>, 
+<a href="https://fonts.cdnfonts.com">CDN Fonts</a>, <a href="https://www.fontsquirrel.com/">FontSquirrel</a>).
 All the main fonts used are released under the <a href="https://opensource.org/licenses/OFL-1.1">OFL</a> 
-(<strong>O</strong>pen <strong>F</strong>ont <strong>L</strong>icense), and alike. Original reference and download links are provided below.</p>
-<p><strong>Note</strong>: All used fonts and typefaces are included in the repository (see the <code>fonts</code> folder), 
-and configured in the <code>fonts.css</code> stylesheet according to multiple <code>font-style</code>, 
-and <code>font-weight</code> as needed.</p>
+(<strong>O</strong>pen <strong>F</strong>ont <strong>L</strong>icense), and alike. Original reference and download links are provided 
+below $\Downarrow$.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h6 id="$TeX$Book-typeface">$TeX$Book typeface<a class="anchor-link" href="#$TeX$Book-typeface">&#182;</a></h6><p>The main goal of the $\TeX$book theme is to allow Jupyter notebooks to render like a 
+<h6 id="$\text{no}\TeX\text{book}$-typeface">$\text{no}\TeX\text{book}$ typeface<a class="anchor-link" href="#$\text{no}\TeX\text{book}$-typeface">&#182;</a></h6><p>The main goal of the $\text{no}\TeX\text{book}$ theme is to allow Jupyter notebooks to render like a 
 $\LaTeX$-generated article. Therefore, the (<strong>Markdown</strong>) text rendering adopts the good ol' 
 <a href="https://en.wikipedia.org/wiki/Computer_Modern"><em>Computer Modern</em></a> font family for both 
 serif and <code>monospace</code> text (i.e. <code>CMUSerif</code> and <code>CMUTypewriter</code> fonts, respectively).</p>
-<p>In <strong>edit</strong> mode, the <a href="https://github.com/source-foundry/Hack"><code>Hack</code></a> font is used for Markdown, whereas the <a href="https://github.com/i-tu/Hasklig"><code>Hasklig</code></a> font is used
-for code editor. The former looks slightly better for text writing (imho), being also based on
+<p>In <strong>edit</strong> mode, the <a href="https://github.com/source-foundry/Hack"><code>Hack</code></a> font is used for Markdown, whereas <a href="https://github.com/tonsky/FiraCode"><code>Fira Code</code></a> font is used
+for code editor. The former looks slightly better for text writing (<em>imho</em>), being also based on
 the <a href="https://www.gnome.org/fonts/"><code>Bitstream Vera</code></a> and the
 <a href="https://dejavu-fonts.github.io/"><code>DejaVu</code></a> fonts; whereas the latter has been
 specifically designed for source code, combining an elegant style with support for 
-<a href="https://github.com/i-tu/Hasklig#hasklig--ligatures-for-code"><strong>ligratures</strong></a><a href="#lig">$^1$</a>.</p>
+<a href="https://github.com/tonsky/FiraCode#whats-in-the-box"><strong>ligratures</strong></a><a href="#lig">$^1$</a>.</p>
 <p><span id="lig" class="fn"><i>[1]:</i>The support for ligatures in the Markdown editor would be
-useless anyway, being then rendered in Computer Modern font.</span></p>
+almost useless anyway, being then rendered in Computer Modern font.</span></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h6 id="Notebook-UI">Notebook UI<a class="anchor-link" href="#Notebook-UI">&#182;</a></h6><p>The font used for everything else in the Notebook UI and look-and-feel (e.g. <code>header</code>, <code>navbar</code>, 
-<em>jupyter-srever home page</em> (notebook list) uses the <a href="https://fonts.google.com/specimen/Roboto+Slab"><code>Roboto Slab</code></a> font.</p>
+<em>jupyter-server</em> home page (notebook list) uses the <a href="https://fonts.google.com/specimen/Roboto+Slab"><code>Roboto Slab</code></a> font.</p>
 
 </div>
 </div>
@@ -16785,9 +16862,7 @@ License: <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a></p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Tables">Tables<a class="anchor-link" href="#Tables">&#182;</a></h4><p>Tables aren't part of the core Markdown spec, but they are part of GFM and <em>Markdown Here</em> supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.</p>
-<p>Colons can be used to align columns.</p>
-<table>
+<h4 id="Tables">Tables<a class="anchor-link" href="#Tables">&#182;</a></h4><table>
 <thead><tr>
 <th>Tables</th>
 <th style="text-align:center">Are</th>
@@ -16939,7 +17014,7 @@ These include:</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h5><p>To define a new footnote which complies to the CSS directives specified in the $\TeX$book theme, the following <strong>HTML</strong> code should be used:</p>
+<h5 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h5><p>To define a new footnote which complies to the CSS directives specified in the $\text{no}\TeX\text{book}$ theme, the following <strong>HTML</strong> code should be used:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fn1-ex&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>[1]:<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> This is an example of a footnote<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </pre></div>
 <p>Footnotes could be identified by an <code>id</code> starting with the <code>fn</code> prefix 
@@ -16956,7 +17031,7 @@ retrieved via <strong>anchor</strong> links in <em>footnote reference</em>.</p>
 with the <code>fn</code> prefix requirement, the <code>.fn</code> class can be used instead<a href="#fncss">$^{CSS}$</a>:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;css&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fn&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>[1]:<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> This is footnote of class `.fn` and any `id`<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </pre></div>
-<p><span id="css" class="fn"><i>[`.fn` CSS Class]:</i> This is footnote of class `.fn` and any `id`</span></p>
+<p><span id="css" class="fn"><i>[CSS Class] `.fn` :</i> This is footnote of class `.fn` and any `id`</span></p>
 <p><a href="#toc">$\uparrow$ top</a></p>
 
 </div>
@@ -16965,7 +17040,7 @@ with the <code>fn</code> prefix requirement, the <code>.fn</code> class can be u
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="dropcap"></a></p>
 <h5 id="Drop-Cap"><span class="drop">D</span>rop Cap<a class="anchor-link" href="#Drop-Cap">&#182;</a></h5><p>A special class to display a 
-<a href="https://en.wiktionary.org/wiki/drop_cap"><strong>drop cap</strong></a> could not be missing in the $\TeX$book theme.</p>
+<a href="https://en.wiktionary.org/wiki/drop_cap"><strong>drop cap</strong></a> could not be missing in the $\text{no}\TeX\text{book}$ theme.</p>
 <p>It is just required to use the <code>drop</code> <code>CSS</code> class.</p>
 <p><a href="#toc">$\uparrow$ top</a></p>
 
@@ -16982,50 +17057,33 @@ of <code>max-width</code> attribute.</p>
 <p>Here are the available <code>CSS</code> <strong>classes</strong> and corresponding display of the same image at different size.</p>
 <p><strong>Default</strong>:</p>
 <p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" /></p>
+<p><strong>List of Available CSS Classes</strong>:</p>
+<ul>
+<li><code>maxw10</code> $\Rightarrow$ <code>max-width: 10%</code></li>
+<li><code>maxw15</code> $\Rightarrow$ <code>max-width: 15%</code></li>
+<li><code>maxw20</code> $\Rightarrow$ <code>max-width: 20%</code></li>
+<li><code>maxw25</code> $\Rightarrow$ <code>max-width: 25%</code></li>
+<li><code>maxw30</code> $\Rightarrow$ <code>max-width: 30%</code></li>
+<li><code>maxw40</code> $\Rightarrow$ <code>max-width: 40%</code></li>
+<li><code>maxw50</code> $\Rightarrow$ <code>max-width: 50%</code></li>
+<li><code>maxw80</code> $\Rightarrow$ <code>max-width: 80%</code></li>
+<li><code>maxw85</code> $\Rightarrow$ <code>max-width: 85%</code></li>
+<li><code>maxw90</code> $\Rightarrow$ <code>max-width: 90%</code></li>
+<li><code>maxw100</code> $\Rightarrow$ <code>max-width: 100%</code></li>
+</ul>
+<p><strong>Examples</strong> (for the tiny ones)</p>
 <ul>
 <li><code>maxw10</code> $\Rightarrow$ <code>max-width: 10%</code></li>
 </ul>
 <p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw10" /></p>
 <ul>
-<li><code>maxw15</code> $\Rightarrow$ <code>max-width: 15%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw15" /></p>
-<ul>
-<li><code>maxw20</code> $\Rightarrow$ <code>max-width: 20%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw20" /></p>
-<ul>
-<li><code>maxw25</code> $\Rightarrow$ <code>max-width: 25%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw25" /></p>
-<ul>
-<li><code>maxw30</code> $\Rightarrow$ <code>max-width: 30%</code></li>
+<li><p><code>maxw15</code> $\Rightarrow$ <code>max-width: 15%</code>
+<img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw15" /></p>
+</li>
+<li><p><code>maxw30</code> $\Rightarrow$ <code>max-width: 30%</code></p>
+</li>
 </ul>
 <p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw30" /></p>
-<ul>
-<li><code>maxw40</code> $\Rightarrow$ <code>max-width: 40%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw40" /></p>
-<ul>
-<li><code>maxw50</code> $\Rightarrow$ <code>max-width: 50%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw50" /></p>
-<ul>
-<li><code>maxw80</code> $\Rightarrow$ <code>max-width: 80%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw80" /></p>
-<ul>
-<li><code>maxw85</code> $\Rightarrow$ <code>max-width: 85%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw85" /></p>
-<ul>
-<li><code>maxw90</code> $\Rightarrow$ <code>max-width: 90%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw90" /></p>
-<ul>
-<li><code>maxw100</code> $\Rightarrow$ <code>max-width: 100%</code></li>
-</ul>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw100" /></p>
 <p><a href="#toc">$\uparrow$ top</a></p>
 
 </div>
@@ -17039,7 +17097,7 @@ of <code>max-width</code> attribute.</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="code"></a></p>
-<h2 id="Code-Sample">Code Sample<a class="anchor-link" href="#Code-Sample">&#182;</a></h2><p>Here is how Python code looks like in $\TeX$book theme.</p>
+<h2 id="Code-Sample">Code Sample<a class="anchor-link" href="#Code-Sample">&#182;</a></h2><p>Here is how Python code looks like in $\text{no}\TeX\text{book}$ theme.</p>
 <p>The following code excerpt has been taken from the <strong>PyTorch</strong> code base 
 (<a href="https://github.com/pytorch/pytorch/blob/master/torch/utils/data/dataset.py#L4">source</a>)</p>
 
@@ -17089,8 +17147,7 @@ of <code>max-width</code> attribute.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Code-Editor">Code Editor<a class="anchor-link" href="#Code-Editor">&#182;</a></h3><p>The CSS style for code and markdown editor integrated in the $\TeX$book theme adopts a strategy that 
-aims at <em>flexibility</em> and <em>extensibility</em>.</p>
+<h3 id="Code-Editor">Code Editor<a class="anchor-link" href="#Code-Editor">&#182;</a></h3><p>The CSS style for code and markdown editor integrated in $\text{no}\TeX\text{book}$ adopts a strategy that aims at <em>flexibility</em> and <em>extensibility</em>.</p>
 <p>The main style file for code editors is <code>editors.css</code>. This file <em>imports</em> each theme for both code and 
 markdown editors. The themes for the two editors are defined in two different files, to allow for 
 maxmimum flexibility in the choice of the colours schemes to adopt.</p>
@@ -17100,8 +17157,7 @@ These variables are then used to define the CSS style rules.</p>
 <p>In this way, it is very easy to change or try multiple themes, or even defining custom new ones.</p>
 <p>The default colour scheme used for code and markdown editor is based on the
 <strong>Material Design Light</strong> <a href="https://github.com/JonaDuran/Material-Light-Theme/">Theme</a>.
-In addition, other editor themes are bundled in the $\TeX$book Jupyter theme, e.g. <code>GitHub Light</code> 
-for code, <code>Typora</code> theme for markdown.</p>
+In addition, other editor themes are bundled with the $\text{no}\TeX\text{book}$ Jupyter theme, e.g. <code>GitHub Light</code> for code, <code>Typora</code> theme for markdown.</p>
 <p>The base colour palettes for each of those themes are showed below.</p>
 
 </div>
@@ -17523,7 +17579,7 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The look and feel of dataframes (tables) is slightly changed.</p>
+<p>The look and feel of <code>dataframes</code> (tables) is slightly changed.</p>
 <p>I've chosen a post-it note color for the table background so that dataframe output standsout, especially when scrolling through a long notebook.</p>
 
 </div>
@@ -17648,18 +17704,22 @@ height=92
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="misc"></a></p>
-<h2 id="Miscellaneous">Miscellaneous<a class="anchor-link" href="#Miscellaneous">&#182;</a></h2><ul>
-<li><p>notebook cell style</p>
-<ul>
-<li>codecell  overlay</li>
-</ul>
-</li>
-<li><p>fixed bar (and custom JS)</p>
-</li>
-<li><p>Changed colours?</p>
-</li>
-</ul>
-<p><a href="#toc">$\uparrow$ top</a></p>
+<h2 id="Miscellaneous">Miscellaneous<a class="anchor-link" href="#Miscellaneous">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Jupyter-Lab-Support">Jupyter Lab Support<a class="anchor-link" href="#Jupyter-Lab-Support">&#182;</a></h3><p>A preliminar support to <strong>Jupyter Lab</strong> is available, but still <em>in progress</em>.</p>
+<p>Newer versions of <a href="https://nbconvert.readthedocs.io/en/latest/"><code>jupyter-nbconvert</code></a> apply the <code>lab</code> template as <a href="https://nbconvert.readthedocs.io/en/latest/customizing.html?highlight=template#where-are-nbconvert-templates-installed"><strong>default HTML</strong></a> template for export. This generates a DOM structure which is compliant with Jupyter Lab.</p>
+<p>Here is an example of this notebook exported with <code>lab</code> template $\Rightarrow$ <a href="./jupyter_lab_export.html">Jupyter Lab Light</a></p>
+<p>Some others minor tweaks are already integrated in the theme which makes $\text{no}\TeX\text{book}$ usable with Jupyter Lab. More refined integrations are planned for future versions!</p>
+<h3 id="Google-Colaboratory-Support">Google Colaboratory Support<a class="anchor-link" href="#Google-Colaboratory-Support">&#182;</a></h3><p>The HTML of a Colaboratory notebook is nothing similar to the standard Jupyter notebook/lab HTML structure (so the <code>custom-css</code> cannot work). In addition, every single Colaboratory notebook cell generates a new <code>HTML iframe</code>, so making the <code>texify</code> IPython magic pretty much useless too.</p>
+<p>Therefore, the <em>only</em> solution I could resort to was using the <a href="https://en.wikipedia.org/wiki/Stylus_(browser_extension">Stylus</a>) browser extension.</p>
+<p>Unfortunately it is not as customisable and portable as the IPython magic is, but hey?! Better than nothing 🤓</p>
+<p>If you wanna have a peek, let's follow all the instructions (
+<a href="https://github.com/leriomaggio/notexbook-jupyter-theme/blob/texbook-colab/README.md#colab">here $\Rightarrow$</a>) on how to install $\text{no}\TeX\text{book}$ for Google Colaboratory Notebooks.</p>
+<p>Once you are done, try to open the sample notebook in Colab, and enjoy 🙌</p>
+<p><a href="https://colab.research.google.com/github/leriomaggio/notexbook-jupyter-theme/blob/master/docs/TeXbook_Theme_Sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 
 </div>
 </div>
@@ -17671,7 +17731,28 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Credits">Credits<a class="anchor-link" href="#Credits">&#182;</a></h2>
+<h2 id="Credits">Credits<a class="anchor-link" href="#Credits">&#182;</a></h2><ul>
+<li>The <a href="https://github.com/neilpanchal/spinzero-jupyter-theme"><code>spinzero</code></a> jupyter theme has been inspirational in the design of the early version of this theme;</li>
+<li>The idea of overlay of selected cells has been inspired from <a href="https://gist.github.com/formigone/dbabdd4ae38ded54b6f028713ac78c8a">this</a> custom theme.</li>
+<li>Inspiration on the choice of Monospace fonts for code and markdown has come from this <a href="https://fontsarena.com/blog/best-programming-fonts/">article</a> </li>
+<li>Original versions of colour themes for code and markdown editors:<ul>
+<li><a href="https://github.com/JonaDuran/Material-Light-Theme/">Material Design Light</a></li>
+<li><a href="https://github.com/primer/github-syntax-light">GitHub Light</a></li>
+<li><a href="https://github.com/rainglow/vscode/">Crisp Rainglow Collection</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><p>(Some links I found useful along the way):</p>
+<ul>
+<li><a href="https://www.checkmyworking.com/cm-web-fonts/">Computer Modern on the Web</a></li>
+<li><a href="https://python-packaging.readthedocs.io/en/latest/dependencies.html"><code>setuptools</code>: Specify Dependencies</a></li>
+<li><a href="https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/">How to Add Custom <code>setup.py</code> commands</a></li>
+<li><a href="https://martin-thoma.com/pyproject-toml/"><code>pyproject.toml</code></a></li>
+<li><a href="https://snarky.ca/what-the-heck-is-pyproject-toml/">What the heck is <code>pyproject.toml</code></a></li>
+<li><a href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html">Jupyter Server Extension</a> (Particularly useful in earlier version of this project in which fonts where handled as local resources)</li>
+</ul>
+<h3 id="Acknowledgments">Acknowledgments<a class="anchor-link" href="#Acknowledgments">&#182;</a></h3><p>Special thanks to <a href="https://github.com/cdesio">cdesio</a>, <a href="https://github.com/ninadicara">ninadicara</a>, and <a href="https://github.com/alanderex">alanderex</a> for testing earlier versions of the theme!</p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
