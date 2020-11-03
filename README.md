@@ -11,10 +11,20 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
 - `Fira Code` (_open source_) font as the default `monospace` for the **Code** editor (with ligatures support);
 - `Hack` (_open source_) font as the default `monospace` font for **Markdown** editor (slightly better for text writing, _ed._);
 - Colour Syntax highlight themes for Code and Markdown editors based on Material Design colour scheme.
-    - Multiple Editor Themes supported: easy to change and customise (just a few CSS variables to do the trick!)
 - Special Output formatting for `stderr` and `pandas.DataFrame`
 - Extra `ad-hoc` CSS classes for extra formatting use cases (e.g. _footnotes_, _dropcap_)
-  
+
+### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit) Community
+
+`noTeXbook` theme has been designed with *configurability* and *extensibility* in mind!
+Therefore *any* contribution from the community is more than appreciated!
+
+As for customising the theme:
+
+- Main Theme easy to customise (via `CSS` vars)
+- Editor themes easy to change and customise
+    * [Supported Themes](https://github.com/leriomaggio/notexbook-jupyter-theme/tree/custom-css/custom/themes)
+    * (Example) [GitHub Theme](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/custom/themes/code_github_theme.css)
 
 ### Sneak Peek?
 
