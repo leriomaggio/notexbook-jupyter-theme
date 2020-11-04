@@ -14,18 +14,6 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
 - Special Output formatting for `stderr` and `pandas.DataFrame`
 - Extra `ad-hoc` CSS classes for extra formatting use cases (e.g. _footnotes_, _dropcap_)
 
-### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit) Community
-
-`noTeXbook` theme has been designed with *configurability* and *extensibility* in mind!
-Therefore *any* contribution from the community is more than appreciated!
-
-As for customising the theme:
-
-- Main Theme easy to customise (via `CSS` vars)
-- Editor themes easy to change and customise
-    * [Supported Themes](https://github.com/leriomaggio/notexbook-jupyter-theme/tree/custom-css/custom/themes)
-    * (Example) [GitHub Theme](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/custom/themes/code_github_theme.css)
-
 ### Sneak Peek?
 
 Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
@@ -181,8 +169,6 @@ As the general `noTeXbook` theme, customising the Colaboratory version is as eas
 * `--txbk-content-mono-font-size`: Set the font-size of rendered mono Markdown.
 
 
-
-
 ### Project Links
 
 - [PyPi package](https://pypi.org/project/notexbook-theme/)
@@ -190,6 +176,17 @@ As the general `noTeXbook` theme, customising the Colaboratory version is as eas
 - [Documentation and GitHub Page](https://leriomaggio.github.io/notexbook-jupyter-theme/)
 - [Project Board and Issue Tracker](https://github.com/leriomaggio/notexbook-jupyter-theme/projects/1)
 
+### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit) Community
+
+`noTeXbook` theme has been designed with *configurability* and *extensibility* in mind!
+Therefore *any* contribution from the community is more than appreciated!
+
+As for customising the theme:
+
+- Main Theme easy to customise (via `CSS` vars)
+- Editor themes easy to change and customise
+    * [Supported Themes](https://github.com/leriomaggio/notexbook-jupyter-theme/tree/custom-css/custom/themes)
+    * (Example) [GitHub Theme](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/custom/themes/code_github_theme.css)
 
 
 ### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="15%" /> shall by *thy* name
