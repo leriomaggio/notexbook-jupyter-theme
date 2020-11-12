@@ -717,6 +717,14 @@ div.text_cell_render ul li > code, div.text_cell_render ol li > code {
     font-size: .8em !important;
 }
 
+div.text_cell_render ul li > code, div.text_cell_render ol li > code {
+    font-size: .9em !important;
+}
+
+div.text_cell_render ul li a code, div.text_cell_render ol li a code {
+    font-size: .9em !important;
+}
+
 div.text_cell_render ul ul {
     list-style-type: circle !important;
 }
@@ -733,6 +741,20 @@ div.text_cell_render ul li > ol li,
 div.text_cell_render ol li > ul li,
 div.text_cell_render ol li > ol li {
     padding: .5rem !important;
+}
+
+div.text_cell_render ul li > ul li code,
+div.text_cell_render ul li > ol li code,
+div.text_cell_render ol li > ul li code,
+div.text_cell_render ol li > ol li code {
+    font-size: .9em !important;
+}
+
+div.text_cell_render ul li > ul li a code,
+div.text_cell_render ul li > ol li a code,
+div.text_cell_render ol li > ul li a code,
+div.text_cell_render ol li > ol li a code {
+    font-size: .9em !important;
 }
 
 div.text_cell_render ul ul ul {
@@ -913,4 +935,19 @@ div.text_cell_render p > img.maxw90 {
 div.text_cell_render img.maxw100,
 div.text_cell_render p > img.maxw100 {
     max-width: 100% !important;
+}
+
+.badges img, .badges p img {
+    margin: 0 !important;  /* Override margins */
+    display: inline !important;
+    padding-right: 7px;
+}
+
+.badges p {
+    display: inline !important;
+}
+
+.badges {
+    display: block;
+    text-align: center;
 }
