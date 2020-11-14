@@ -22,7 +22,7 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
 
 ### Sneak Peek?
 
-Here is a [**Preview**](https://leriomaggio.github.io/texbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
+Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
 
 ## Install <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> Theme
 
