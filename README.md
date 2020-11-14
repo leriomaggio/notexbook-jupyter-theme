@@ -1,5 +1,9 @@
 # <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="34%" />
 
+⚠️ **Note**: ⚠️ 
+You just hit the `notebook-magic `branch where the **notexbook** Jupyter extension, and IPython magic are developed and maintained.
+Jump [here](#magic) for instructions!
+
 ## The Jupyter notebook theme for ![LaTeX](https://render.githubusercontent.com/render/math?math=\LaTeX) lovers ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit)
 
 The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme aims at combining the flexibility and interactivity of Jupyter notebooks with the unique elegance and sobriety of a `LaTeX`-generated article.  The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> project wishes to pay a tribute of gratitude (in the name, and in the content) to two of the technologies I do use and love the most as a researcher and a data scientist.
@@ -18,20 +22,9 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
 
 ### Sneak Peek?
 
-Here is a [**Preview**](https://leriomaggio.github.io/texbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
+Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
 
 ## Install <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> Theme
-
-The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme is available in three different flavours: 
-
-1. `pip`-_installable_ package to embed the theme into notebooks via custom **IPython magic** (`%texify`) ([here ![arrow](https://render.githubusercontent.com/render/math?math=\Downarrow)](#magic));
-
-2. **Full-fledged** _custom_ Jupyter notebook theme (HTML/CSS): ([Link  ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/README.md#custom))
-
-3. (**Experimental**) theme integration for Google Colaboratory Notebooks (via the 
-    [Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) ([Link ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/texbook-colab/README.md#colab)).
-
-⚠️ Jupyter **Lab** is <ins>supported</ins>, but *still in progress* ! ⚠️
 
 <a name="magic"></a>
 
