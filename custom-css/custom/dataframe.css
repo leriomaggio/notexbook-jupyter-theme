@@ -21,7 +21,7 @@ table.dataframe {
     border-collapse: collapse;
     border: none;
     margin-left: 20px !important;
-    font-size: var(--txbk-content-mono-font-size) !important;
+    font-size: 14px !important;
 }
 
 table.dataframe thead {
