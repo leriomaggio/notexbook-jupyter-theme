@@ -26,26 +26,16 @@ Here is a [**Preview**](https://leriomaggio.github.io/texbook-jupyter-theme/) of
 
 ## Install <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> Theme
 
-The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme is available in three different flavours: 
-
-1. **Full-fledged** _custom_ Jupyter notebook theme (HTML/CSS): ([here  ![arrow](https://render.githubusercontent.com/render/math?math=\Downarrow)](#custom))
-
-1. `pip`-_installable_ package to embed the theme into notebooks via custom **IPython magic** (`%texify`) ([Link ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/notebook-magic/README.md#magic));
-
-3. (**Experimental**) theme integration for Google Colaboratory Notebooks (via the 
-    [Stylus](https://en.wikipedia.org/wiki/Stylus_(browser_extension)) browser extension) ([Link ![arrow](https://render.githubusercontent.com/render/math?math=\Rightarrow)](https://github.com/leriomaggio/notexbook-jupyter-theme/blob/texbook-colab/README.md#colab)).
-
-⚠️ Jupyter **Lab** is <ins>supported</ins>, but *still in progress* ! ⚠️
-
 <a name="custom"></a>
+
 ### Setup `noTeXbook` as the default Jupyter Notebook theme
 
-To install and enable `noTeXbook` as the **default** Jupyter Notebook theme, it is just necessart to copy the `custom` folder  contained in this repository **as-is** in the `JUPYTER_CONFIG_DIR` folder (see [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files)) - default `$HOME/.jupyter`:
+To install and enable `noTeXbook` as the **default** Jupyter Notebook theme (for **all your notebooks**), it is just necessary to copy the `custom` folder  contained in this repository **as-is** in your `JUPYTER_CONFIG_DIR` folder (`$HOME/.jupyter`by default)
+See [here](https://jupyter.readthedocs.io/en/latest/use/jupyter-directories.html#configuration-files)) for more about Jupyter configuration dirs.
 
 ```shell
 cp -R custom $HOME/.jupyter
 ```
-This will automatically enable the `noTeXbook` theme as the **default** theme for all Jupyter notebook. 
 
 See [here](https://stackoverflow.com/questions/32156248/how-do-i-set-custom-css-for-my-ipython-ihaskell-jupyter-notebook/34742362#34742362) for more information on Customising Notebook style.
 
@@ -64,9 +54,6 @@ In order to change the **colour theme** used by code and markdown editors, it is
 It is also very simple to create your own theme: in each theme CSS file there is just the reference  _colour palette_, and how this palette maps to specific CSS VARS (e.g. `keywords`, `numbers`, etc.).
 
 **No CSS class nor rule is defined into a Theme file**. Each rule is defined into the main `editors.css` file, and overloaded by specific themes VARS definitions.
-
-
-
 
 ### Project Links
 
