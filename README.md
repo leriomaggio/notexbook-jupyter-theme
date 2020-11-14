@@ -18,11 +18,11 @@ The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/
 
 ### Sneak Peek?
 
-Here is a [**Preview**](https://leriomaggio.github.io/texbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
+Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
 
 ## Install <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> Theme
 
-The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme is available in three different flavours: 
+The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme is available in three <ins>**alternative** flavours</ins>: 
 
 1. `pip`-_installable_ package to embed the theme into notebooks via custom **IPython magic** (`%texify`) ([here ![arrow](https://render.githubusercontent.com/render/math?math=\Downarrow)](#magic));
 
@@ -172,13 +172,12 @@ As the general `noTeXbook` theme, customising the Colaboratory version is as eas
 
 
 
+## Project Links
 
-### Project Links
-
-- [PyPi package](https://pypi.org/project/notexbook-theme/)
-- [Official GitHub Repo](https://github.com/leriomaggio/notexbook-jupyter-theme/)
-- [Documentation and GitHub Page](https://leriomaggio.github.io/notexbook-jupyter-theme/)
-- [Project Board and Issue Tracker](https://github.com/leriomaggio/notexbook-jupyter-theme/projects/1)
+- 📦 **PyPi package**: [pypi.org/project/notexbook-theme/](https://pypi.org/project/notexbook-theme/) 
+- 🐍🎨 **Official GitHub Repo**: [github.com/leriomaggio/notexbook-jupyter-theme/](https://github.com/leriomaggio/notexbook-jupyter-theme/) 
+- 🚀 **Documentation and GitHub Page**: [leriomaggio.github.io/notexbook-jupyter-theme/](https://leriomaggio.github.io/notexbook-jupyter-theme/) 
+- 🎯 **Project Board and Issue Tracker**: [github.com/leriomaggio/notexbook-jupyter-theme/projects](https://github.com/leriomaggio/notexbook-jupyter-theme/projects)
 
 
 
