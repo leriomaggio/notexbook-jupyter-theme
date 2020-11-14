@@ -7,10 +7,10 @@
 
 <style type="text/css">
   pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -13878,7 +13878,7 @@ table.dataframe {
     border-collapse: collapse;
     border: none;
     margin-left: 20px !important;
-    font-size: var(--txbk-content-mono-font-size) !important;
+    font-size: 14px !important;
 }
 
 table.dataframe thead {
@@ -14160,7 +14160,12 @@ div.jp-RenderedHTMLCommon ol li {
 
 div.jp-RenderedHTMLCommon ul li > code,
 div.jp-RenderedHTMLCommon ol li > code {
-    font-size: .8em !important
+    font-size: .9em !important
+}
+
+div.jp-RenderedHTMLCommon ul li a code,
+div.jp-RenderedHTMLCommon ol li a code {
+    font-size: .9em !important
 }
 
 div.jp-RenderedHTMLCommon ul ul {
@@ -14179,6 +14184,20 @@ div.jp-RenderedHTMLCommon ul li > ol li,
 div.jp-RenderedHTMLCommon ol li > ul li,
 div.jp-RenderedHTMLCommon ol li > ol li {
     padding: .5rem !important;
+}
+
+div.jp-RenderedHTMLCommon ul li > ul li code,
+div.jp-RenderedHTMLCommon ul li > ol li code,
+div.jp-RenderedHTMLCommon ol li > ul li code,
+div.jp-RenderedHTMLCommon ol li > ol li code {
+    font-size: .9em !important;
+}
+
+div.jp-RenderedHTMLCommon ul li > ul li a code,
+div.jp-RenderedHTMLCommon ul li > ol li a code,
+div.jp-RenderedHTMLCommon ol li > ul li a code,
+div.jp-RenderedHTMLCommon ol li > ol li a code {
+    font-size: .9em !important;
 }
 
 div.jp-RenderedHTMLCommon ul ul ul {
@@ -14994,7 +15013,11 @@ div.text_cell_render ul li, div.text_cell_render ol li {
 }
 
 div.text_cell_render ul li > code, div.text_cell_render ol li > code {
-    font-size: .8em !important;
+    font-size: .9em !important;
+}
+
+div.text_cell_render ul li a code, div.text_cell_render ol li a code {
+    font-size: .9em !important;
 }
 
 div.text_cell_render ul ul {
@@ -15013,6 +15036,20 @@ div.text_cell_render ul li > ol li,
 div.text_cell_render ol li > ul li,
 div.text_cell_render ol li > ol li {
     padding: .5rem !important;
+}
+
+div.text_cell_render ul li > ul li code,
+div.text_cell_render ul li > ol li code,
+div.text_cell_render ol li > ul li code,
+div.text_cell_render ol li > ol li code {
+    font-size: .9em !important;
+}
+
+div.text_cell_render ul li > ul li a code,
+div.text_cell_render ul li > ol li a code,
+div.text_cell_render ol li > ul li a code,
+div.text_cell_render ol li > ol li a code {
+    font-size: .9em !important;
 }
 
 div.text_cell_render ul ul ul {
@@ -15192,6 +15229,21 @@ div.text_cell_render p > img.maxw90 {
 div.text_cell_render img.maxw100,
 div.text_cell_render p > img.maxw100 {
     max-width: 100% !important;
+}
+
+.badges img, .badges p img {
+    margin: 0 !important;  /* Override margins */
+    display: inline !important;
+    padding-right: 7px;
+}
+
+.badges p {
+    display: inline !important;
+}
+
+.badges {
+    display: block;
+    text-align: center;
 }
 </style>
 
@@ -15390,6 +15442,7 @@ blending together the words  <strong>noTe</strong><del>X</del><strong>book</stro
 </ul>
 </li>
 <li><a href="#Miscellaneous">Miscellaneous</a></li>
+<li><a href="#Project-Links">Project Links</a></li>
 <li><a href="#Credits">Credits</a></li>
 </ul>
 
@@ -16620,6 +16673,18 @@ height=92
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Project-Links">Project Links<a class="anchor-link" href="#Project-Links">&#182;</a></h2><ul>
+<li>📦 <strong>PyPi package</strong>: <a href="https://pypi.org/project/notexbook-theme/">pypi.org/project/notexbook-theme/</a> </li>
+<li>🐍🎨 <strong>Official GitHub Repo</strong>: <a href="https://github.com/leriomaggio/notexbook-jupyter-theme/">github.com/leriomaggio/notexbook-jupyter-theme/</a> </li>
+<li>🚀 <strong>Documentation and GitHub Page</strong>: <a href="https://leriomaggio.github.io/notexbook-jupyter-theme/">leriomaggio.github.io/notexbook-jupyter-theme/</a> </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Credits">Credits<a class="anchor-link" href="#Credits">&#182;</a></h2><ul>
 <li>The <a href="https://github.com/neilpanchal/spinzero-jupyter-theme"><code>spinzero</code></a> jupyter theme has been inspirational in the design of the early version of this theme;</li>
 <li>The idea of overlay of selected cells has been inspired from <a href="https://gist.github.com/formigone/dbabdd4ae38ded54b6f028713ac78c8a">this</a> custom theme.</li>
@@ -16631,7 +16696,7 @@ height=92
 </ul>
 </li>
 </ul>
-<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><p>(Some links I found useful along the way):</p>
+<h3 id="Useful-Links">Useful Links<a class="anchor-link" href="#Useful-Links">&#182;</a></h3><p>(Some links I found useful along the way):</p>
 <ul>
 <li><a href="https://www.checkmyworking.com/cm-web-fonts/">Computer Modern on the Web</a></li>
 <li><a href="https://python-packaging.readthedocs.io/en/latest/dependencies.html"><code>setuptools</code>: Specify Dependencies</a></li>
