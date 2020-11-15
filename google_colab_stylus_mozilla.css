@@ -138,19 +138,15 @@
         --mono-md-bg: var(--code-background-color);
 
         /*COLAB Variables Override*/
-        --colab-icon-color: var(--texbook-torquoise);
+        --colab-icon-color: var(--texbook-turquoise);
         --colab-dark-orange: var(--texbook-pink);
         --paper-red-a700: var(--texbook-red);
         --colab-primary-text-color: var(--text-color);
         --colab-code-font-family: var(--txbk-code-font-family);
-        --colab-google-sans-font-family: var(--text-ui-font);
         --code-cell-background: #fafafa; /*material design theme editor*/
         --colab-anchor-color: var(--link-color);
         --colab-border-color: var(--texbook-light-grey);
         --colab-bold-border-color: var(--texbook-dark-grey);
-
-        --paper-font-common-base_-_font-family: var(--txbk-ui-font-family);
-        --paper-font-common-code_-_font-family: var(--txbk-md-font-family);
 
     }
 
@@ -240,7 +236,7 @@
     }
 
     #top-toolbar {
-        color: var(--text-head-color) !important;
+        color: var(--texbook-dark-grey) !important;
         font-weight: 500;
     }
 
@@ -266,7 +262,7 @@
     }
 
     .colab-assist-result-insert {
-        --colab-icon-color: var(--texbook-torquoise);
+        --colab-icon-color: var(--texbook-turquoise);
         color: var(--colab-icon-color);
     }
 
@@ -281,7 +277,7 @@
     */
 
     paper-icon-button .head-section-toggle > iron-icon {
-        color: var(--text-head-color) !important;
+        color: var(--texbook-dark-grey) !important;
         background-color: #ffffff !important;
     }
 
@@ -307,7 +303,7 @@
        ======
     */
     .header-warning, #message-area-secondary {
-        background-color: var(--text-head-color);
+        background-color: var(--texbook-dark-grey);
         color: #ffffff;
         font-weight: 300;
     }
@@ -322,7 +318,7 @@
     }
 
     #doc-name {
-        font-family: var(--text-ui-font) !important;
+        font-family: var(--txbk-ui-font-family) !important;
     }
 
     /* Hide Drive Icon */
@@ -416,7 +412,7 @@
         content: "\279E";
         font-size: 24px !important;
         width: 10px;
-        color: var(--texbook-torquoise);
+        color: var(--texbook-turquoise);
         font-weight: bold !important;
         display: inline-block;
         position: absolute;
@@ -438,7 +434,7 @@
     }
 
     div.cell-execution .cell-spinner {
-        border-color: var(--texbook-torquoise) !important;
+        border-color: var(--texbook-turquoise) !important;
     }
 
     div.cell.focused div.cell-execution .cell-spinner {
@@ -745,7 +741,7 @@
     }
 
     .markdown table {
-        font-size: var(--text-font-size) !important;
+        font-size: var(--txbk-content-font-size) !important;
         border-collapse: collapse;
         border-spacing: 0;
         width: 100%;
