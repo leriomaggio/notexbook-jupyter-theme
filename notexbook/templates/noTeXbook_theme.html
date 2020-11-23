@@ -44,9 +44,9 @@ function customise_anchor_links_click() {
                  * https://stackoverflow.com/questions/18445590/jquery-animate-stop-scrolling-when-user-scrolls-manually
                  */
                 page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function () {
-                    page.stop();
+                    page.stop(true);  // clearQueue
                 });
-                page.animate({
+                page.stop(true).animate({
                     scrollTop: offset
                 }, 800, function () {
                     page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
