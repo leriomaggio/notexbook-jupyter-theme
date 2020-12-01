@@ -14054,7 +14054,7 @@ div.jp-RenderedHTMLCommon p,
 div.jp-RenderedHTMLCommon pre,
 div.jp-RenderedHTMLCommon code {
     font-size: 1em !important;
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color)  /* REMOVED useless color forcing */;
 }
 
 /* Monospace Code - no code syntax highlight*/
@@ -14198,6 +14198,7 @@ div.jp-RenderedHTMLCommon ul li > ol li a code,
 div.jp-RenderedHTMLCommon ol li > ul li a code,
 div.jp-RenderedHTMLCommon ol li > ol li a code {
     font-size: .9em !important;
+    color: var(--link-color);
 }
 
 div.jp-RenderedHTMLCommon ul ul ul {
@@ -14425,7 +14426,7 @@ h5, h6 {
 
 code, kbd, pre, samp {
     font-family: var(--txbk-code-font-family) !important;
-    color: var(--txbk-ui-mono-color) !important;
+    color: var(--txbk-ui-mono-color);
     font-weight: 400;
     font-size: var(--txbk-ui-mono-font-size) !important;
     line-height: var(--txbk-ui-mono-line-height) !important;
@@ -14907,7 +14908,7 @@ div.text_cell_render p,
 div.text_cell_render pre,
 div.text_cell_render code {
     font-size: 1em !important;
-    color: var(--code-text-color) !important;  /* from */
+    color: var(--code-text-color)  /* REMOVED useless important clause */
 }
 
 /* Monospace Code - no code syntax highlight*/
@@ -15050,6 +15051,7 @@ div.text_cell_render ul li > ol li a code,
 div.text_cell_render ol li > ul li a code,
 div.text_cell_render ol li > ol li a code {
     font-size: .9em !important;
+    color: var(--link-color);
 }
 
 div.text_cell_render ul ul ul {
@@ -15263,16 +15265,21 @@ http://github.com/leriomaggio
 
 function customise_anchor_links_click() {
     $("a").on("click", function (e) {
-        // Check if header toolbar is visible in the first place
-        if (this.hash !== "") {
+        const hash = this.hash;  // full hash reference, if any (e.g. #numpy.arange)
+        if (hash !== "") {  // check that this is an anchor link
             // Remove any existing handler
             $(this).unbind();
-            // Store hash
-            const hash = this.hash;
-            let t = $(hash);
+            // Get anchor (get rid of sharp symbol)
+            // and escape any invalid character for a JQuery selector
+            // e.g. numpy.arange ==> "numpy\.arange"
+            const anchor = $.escapeSelector(hash.substr(1));
+            // Look for ID selector
+            let anchor_sel = "#"+anchor;
+            let t = $(anchor_sel);
             if ((t === undefined) || (t.length === 0)) {
-                let anchor = hash.substr(1);
-                t = $("a[name='" + anchor + "'");
+                // if not ID, look for a link name anchor
+                anchor_sel = "a[name='" + anchor + "'";
+                t = $(anchor_sel);
             }
             if ((t !== undefined) && (t.length > 0)) {
                 // Prevent default anchor click behavior
@@ -15282,7 +15289,7 @@ function customise_anchor_links_click() {
                 // The optional number (800) specifies the number of milliseconds
                 // it takes to scroll to the specified area
                 let header_height = $("#header").height();
-                let offset = $(t).offset().top - header_height;
+                let scrollTopOffset = $(t).offset().top - header_height;
 
                 /*
                  * FIX Scrolling Animation Freeze:
@@ -15292,7 +15299,7 @@ function customise_anchor_links_click() {
                     page.stop(true);  // clearQueue
                 });
                 page.stop(true).animate({
-                    scrollTop: offset
+                    scrollTop: scrollTopOffset
                 }, 800, function () {
                     page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
                 });
