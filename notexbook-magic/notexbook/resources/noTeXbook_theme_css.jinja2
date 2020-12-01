@@ -125,7 +125,7 @@ h5, h6 {
 
 code, kbd, pre, samp {
     font-family: var(--txbk-code-font-family) !important;
-    color: var(--txbk-ui-mono-color) !important;
+    color: var(--txbk-ui-mono-color);
     font-weight: 400;
     font-size: var(--txbk-ui-mono-font-size) !important;
     line-height: var(--txbk-ui-mono-line-height) !important;
@@ -607,7 +607,7 @@ div.text_cell_render p,
 div.text_cell_render pre,
 div.text_cell_render code {
     font-size: 1em !important;
-    color: var(--code-text-color) !important;  /* from */
+    color: var(--code-text-color)  /* REMOVED useless important clause */
 }
 
 /* Monospace Code - no code syntax highlight*/
@@ -750,6 +750,7 @@ div.text_cell_render ul li > ol li a code,
 div.text_cell_render ol li > ul li a code,
 div.text_cell_render ol li > ol li a code {
     font-size: .9em !important;
+    color: var(--link-color);
 }
 
 div.text_cell_render ul ul ul {
