@@ -200,7 +200,7 @@ h5, h6 {
 
 code, kbd, pre, samp {
     font-family: var(--txbk-code-font-family) !important;
-    color: var(--txbk-ui-mono-color) !important;
+    color: var(--txbk-ui-mono-color);
     font-weight: 400;
     font-size: var(--txbk-ui-mono-font-size) !important;
     line-height: var(--txbk-ui-mono-line-height) !important;
@@ -684,7 +684,7 @@ div.cell.text.focused.edit .markdown h6 {
 .markdown p,
 .markdown pre, .markdown code {
     font-size: 1em !important;
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color);
     /*line-height: var(--txbk-code-line-height);*/
 }
 
@@ -719,7 +719,7 @@ div.cell.text.focused.edit .markdown h6 {
     font-size: 1em !important;
     padding: 1rem 1.5rem;
     display: block !important;
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color);
     background-color: var(--code-background-color) !important;
     font-family: var(--txbk-content-mono-font-family) !important;
     word-wrap: break-word;
@@ -857,6 +857,21 @@ div.markdown ul li > ol li,
 div.markdown ol li > ul li,
 div.markdown ol li > ol li {
     padding: .15rem !important;
+}
+
+div.markdown ul li > ul li code,
+div.markdown ul li > ol li code,
+div.markdown ol li > ul li code,
+div.markdown ol li > ol li code {
+    font-size: .9em !important;
+}
+
+div.markdown ul li > ul li a code,
+div.markdown ul li > ol li a code,
+div.markdown ol li > ul li a code,
+div.markdown ol li > ol li a code {
+    font-size: .9em !important;
+    color: var(--link-color);
 }
 
 div.markdown ul ul ul {
