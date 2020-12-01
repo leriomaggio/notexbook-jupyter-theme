@@ -95,7 +95,7 @@ div.jp-RenderedHTMLCommon p,
 div.jp-RenderedHTMLCommon pre,
 div.jp-RenderedHTMLCommon code {
     font-size: 1em !important;
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color);
 }
 
 /* Monospace Code - no code syntax highlight*/
@@ -239,6 +239,7 @@ div.jp-RenderedHTMLCommon ul li > ol li a code,
 div.jp-RenderedHTMLCommon ol li > ul li a code,
 div.jp-RenderedHTMLCommon ol li > ol li a code {
     font-size: .9em !important;
+    color: var(--link-color);
 }
 
 div.jp-RenderedHTMLCommon ul ul ul {
