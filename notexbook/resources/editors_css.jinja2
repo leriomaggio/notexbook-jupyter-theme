@@ -84,7 +84,7 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-keyword {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 .cm-s-ipython span.cm-variable {
@@ -125,11 +125,12 @@ span.CodeMirror-matchingbracket {
 
 .cm-s-ipython span.cm-comment {
     color: var(--comments);
+    font-style: normal;
 }
 
 .cm-s-ipython span.cm-operator {
     color: var(--operator);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 .cm-s-ipython span.cm-number {
@@ -161,8 +162,11 @@ Markdown MathJax Customisation
 */
 
 .highlight .hll, div.highlight > pre {
-    background-color: var(--code-background-color) !important;
-    color: var(--code-text-color) !important;
+    background-color: var(--code-background-color);
+    color: var(--code-text-color);
+    font-family: var(--txbk-code-font-family);
+    font-size: var(--txbk-code-font-size);
+    line-height: var(--txbk-code-line-height);
 }
 
 /* Comment */
@@ -179,7 +183,7 @@ Markdown MathJax Customisation
 /* Keyword */
 .highlight .k {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Literal */
@@ -203,7 +207,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator */
 .highlight .o {
     color: var(--code-text-color);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Punctuation */
@@ -266,37 +270,37 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Keyword.Constant */
 .highlight .kc {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Keyword.Declaration */
 .highlight .kd {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Keyword.Namespace */
 .highlight .kn {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Keyword.Pseudo */
 .highlight .kp {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Keyword.Reserved */
 .highlight .kr {
     color: var(--keywords);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Keyword.Type */
 .highlight .kt {
     color: var(--types);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* Literal.Date */
@@ -390,7 +394,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 /* Operator.Word */
 .highlight .ow {
     color: var(--operator);
-    font-weight: 500 !important;
+    font-weight: 400;
 }
 
 /* @ Text.Whitespace */
@@ -551,7 +555,7 @@ span.cm-string.cm-url {
 }
 
 span.cm-string {
-   color: var(--string) !important;
+   color: var(--strings) !important;
 }
 /* Sometimes useful in Mono code Highlighting*/
 span.cm-string-2 {
