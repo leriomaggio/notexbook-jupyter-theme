@@ -29,6 +29,7 @@ EDITOR_THEMES = {
     "code": {
         "material": EDITOR_THEMES_FOLDER / "code_material_theme.css",
         "github": EDITOR_THEMES_FOLDER / "code_github_theme.css",
+        "github2": EDITOR_THEMES_FOLDER / "code_github2_theme.css",
         "crisp": EDITOR_THEMES_FOLDER / "code_crisp_theme.css",
     },
 }
