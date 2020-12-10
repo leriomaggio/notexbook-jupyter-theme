@@ -1,0 +1,66 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+The color palette is inspired by
+the **new** GitHub Code Editor theme
+*/
+
+:root {
+    /* Color Palette */
+    --gh2-white: #fafafa;
+    --gh2-red: #d65b67;
+    --gh2-orange: #df7b41;
+    --gh2-yellow: #f5e17b;
+    --gh2-blue: #0259be;
+    --gh2-dark-blue: #053060;
+    --gh2-black: #24292e;
+    --gh2-azure: #c0d8f4;
+    --gh2-grey: #868c94;
+    --gh2-light-grey: #b3b4b6;
+    --gh2-purple: #724abd;
+
+
+    /* Editor Theme */
+    --code-background-color: var(--gh2-white);
+    --gutter-background: var(--gh2-white);
+    --selection-background-color: var(--gh2-azure);
+    --line-numbers: var(--gh2-light-grey);
+    --cursor: var(--gh2-black);
+    --bracket: var(--gh2-black);
+    --matching-bracket: var(--gh2-dark-blue);
+    --code-text-color: var(--gh2-black);
+    --keywords: var(--gh2-red);
+    --types: var(--gh2-orange);
+    --variables: var(--code-text-color);
+    --variables2: var(--gh2-blue);
+    --def: var(--gh2-purple);
+    --property: var(--gh2-purple);
+    --meta: var(--gh2-purple);
+    --builtin: var(--gh2-purple);
+    --attribute: var(--code-text-color);
+    --strings: var(--gh2-dark-blue);
+    --strings2: var(--gh2-dark-blue);
+    --comments: var(--gh2-light-grey);
+    --operator: var(--gh2-blue);
+    --numbers: var(--gh2-blue);
+
+    /*TODO: To be completed!*/
+    /* Dataframe */
+    --dataframe: var(--code-text-color);
+    --df-bg: var(--gh2-white);
+    --df-thead: var(--gh2-blue);
+    --df-thead-border: var(--gh2-dark-blue);
+    --df-tr-hover: var(--selection-background-color);
+    --df-border: var(--gh2-white);
+    --df-border-right: var(--gh2-grey);
+    --df-th-bg: var(--gh2-white);
+    /* ANSI Term Colours */
+    --ansi-red: var(--gh2-red);
+    --ansi-green: var(--gh2-dark-blue);
+    --ansi-cyan: var(--gh2-purple);
+    --ansi-blue: var(--gh2-blue);
+}
