@@ -1,7 +1,9 @@
 /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
+
+ ======================================================
 
 The color palette is inspired by
 the default GitHub light theme
@@ -10,52 +12,52 @@ Repo: https://github.com/primer/github-syntax-light
 
 :root {
     /* Color Palette */
-    --dark-grey: #505050;
-    --grey: #b8b8b8;
-    --light-grey: #6a737d;
-    --lighter-grey: #e2e2e2;
-    --antrax: #24292e;
-    --white: #ffffff;
-    --red: #d73a49;
-    --orange: #e36209;
-    --dark-orange: #f14c00;
-    --purple: #6f42c1;
-    --light-yellow: #fff9eb;
-    --yellow: #ffea7f;
-    --blue: #005cc5;
-    --dark-blue: #032f62;
-    --green: #22863a;
+    --gh-dark-grey: #505050;
+    --gh-grey: #b8b8b8;
+    --gh-light-grey: #6a737d;
+    --gh-lighter-grey: #e2e2e2;
+    --gh-antrax: #24292e;
+    --gh-white: #ffffff;
+    --gh-red: #d73a49;
+    --gh-orange: #e36209;
+    --gh-dark-orange: #f14c00;
+    --gh-purple: #6f42c1;
+    --gh-light-yellow: #fff9eb;
+    --gh-yellow: #ffea7f;
+    --gh-blue: #005cc5;
+    --gh-dark-blue: #032f62;
+    --gh-green: #22863a;
 
     /* Editor Theme */
-    --code-background-color: var(--white);
-    --gutter-background: var(--white);
-    --selection-background-color: var(--light-yellow);
-    --line-numbers: var(--grey);
-    --cursor: var(--dark-grey);
-    --bracket: var(--light-grey);
-    --matching-bracket: var(--dark-orange);
-    --code-text-color: var(--antrax);
-    --keywords: var(--red);
-    --types: var(--red);
-    --variables: var(--code-text-color);
-    --variables2: var(--blue);
-    --def: var(--purple);
-    --property: var(--code-text-color);
-    --meta: var(--purple);
-    --builtin: var(--yellow);
-    --attribute: var(--code-text-color);
-    --strings: var(--dark-blue);
-    --strings2: var(--light-grey);
-    --comments: var(--light-grey);
-    --operator: var(--blue);
-    --numbers: var(--blue);
+    --gh-code-background-color: var(--gh-white);
+    --gh-gutter-background: var(--gh-white);
+    --gh-selection-background-color: var(--gh-light-yellow);
+    --gh-line-numbers: var(--gh-grey);
+    --gh-cursor: var(--gh-dark-grey);
+    --gh-bracket: var(--gh-light-grey);
+    --gh-matching-bracket: var(--gh-dark-orange);
+    --gh-code-text-color: var(--gh-antrax);
+    --gh-keywords: var(--gh-red);
+    --gh-types: var(--gh-red);
+    --gh-variables: var(--gh-code-text-color);
+    --gh-variables2: var(--gh-blue);
+    --gh-def: var(--gh-purple);
+    --gh-property: var(--gh-code-text-color);
+    --gh-meta: var(--gh-purple);
+    --gh-builtin: var(--gh-yellow);
+    --gh-attribute: var(--gh-code-text-color);
+    --gh-strings: var(--gh-dark-blue);
+    --gh-strings2: var(--gh-light-grey);
+    --gh-comments: var(--gh-light-grey);
+    --gh-operator: var(--gh-blue);
+    --gh-numbers: var(--gh-blue);
     /* Dataframe */
-    --dataframe: var(--code-text-color);
-    --df-bg: var(--white);
-    --df-thead: var(--blue);
-    --df-thead-border: var(--dark-blue);
-    --df-tr-hover: var(--selection-background-color);
-    --df-border: var(--white);
-    --df-border-right: var(--grey);
-    --df-th-bg: var(--white);
+    --gh-dataframe: var(--gh-code-text-color);
+    --gh-df-bg: var(--gh-white);
+    --gh-df-thead: var(--gh-blue);
+    --gh-df-thead-border: var(--gh-dark-blue);
+    --gh-df-tr-hover: var(--gh-selection-background-color);
+    --gh-df-border: var(--gh-white);
+    --gh-df-border-right: var(--gh-grey);
+    --gh-df-th-bg: var(--gh-white);
 }
