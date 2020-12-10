@@ -124,11 +124,11 @@ h5, h6 {
 }
 
 code, kbd, pre, samp {
-    font-family: var(--txbk-code-font-family) !important;
+    font-family: var(--txbk-code-font-family);
     color: var(--txbk-ui-mono-color);
     font-weight: 400;
-    font-size: var(--txbk-ui-mono-font-size) !important;
-    line-height: var(--txbk-ui-mono-line-height) !important;
+    font-size: var(--txbk-ui-mono-font-size);
+    line-height: var(--txbk-ui-mono-line-height);
 }
 
 table > thead > tr > td.info,
@@ -233,7 +233,7 @@ div#notebook_name {
 }
 
 div#site {
-	overflow: inherit;
+    overflow: inherit;
     top: 112px;
     position: absolute;
 }
@@ -243,8 +243,8 @@ div#site {
     position: fixed !important;
     top: 0;
     width: 100%;
-    height: fit-content;
     max-width: 100%;
+    height: fit-content;
     background-color: var(--background-color);
 }
 
@@ -518,9 +518,9 @@ div.cell.edit_mode {
 
 /* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
-    font-family: var(--txbk-code-font-family) !important;
-    font-size: var(--txbk-code-font-size) !important;
-    line-height: var(--txbk-code-line-height) !important;
+    font-family: var(--txbk-code-font-family);
+    font-size: var(--txbk-code-font-size);
+    line-height: var(--txbk-code-line-height);
 }
 
 div.CodeMirror-linenumber {
@@ -532,15 +532,15 @@ div.CodeMirror-linenumber {
 /* md cell */
 div.text_cell.unrendered pre {
     /* general font rule */
-    font-family: var(--txbk-md-font-family)  !important;
-    font-size: var(--txbk-code-font-size) !important;
+    font-family: var(--txbk-md-font-family);
+    font-size: var(--txbk-code-font-size);
 }
 
 /* md cell headers (edit) */
 .cm-header-1, .cm-header-2, .cm-header-3,
 .cm-header-4, .cm-header-5, .cm-header-6 {
     /* general font rule */
-    font-family: var(--txbk-md-font-family) !important;
+    font-family: var(--txbk-md-font-family);
 }
 
 /* ------------------------------------------------------------------
@@ -553,24 +553,24 @@ div.text_cell.unrendered pre {
  */
 
 div.text_cell_render {
-    font-family: var(--txbk-content-font-family) !important;
-    font-size: var(--txbk-content-font-size) !important;
-    color: var(--txbk-content-color) !important;
+    font-family: var(--txbk-content-font-family);
+    font-size: var(--txbk-content-font-size);
+    color: var(--txbk-content-color);
     font-kerning: auto;
-    text-align: justify !important;
+    text-align: justify;
     display: block;
-    word-break: normal !important;
-    word-wrap: break-word !important;
+    word-break: normal;
+    word-wrap: break-word;
 }
 
 div.text_cell_render a {
-    color: var(--link-color) !important;
+    color: var(--link-color);
 }
 
 div.text_cell_render h1, div.text_cell_render h2,
 div.text_cell_render h3, div.text_cell_render h4,
 div.text_cell_render h5, div.text_cell_render h6 {
-    font-family:  var(--txbk-content-font-family) !important;
+    font-family:  var(--txbk-content-font-family);
     font-style: normal !important;
 }
 
@@ -607,7 +607,7 @@ div.text_cell_render p,
 div.text_cell_render pre,
 div.text_cell_render code {
     font-size: 1em !important;
-    color: var(--code-text-color);  /* REMOVED useless important clause */
+    color: var(--code-text-color); /* REMOVED useless important clause */
 }
 
 /* Monospace Code - no code syntax highlight*/
@@ -712,11 +712,6 @@ div.text_cell_render ul li, div.text_cell_render ol li {
     padding: .8rem !important;
 }
 
-/*FIX: Forcing Monospace in lists (Issue #6)*/
-div.text_cell_render ul li > code, div.text_cell_render ol li > code {
-    font-size: .8em !important;
-}
-
 div.text_cell_render ul li > code, div.text_cell_render ol li > code {
     font-size: .9em !important;
 }
@@ -810,8 +805,8 @@ p > [class^='fn']:not(:first-child) {
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
-div.text_cell_render p > [id^='fn'] code,
-div.text_cell_render p > [class^='fn']  code {
+div.text_cell_render p [id^='fn'] > code,
+div.text_cell_render p [class^='fn'] > code {
     font-size: 1em !important;
 }
 
