@@ -11,7 +11,7 @@ the **new** GitHub Code Editor theme
 
 :root {
     /* Color Palette */
-    --gh2-white: #ffffff;
+    --gh2-white: #fafafa;
     --gh2-red: #d65b67;
     --gh2-orange: #df7b41;
     --gh2-yellow: #f5e17b;
@@ -48,6 +48,7 @@ the **new** GitHub Code Editor theme
     --operator: var(--gh2-blue);
     --numbers: var(--gh2-blue);
 
+    /*TODO: To be completed!*/
     /* Dataframe */
     --dataframe: var(--code-text-color);
     --df-bg: var(--gh2-white);
