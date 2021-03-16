@@ -632,7 +632,7 @@
 
     div.cell.text.focused.edit h1.text-cell-section-header,
     div.cell.text.focused.edit .markdown h1 {
-        font-size: 1.25em !important;
+        font-size: 2em !important;
         padding-bottom: .25rem;
     }
 
@@ -642,7 +642,7 @@
 
     div.cell.text.focused.edit h2.text-cell-section-header,
     div.cell.text.focused.edit .markdown h2 {
-        font-size: 1.2em !important;
+        font-size: 1.8em !important;
     }
 
     .markdown h3 {
@@ -651,7 +651,7 @@
 
     div.cell.text.focused.edit h3.text-cell-section-header,
     div.cell.text.focused.edit .markdown h3 {
-        font-size: 1em !important;
+        font-size: 1.7em !important;
     }
 
     .markdown h4 {
@@ -660,7 +660,7 @@
 
     div.cell.text.focused.edit h4.text-cell-section-header,
     div.cell.text.focused.edit .markdown h4 {
-        font-size: .9em !important;
+        font-size: 1.5em !important;
     }
 
     .markdown h5 {
@@ -669,7 +669,7 @@
 
     div.cell.text.focused.edit h5.text-cell-section-header,
     div.cell.text.focused.edit .markdown h5 {
-        font-size: .8em !important;
+        font-size: 1.4em !important;
     }
 
     .markdown h6 {
@@ -679,7 +679,7 @@
 
     div.cell.text.focused.edit h6.text-cell-section-header,
     div.cell.text.focused.edit .markdown h6 {
-        font-size: .7em !important;
+        font-size: 1.2em !important;
     }
 
     .markdown p,
