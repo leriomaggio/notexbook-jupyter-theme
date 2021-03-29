@@ -1,20 +1,7 @@
-/*
-Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/notexbook-jupyter-theme
-License: Apache License 2.0
-*/
-
-{% include "fonts_css.jinja2" %}
-{% include "editors_css.jinja2" %}
-{% include "dataframe_css.jinja2" %}
-{% include "jupyter_light_css.jinja2" %}
-
-
 /* ======================================================
                          GLOBALS
    ======================================================
 */
-
 
 :root {
     /* Base colors */
@@ -42,20 +29,20 @@ License: Apache License 2.0
 
     /* Content Formatting */
     --txbk-content-font-family: "CMU Serif", "Times New Roman", serif;
-    --txbk-content-font-size: {{ nb_font_size }};
+    --txbk-content-font-size: var(--template-txbk-content-font-size);
     --txbk-content-color: rgb(51, 51, 51);
-    --txbk-content-line-height: {{ nb_line_height }};
+    --txbk-content-line-height: var(--template-txbk-content-line-height);
 
-    --txbk-content-mono-font-family: "CMU Typewriter Text", "{{ code_mono_font }}", "Fira Code", monospace;
-    --txbk-content-mono-font-size: {{ md_mono_font_size }};
-    --txkb-content-mono-color: var(--texbook-dark-grey);
+    --txbk-content-mono-font-family: var(--template-txbk-content-mono-font-family);
+    --txbk-content-mono-font-size: var(--template-txbk-content-mono-font-size);
+    --txbk-content-mono-color: var(--texbook-dark-grey);
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
-    --txbk-code-font-family: "{{ code_mono_font }}", "Fira Code", monospace;
-    --txbk-md-font-family: "{{ md_mono_font }}", "Hack", monospace;
-    --txbk-code-font-size: {{ code_mono_font_size }};
+    --txbk-code-font-family: var(--template-txbk-code-font-family);
+    --txbk-md-font-family: var(--template-txbk-md-font-family);
+    --txbk-code-font-size: var(--template-txbk-code-font-size);
     --txbk-code-line-height: 1.6;
-    --txkb-code-color: var(--code-text-color);
+    --txbk-code-color: var(--code-text-color);
     --txbk-code-bgcolor: var(--code-background-color);
 
     --link-color: #2875d9;
@@ -320,7 +307,7 @@ div#notebook {
 div.cell {
     padding: 12px 0 5px 0 !important;
     right: 2px;
-    border:  none;
+    border:  none !important;
 }
 
 div.cell .inner_cell {
@@ -384,10 +371,10 @@ div.cell.selected div.input:before {
     position: absolute;
     content: "\279E";
     font-size: 1.8rem;
-    top: 14px;
+    top: 22px;
     /*top: 40px;*/
     width: 10px;
-    left: 30px;
+    left: 45px;
     /*left: 15px;*/
     color: var(--cell-display-border);
     font-weight: bold !important;
@@ -399,6 +386,7 @@ div.input_prompt {
     color: #aba9a9;
     font-style: normal !important;
     font-size: 1.4rem;
+    padding-top: 14px;
 }
 
 /* FIX: Fixing Empty cell output in HTML export */
@@ -420,17 +408,28 @@ div.output_wrapper {
     margin-top: 8px;
 }
 
-div.output_area pre, div.output_subarea {
+div.output_area div.output_text pre,
+div.output_area div.output_markdown p {
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+div.output_area div.output_markdown p {
+    font-size: var(--txbk-content-font-size);
+}
+
+div.output_area div.output_markdown pre code {
+    font-size: var(--txbk-content-mono-font-size);
+    font-family: var(--txbk-content-mono-font-family);
+    color: var(--txbk-content-mono-color);
+}
+
+div.output_area div.output_text pre {
+    --txbk-content-mono-font-family: var(--txbk-code-font-family);
+
     font-weight: normal;
     word-break: normal;
     word-wrap: break-word;
-}
-
-div.output_area pre {
-    --txbk-content-mono-font-family: var(--txbk-code-font-family);
-
-    padding-bottom: 15px;
-    padding-top: 10px;
 }
 
 /* Output Standard Error  */
@@ -453,9 +452,12 @@ div.output_html {
     font-size: 1.3rem;
     font-weight: normal;
     font-family: var(--txbk-code-font-family);
-    padding-bottom: 15px;
-    padding-top: 10px;
 }
+
+div.output_html p.nomono {
+    font-family: var(--txbk-content-font-family);
+}
+
 div.output_html > iframe, div.output_area {
     margin-left: 3rem;
 }
@@ -576,45 +578,49 @@ div.text_cell_render h5, div.text_cell_render h6 {
 
 /* Font-sizes for headers */
 div.text_cell_render h1 {
-    font-size: 4.2rem !important;
+    font-size: 2.2em !important;
     text-align: center !important;
     padding-top:  3rem;
     padding-bottom: 3rem;
 }
 
 div.text_cell_render h2 {
-    font-size: 3.8rem !important;
+    font-size: 1.9em !important;
 }
 
 div.text_cell_render h3 {
-    font-size: 3.4rem !important;
+    font-size: 1.7em !important;
 }
 
 div.text_cell_render h4 {
-    font-size: 3rem !important;
+    font-size: 1.5em !important;
 }
 
 div.text_cell_render h5 {
-    font-size: 2.6rem !important;
+    font-size: 1.3em !important;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 
 div.text_cell_render h6 {
-    font-size: 2.2rem !important;
-    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 1.1em !important;
 }
 
 div.text_cell_render p,
 div.text_cell_render pre,
 div.text_cell_render code {
     font-size: 1em !important;
-    color: var(--code-text-color);  /* REMOVED useless important clause */
+}
+
+div.text_cell_render pre,
+div.text_cell_render code {
+    color: var(--txbk-content-mono-color);
 }
 
 /* Monospace Code - no code syntax highlight*/
 div.text_cell_render pre {
     /* hack: using code background colour here to allow for compatibility */
-    background-color: var(--code-background-color) !important;
-    font-family: var(--txbk-content-mono-font-family) !important;
+    background-color: var(--code-background-color);
+    font-family: var(--txbk-content-mono-font-family);
 }
 
 div.text_cell_render p {
@@ -624,28 +630,33 @@ div.text_cell_render p {
 
 /* Monospace inline rendered markdown */
 div.text_cell_render p code {
+
+    /*Re-defining variables for Mono using Code Editor's settings*/
+    --txbk-content-mono-font-family: var(--txbk-code-font-family);
+    --txbk-content-mono-font-size: var(--txbk-code-font-size);
+
     background-color: var(--txbk-content-mono-bgcolor) !important;
     font-size: var(--txbk-content-mono-font-size) !important;
+    color: var(--txbk-content-mono-color)
 }
 
 div.text_cell_render p strong code {
     font-weight: bold !important;
+    color: var(--txbk-content-mono-color);
 }
 
 div.text_cell_render p em code {
     font-style: italic !important;
+    color: var(--txbk-content-mono-color);
 }
 
 div.text_cell_render pre code {
-
-    /*--txbk-ui-mono-line-height: 1.3;*/
-
-    font-size: 1em !important;
     padding: 1rem 1.5rem;
     display: block !important;
-    color: var(--txkb-content-mono-color) !important;
+    color: var(--txbk-content-mono-color);
     background-color: var(--txbk-content-mono-bgcolor) !important;
-    font-family: var(--txbk-content-mono-font-family) !important;
+    font-family: var(--txbk-content-mono-font-family);
+    font-size: var(--txbk-content-mono-font-size) !important;
     word-wrap: break-word;
     word-break: normal;
 }
@@ -655,7 +666,7 @@ div.text_cell_render blockquote {
 
     margin: 2rem .2rem !important;
     padding: .3rem .5rem !important;
-    border-left: .3rem solid #a7a7a7 !important;
+    border-left: .3rem solid #a7a7a7;
 }
 
 div.text_cell_render blockquote p {
@@ -663,7 +674,7 @@ div.text_cell_render blockquote p {
 }
 
 div.text_cell_render table {
-    font-size: var(--txbk-content-font-size) !important;
+    font-size: var(--txbk-content-font-size);
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
