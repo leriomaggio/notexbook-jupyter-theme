@@ -139,7 +139,7 @@ Markdown MathJax Customisation
     font-size: 2rem;
 }
 
-.mjx-char {
+.MathJax_Display .mjx-char {
     font-family: var(--txbk-content-font-family) !important;
 }
 
