@@ -1,0 +1,41 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+======================================================
+
+
+    ---------------------------------
+    Code Mirror - Code Cell Highlight
+    ---------------------------------
+
+    Define the Style for Code **and** Markdown editors (Themes)
+    Theme files are all located in the "themes" folder, and the
+    different styles for the Code and Markdown editors are
+    distinguished by a common prefix in the file names:
+
+        --> Code editors Themes: "themes/code_*"
+        --> Markdown Editor Themes: "themes/md_*"
+
+    Styles can be imported as separate CSS modules.
+
+    Current stylesheet (editor.css) defines the CSS rules
+    for notebook tags and classes. These rules are
+    all based to colors defined in external Theme files.
+
+    This would ease the definition of other custom CSS Editor themes
+*/
+
+/* Code Editor theme */
+{% block code_editor_theme %}
+    {{ code_theme }}
+{% endblock %}
+
+/* Markdown Editor theme */
+{% block markdown_editor_theme %}
+    {{ md_theme }}
+{% endblock %}
+
+{# Include CSS style for Code and Markdown Editors #}
+{% include "editors.css" %}
