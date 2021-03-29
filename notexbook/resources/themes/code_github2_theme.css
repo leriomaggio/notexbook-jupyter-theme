@@ -58,4 +58,10 @@ the **new** GitHub Code Editor theme
     --df-border: var(--gh2-white);
     --df-border-right: var(--gh2-grey);
     --df-th-bg: var(--gh2-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--gh2-red);
+    --ansi-green: var(--gh2-dark-blue);
+    --ansi-green-intense: var(--gh2-grey);
+    --ansi-cyan: var(--gh2-purple);
+    --ansi-blue: var(--gh2-blue);
 }

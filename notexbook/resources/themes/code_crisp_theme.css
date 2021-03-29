@@ -58,4 +58,10 @@ Repo: https://github.com/rainglow/vscode/
     --cl-df-border: var(--cl-white);
     --cl-df-border-right: var(--cl-grey);
     --cl-df-th-bg: var(--cl-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--cl-red);
+    --ansi-green: var(--cl-yellow);
+    --ansi-green-intense: var(--cl-grey);
+    --ansi-cyan: var(--cl-purple);
+    --ansi-blue: var(--cl-blue);
 }

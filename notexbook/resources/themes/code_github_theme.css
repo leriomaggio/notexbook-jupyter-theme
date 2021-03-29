@@ -60,4 +60,10 @@ Repo: https://github.com/primer/github-syntax-light
     --gh-df-border: var(--gh-white);
     --gh-df-border-right: var(--gh-grey);
     --gh-df-th-bg: var(--gh-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--gh-red);
+    --ansi-green: var(--gh-green);
+    --ansi-green-intense: var(--gh-dark-grey);
+    --ansi-cyan: var(--gh-orange);
+    --ansi-blue: var(--gh-blue);
 }
