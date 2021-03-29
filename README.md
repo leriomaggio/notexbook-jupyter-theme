@@ -24,7 +24,7 @@ Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) 
 
 <a name="magic"></a>
 
-### `notexbook-theme`  and `%texify` 🔮
+### `notexbook-theme` and `%texify` 🔮
 
 The `notexbook-theme` package (on [PyPi](https://pypi.org/project/notexbook-theme/)) provides the `noTeXbook` theme as an easy-to-integrate IPython magic (i.e. `%texify`), activated via Jupyter notebook (Python) extension, `notexbook`. So, to use the `noTeXbook` theme in a notebook it will be just a matter of (1) loading the extension; (2) calling the `%texify` IPython magic.
 
@@ -43,13 +43,13 @@ pip install notexbook-theme
 
 Once installed, just `load` the `notexbook` extension into a notebook cell:
 
-```python
+```
 %load_ext notexbook
 ```
 
 and activate the custom IPython magic:
 
-```python
+```
 %texify  # default theme settings will be used
 ```
 
@@ -57,7 +57,7 @@ and activate the custom IPython magic:
 
 #### Customising theme settings
 
-Current version of the theme allows to customise the following settings:
+The current version of the theme allows to customise the following settings:
 
 - `--code-font` (`-cdf`): the font family used in Code editor (default: `Fira Code`)
 - `--md-font` (`-mdf`): the font family used in Markdown editor (default `Hack`)
@@ -84,8 +84,6 @@ To see the **full** list of configuration options :
 %texify?
 ```
 
-
-
 ### Project Links
 
 - [PyPi package](https://pypi.org/project/notexbook-theme/)
@@ -94,19 +92,17 @@ To see the **full** list of configuration options :
 - [Project Board and Issue Tracker](https://github.com/leriomaggio/notexbook-jupyter-theme/projects/1)
 
 
-
 ### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="15%" /> shall by *thy* name
 
-When I had to think of a name for this project, I aimed almost immediately at finding a single word that could convey the idea of integration of the`LaTeX`-__inspired_  theme for notebooks I had in mind. And so, <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" />, a unique [portmanteau](https://www.merriam-webster.com/dictionary/portmanteau)[(1)]( "Pronunciation") that blends together the words **noTe**<del>X</del>**book** (_no further explanation needed, ed._), and <del>no</del>**TeXbook**, the name of [Donald E. Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)'s [book](http://www.ctex.org/documents/shredder/src/texbook.pdf) on `TeX`.
+When I had to think of a name for this project, I aimed almost immediately at finding a single word that could convey the idea of integration of the`LaTeX`-__inspired_  theme for notebooks I had in mind. So, <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" />, a unique [portmanteau](https://www.merriam-webster.com/dictionary/portmanteau)[(1)]( "Pronunciation") that blends together the words **noTe**<del>X</del>**book** (_no further explanation needed, ed._), and <del>no</del>**TeXbook**, the name of [Donald E. Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)'s [book](http://www.ctex.org/documents/shredder/src/texbook.pdf) on `TeX`.
 
 That was the omen... 🤩.
 
 > One!... Two!... Five! [(2)]("Monty Python and the Holy Grail")
 
 ---
-`[(1)]` : `port·​man·​teau | \ pȯrt-ˈman-(ˌ)tō` <br />
+`[(1)]`: `port·​man·​teau | \ pȯrt-ˈman-(ˌ)tō` <br />
 `[(2)]`: [The Holy Hand Grenade](https://www.youtube.com/watch?v=xOrgLj9lOwk) - Monty Python and the Holy Grail
-
 
 
 #### Credits
@@ -119,8 +115,7 @@ That was the omen... 🤩.
 	- [GitHub Light](https://github.com/primer/github-syntax-light)
 	- [Crisp Rainglow Collection](https://github.com/rainglow/vscode/)
 
-
-
+	
 #### References
 
 (Some links I found useful along the way):
@@ -131,7 +126,6 @@ That was the omen... 🤩.
 - [`pyproject.toml`](https://martin-thoma.com/pyproject-toml/)
 - [What the heck is `pyproject.toml`](https://snarky.ca/what-the-heck-is-pyproject-toml/)
 - [Jupyter Server Extension](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html) (Particularly useful in earlier version of this project in which fonts where handled as local resources)
-
 
 
 #### Acknowledgments
