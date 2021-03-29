@@ -1,0 +1,547 @@
+:root {
+    /* Jupyter Lab Integration (Light Theme) */
+    --jp-content-font-color1: var(--txbk-content-mono-color);
+    --jp-content-font-family: var(--txbk-content-font-family);
+    --jp-content-line-height: var(--txbk-content-line-height);
+    --jp-content-link-color: var(--link-color);
+    --jp-content-font-size: var(--txbk-content-font-size);
+
+    --jp-layout-color3: #efefef;
+
+    --jp-code-font-size: var(--txbk-code-font-size);
+    --jp-code-line-height: var(--txbk-ui-mono-line-height);
+    --jp-code-padding: 5px;
+    --jp-code-font-family-default: var(--txbk-code-font-family);
+    --jp-code-font-family: var(--jp-code-font-family-default);
+    --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
+    --jp-content-heading-font-weight: 500;
+    --jp-content-heading-line-height: 1;
+
+    --jp-cell-prompt-font-family: var(--txbk-code-font-family);
+
+    --jp-border-width: 0;
+    --jp-cell-editor-border-color: transparent;
+
+    --jp-layout-color0: var(--code-background-color);
+    --jp-cell-prompt-not-active-font-color: #aba9a9;
+
+    --jp-cell-editor-background: var(--code-background-color);
+    --jp-cell-editor-active-background: var(--code-background-color);
+    --jp-cell-editor-active-border-color: var(--cell-edit-border);
+
+}
+
+/* body class*/
+
+body[data-jp-theme-light="true"]:not(.jp-Notebook) {
+    font-family: var(--jp-ui-font-family);
+    background: var(--jp-layout-color3) !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#jp-main-content-panel {
+    top: 40px !important;
+}
+
+#jp-top-panel {
+    top: 5px !important;
+}
+
+#jp-menu-panel {
+    padding-top: 5px !important;
+}
+
+div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.lm-DockPanel-tabBar.jp-Activity {
+    top: 0 !important;
+}
+
+div.lm-Widget.p-Widget.jp-MainAreaWidget.jp-NotebookPanel.jp-Document.jp-Activity.lm-DockPanel-widget.p-DockPanel-widget {
+    top: 26px !important;
+}
+
+/* Left toolbar */
+/* FIX: force min-width to avoid toolbar to disappear */
+div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-child.p-BoxPanel-child {
+    min-width: 33px !important;
+}
+.jp-Notebook {
+    background-color: var(--background-color) !important;
+    font-weight: 300;
+    color: var(--txbk-ui-color);
+    font-size: var(--txbk-ui-font-size);
+}
+
+
+/* -------------------------------------------------
+    HTML Cells output generics
+    (overriding default JupyterLab theme settings)
+   -------------------------------------------------
+*/
+
+.jp-RenderedHTMLCommon :not(pre) > code {
+    background-color: transparent !important;
+    padding: 0 0 !important;
+}
+
+.jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code {
+    background-color: transparent !important;
+}
+
+
+/* ======================================
+    MARKDOWN CELLS DISPLAY MODE
+    (text_cell_render in Notebook HTML)
+   ======================================
+*/
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon {
+    font-family: var(--txbk-content-font-family) !important;
+    font-size: var(--txbk-content-font-size) !important;
+    color: var(--txbk-content-color) !important;
+    font-kerning: auto;
+    text-align: justify !important;
+    display: block;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon a {
+    color: var(--link-color) !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h1,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h2,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h3,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h4,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h5,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h6 {
+    font-family:  var(--txbk-content-font-family) !important;
+    font-style: normal !important;
+}
+
+/*  Font-sizes for Headers
+    ----------------------*/
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h1 {
+    font-size: 2.2em !important;
+    text-align: center !important;
+    padding-top:  3rem;
+    padding-bottom: 3rem;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h2 {
+    font-size: 1.9em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h3 {
+    font-size: 1.7em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h4 {
+    font-size: 1.5em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h5 {
+    font-size: 1.3em !important;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon h6 {
+    font-size: 1.1em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon code {
+    font-size: 1em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon code {
+    color: var(--txbk-content-mono-color);
+}
+
+
+/* Monospace Code - no code syntax highlight*/
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre {
+    /* hack: using code background colour here to allow for compatibility */
+    background-color: var(--code-background-color) !important;
+    font-family: var(--txbk-content-mono-font-family) !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p {
+    line-height: var(--txbk-content-line-height);
+    text-align: justify !important;
+}
+
+/* Monospace inline rendered markdown */
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p code {
+
+    /*Re-defining variables for Mono using Code Editor's settings*/
+    --txbk-content-mono-font-family: var(--txbk-code-font-family);
+    --txbk-content-mono-font-size: var(--txbk-code-font-size);
+
+    background-color: var(--txbk-content-mono-bgcolor) !important;
+    font-size: var(--txbk-content-mono-font-size) !important;
+    color: var(--txbk-content-mono-color);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p strong code {
+    font-weight: bold !important;
+    color: var(--txbk-content-mono-color);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p em code {
+    font-style: italic !important;
+    color: var(--txbk-content-mono-color);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre code {
+    padding: 1rem 1.5rem;
+    display: block;
+    color: var(--txbk-content-mono-color);
+    background-color: var(--txbk-content-mono-bgcolor) !important;
+    font-family: var(--txbk-content-mono-font-family);
+    font-size: var(--txbk-content-mono-font-size) !important;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote {
+    --txbk-ui-color: #6f6f6f !important;
+
+    margin: 2rem .2rem !important;
+    padding: .3rem .5rem !important;
+    border-left: .3rem solid #a7a7a7 !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote p {
+    padding: .2rem 1.5rem;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table {
+    margin-top: 25px;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table {
+    font-size: var(--txbk-content-font-size) !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow: auto;
+    break-inside: auto;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table thead {
+    display: table-header-group;
+    vertical-align: middle !important;
+    border-bottom: none !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table thead tr,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table thead tr td,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table tbody tr,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table tbody tr th,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table tbody tr td {
+    break-inside: avoid;
+    break-after: auto;
+    text-align: left !important;
+    vertical-align: middle !important;
+    padding: 0 !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon table tr th {
+    border-bottom-width: 0;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol {
+    position: relative;
+    display: block;
+    margin-bottom: 0 !important;
+    line-height: var(--txbk-content-line-height);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul {
+    list-style-type: disc;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li {
+    /*white-space: pre-wrap;*/
+    padding: .8rem !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > code {
+    font-size: .9em !important
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li a code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li a code {
+    font-size: .9em !important
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul {
+    list-style-type: circle !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ol,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ul,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ol {
+    padding-top: .5rem !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li {
+    padding: .5rem !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li code {
+    font-size: .9em !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li a code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li a code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li a code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li a code {
+    font-size: .9em !important;
+    color: var(--link-color);
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul ul {
+    list-style-type: square !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img:only-child,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img:only-child {
+    display: block;
+    margin: auto;
+    max-width: 40%;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img {
+    max-width: 40%;
+}
+
+/* Img MaxW classes */
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw10,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw10 {
+    max-width: 10% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw15,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw15 {
+    max-width: 15% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw20,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw20 {
+    max-width: 20% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw25,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw25 {
+    max-width: 25% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw30,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw30 {
+    max-width: 30% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw40,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw40 {
+    max-width: 40% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw50,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw50 {
+    max-width: 50% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw80,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw80 {
+    max-width: 80% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw85,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw85 {
+    max-width: 85% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw90,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw90 {
+    max-width: 90% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw100,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw100 {
+    max-width: 100% !important;
+}
+
+/* FIX Forcing monospace code to adhere with footnotes rules!*/
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p [id^='fn'] > code,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p [class^='fn'] > code {
+    font-size: 1em !important;
+}
+
+/* Code Cell Render (HTML output) */
+.jp-CodeCell .jp-RenderedHTMLCommon {
+    color: var(--code-text-color);
+}
+
+.jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p {
+    font-family: var(--txbk-code-font-family);
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p.nomono {
+    font-family: var(--txbk-content-font-family);
+}
+
+
+.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+    background: transparent;
+    border: none !important;
+    border-left: 0 !important;
+    border-right: 5px solid var(--cell-display-border) !important;
+
+}
+
+.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-MarkdownOutput.jp-RenderedHTMLCommon {
+    border-left: 0.1rem dotted lightgrey;
+}
+
+.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+    border-right: 5px solid var(--cell-edit-border) !important;
+}
+
+
+/* Code Cell Editor */
+.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active .jp-InputArea-editor {
+    box-shadow: none;
+    background-color: var(--jp-cell-editor-active-background);
+    border: none;
+}
+
+/*
+    Overlay with Shadow for Code Cell Selected !
+    ============================================
+*/
+/* Overlay limited to CodeCells */
+.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+    border: none;
+    background: transparent;
+    box-shadow: 0 6px 18px #aaa;
+    z-index: 10;
+    top: -10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 18px;
+    margin-bottom: 2px;
+}
+
+.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:before {
+    position: absolute;
+    display: none;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: calc(100% + 2px);
+    content: '';
+    background: none;
+}
+
+.jp-Notebook .jp-Cell .jp-Collapser {
+    display: none !important;
+}
+
+.jp-Notebook .jp-CodeCell .jp-InputPrompt {
+    color: var(--texbook-light-grey) !important;
+    font-style: normal !important;
+    font-size: 1.4rem;
+    opacity: 1 !important;
+    font-weight: normal;
+    padding-right: 7px;
+    padding-top: 8px;
+}
+
+.jp-OutputPrompt {
+    color: transparent !important;
+}
+
+.jp-Notebook .jp-CodeCell .jp-InputPrompt bdi,
+.jp-Notebook .jp-CodeCell .jp-OutputPrompt  bdi {
+    line-height: 0;
+    font-size:0;
+    color: transparent;
+    left: -10000px;
+    content: "\21E2";
+
+}
+
+.jp-Notebook.jp-mod-commandMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+    display: inline-block;
+    position: absolute;
+    content: "\279E";
+    font-size: 2.3rem;
+    top: 2px;
+    width: 10px;
+    left: 6px;
+    color: var(--cell-display-border);
+    font-weight: bold !important;
+}
+
+.jp-Notebook.jp-mod-editMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+    display: inline-block;
+    position: absolute;
+    content: "\279E";
+    font-size: 2.3rem;
+    top: 2px;
+    width: 10px;
+    left: 6px;
+    font-weight: bold !important;
+    color: var(--cell-edit-border);
+}
+
+/* Cell Output rendering (.output_area in Notebook HTML) */
+
+.jp-OutputArea-output.jp-RenderedText pre,
+.jp-OutputArea-output.jp-RenderedMarkdown p {
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.jp-OutputArea-output.jp-RenderedMarkdown p {
+    font-size: var(--txbk-content-font-size);
+}
+
+.jp-OutputArea-output.jp-RenderedMarkdown pre code {
+    font-size: var(--txbk-content-mono-font-size);
+    font-family: var(--txbk-content-mono-font-family);
+    color: var(--txbk-content-mono-color);
+}
+
+.jp-OutputArea-output.jp-RenderedText pre {
+    --txbk-content-mono-font-family: var(--txbk-code-font-family);
+    font-size: var(--txbk-code-font-size);
+    font-weight: normal;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+/* Standard Error */
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] {
+    background: none !important;
+}
