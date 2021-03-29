@@ -21,15 +21,16 @@ https://leriomaggio.github.io/texbook-jupyter-theme/#Code-Editor
 """
 
 from . import settings
+from . import __version__ as VERSION
 from IPython.core.magic import Magics
 from IPython.core.magic import magics_class
 from IPython.core.magic import line_magic
 from IPython.core.magic_arguments import argument
 from IPython.core.magic_arguments import magic_arguments
 from IPython.core.magic_arguments import parse_argstring
-from IPython.core.display import HTML
+from IPython.core.display import HTML, display
 from jinja2 import FileSystemLoader, Environment
-from typing import NamedTuple, Union
+from typing import NamedTuple
 
 
 # Using typing.NamedTuple rather than @dataclass for broader
@@ -42,7 +43,7 @@ class ThemeConfig(NamedTuple):
     md_mono_font: str
     md_mono_font_size: str
     nb_font_size: str
-    nb_line_height: Union[str, float]
+    nb_line_height: float
 
     @staticmethod
     def normalise_fontsize(value):
@@ -63,7 +64,7 @@ def create_config_from(args) -> ThemeConfig:
         args.code_mono_font_size,
     )
     md_mono_font, md_mono_font_size = args.md_mono_font, args.md_mono_font_size
-    nb_font_size, nb_line_height = args.nb_font_size, args.nb_line_height
+    nb_font_size, nb_line_height = args.nb_font_size, float(args.nb_line_height)
 
     code_mono_font_size = ThemeConfig.normalise_fontsize(code_mono_font_size)
     md_mono_font_size = ThemeConfig.normalise_fontsize(md_mono_font_size)
@@ -143,15 +144,15 @@ class TeXbookTheme(Magics):
     @argument(
         "-mdfs",
         "--md-fontsize",
-        help="Font size of Rendered Markdown monospace. Default: 16px",
-        default="16px",
+        help="Font size of Rendered Markdown monospace. Default: 17px",
+        default="17px",
         dest="md_mono_font_size",
     )
     @argument(
         "-nbfs",
         "--notebook-font-size",
-        help="Font size of Rendered Content in Notebook. Default: 19px",
-        default="19px",
+        help="Font size of Rendered Content in Notebook. Default: 17px",
+        default="17px",
         dest="nb_font_size",
     )
     @argument(
@@ -171,7 +172,10 @@ class TeXbookTheme(Magics):
         config = create_config_from(args)
         theme_css = self._load_texbook_theme_template(config)
         template = self.template_env.get_template(settings.TEXBOOK_HTML_TEMPLATE)
-        theme_style_tag = template.render(textbook_css=theme_css)
+        theme_style_tag = template.render(
+            version=VERSION,
+            textbook_css=theme_css,
+        )
 
         return HTML(theme_style_tag)
 
@@ -184,7 +188,9 @@ class TeXbookTheme(Magics):
             code_theme = cd_theme_file.read()
             t = self.template_env.get_template(settings.TEXBOOK_CSS)
             return t.render(
-                code_theme=code_theme, md_theme=md_theme, **config.as_dict()
+                code_theme=code_theme,
+                md_theme=md_theme,
+                **config.as_dict(),
             )
 
 
