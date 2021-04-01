@@ -826,12 +826,9 @@ div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] >
 */
 .drop {
     color: var(--drop-cap-color);
-    float: left;
     font-size: 75px;
     line-height: 60px;
     padding-top: 4px;
-    padding-right: 8px;
-    padding-left: 3px;
     margin-top: 0.2rem;
 }
 
