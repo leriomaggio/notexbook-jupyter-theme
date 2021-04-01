@@ -1,0 +1,69 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+The color palette is inspired by
+the default GitHub light theme
+Repo: https://github.com/primer/github-syntax-light
+*/
+
+:root {
+    /* Color Palette */
+    --ghl-dark-grey: #505050;
+    --ghl-grey: #b8b8b8;
+    --ghl-light-grey: #6a737d;
+    --ghl-lighter-grey: #e2e2e2;
+    --ghl-antrax: #24292e;
+    --ghl-white: #ffffff;
+    --ghl-red: #d73a49;
+    --ghl-orange: #e36209;
+    --ghl-dark-orange: #f14c00;
+    --ghl-purple: #6f42c1;
+    --ghl-light-yellow: #fff9eb;
+    --ghl-yellow: #ffea7f;
+    --ghl-blue: #005cc5;
+    --ghl-dark-blue: #032f62;
+    --ghl-green: #22863a;
+
+    /* Editor Theme */
+    --ghl-code-background-color: var(--ghl-white);
+    --ghl-gutter-background: var(--ghl-white);
+    --ghl-selection-background-color: var(--ghl-light-yellow);
+    --ghl-line-numbers: var(--ghl-grey);
+    --ghl-cursor: var(--ghl-dark-grey);
+    --ghl-bracket: var(--ghl-light-grey);
+    --ghl-matching-bracket: var(--ghl-dark-orange);
+    --ghl-code-text-color: var(--ghl-antrax);
+    --ghl-keywords: var(--ghl-red);
+    --ghl-types: var(--ghl-red);
+    --ghl-variables: var(--ghl-code-text-color);
+    --ghl-variables2: var(--ghl-blue);
+    --ghl-def: var(--ghl-purple);
+    --ghl-property: var(--ghl-code-text-color);
+    --ghl-meta: var(--ghl-purple);
+    --ghl-builtin: var(--ghl-yellow);
+    --ghl-attribute: var(--ghl-code-text-color);
+    --ghl-strings: var(--ghl-dark-blue);
+    --ghl-strings2: var(--ghl-light-grey);
+    --ghl-comments: var(--ghl-light-grey);
+    --ghl-operator: var(--ghl-blue);
+    --ghl-numbers: var(--ghl-blue);
+    /* Dataframe */
+    --ghl-dataframe: var(--ghl-code-text-color);
+    --ghl-df-bg: var(--ghl-white);
+    --ghl-df-thead: var(--ghl-blue);
+    --ghl-df-thead-border: var(--ghl-dark-blue);
+    --ghl-df-tr-hover: var(--ghl-selection-background-color);
+    --ghl-df-border: var(--ghl-white);
+    --ghl-df-border-right: var(--ghl-grey);
+    --ghl-df-th-bg: var(--ghl-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--ghl-red);
+    --ansi-green: var(--ghl-green);
+    --ansi-green-intense: var(--ghl-dark-grey);
+    --ansi-cyan: var(--ghl-orange);
+    --ansi-blue: var(--ghl-blue);
+}

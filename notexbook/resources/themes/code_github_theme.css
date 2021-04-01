@@ -6,64 +6,62 @@ License: Apache License 2.0
  ======================================================
 
 The color palette is inspired by
-the default GitHub light theme
-Repo: https://github.com/primer/github-syntax-light
+the **new** GitHub Code Editor theme
 */
 
 :root {
     /* Color Palette */
-    --gh-dark-grey: #505050;
-    --gh-grey: #b8b8b8;
-    --gh-light-grey: #6a737d;
-    --gh-lighter-grey: #e2e2e2;
-    --gh-antrax: #24292e;
-    --gh-white: #ffffff;
-    --gh-red: #d73a49;
-    --gh-orange: #e36209;
-    --gh-dark-orange: #f14c00;
-    --gh-purple: #6f42c1;
-    --gh-light-yellow: #fff9eb;
-    --gh-yellow: #ffea7f;
-    --gh-blue: #005cc5;
-    --gh-dark-blue: #032f62;
-    --gh-green: #22863a;
+    --gh-white: #fafafa;
+    --gh-red: #d65b67;
+    --gh-orange: #df7b41;
+    --gh-yellow: #f5e17b;
+    --gh-blue: #0259be;
+    --gh-dark-blue: #053060;
+    --gh-black: #24292e;
+    --gh-azure: #c0d8f4;
+    --gh-grey: #868c94;
+    --gh-light-grey: #b3b4b6;
+    --gh-purple: #724abd;
+
 
     /* Editor Theme */
-    --gh-code-background-color: var(--gh-white);
-    --gh-gutter-background: var(--gh-white);
-    --gh-selection-background-color: var(--gh-light-yellow);
-    --gh-line-numbers: var(--gh-grey);
-    --gh-cursor: var(--gh-dark-grey);
-    --gh-bracket: var(--gh-light-grey);
-    --gh-matching-bracket: var(--gh-dark-orange);
-    --gh-code-text-color: var(--gh-antrax);
-    --gh-keywords: var(--gh-red);
-    --gh-types: var(--gh-red);
-    --gh-variables: var(--gh-code-text-color);
-    --gh-variables2: var(--gh-blue);
-    --gh-def: var(--gh-purple);
-    --gh-property: var(--gh-code-text-color);
-    --gh-meta: var(--gh-purple);
-    --gh-builtin: var(--gh-yellow);
-    --gh-attribute: var(--gh-code-text-color);
-    --gh-strings: var(--gh-dark-blue);
-    --gh-strings2: var(--gh-light-grey);
-    --gh-comments: var(--gh-light-grey);
-    --gh-operator: var(--gh-blue);
-    --gh-numbers: var(--gh-blue);
+    --code-background-color: var(--gh-white);
+    --gutter-background: var(--gh-white);
+    --selection-background-color: var(--gh-azure);
+    --line-numbers: var(--gh-light-grey);
+    --cursor: var(--gh-black);
+    --bracket: var(--gh-black);
+    --matching-bracket: var(--gh-dark-blue);
+    --code-text-color: var(--gh-black);
+    --keywords: var(--gh-red);
+    --types: var(--gh-orange);
+    --variables: var(--code-text-color);
+    --variables2: var(--gh-blue);
+    --def: var(--gh-purple);
+    --property: var(--gh-purple);
+    --meta: var(--gh-purple);
+    --builtin: var(--gh-purple);
+    --attribute: var(--code-text-color);
+    --strings: var(--gh-dark-blue);
+    --strings2: var(--gh-dark-blue);
+    --comments: var(--gh-light-grey);
+    --operator: var(--gh-blue);
+    --numbers: var(--gh-blue);
+
+    /*TODO: To be completed!*/
     /* Dataframe */
-    --gh-dataframe: var(--gh-code-text-color);
-    --gh-df-bg: var(--gh-white);
-    --gh-df-thead: var(--gh-blue);
-    --gh-df-thead-border: var(--gh-dark-blue);
-    --gh-df-tr-hover: var(--gh-selection-background-color);
-    --gh-df-border: var(--gh-white);
-    --gh-df-border-right: var(--gh-grey);
-    --gh-df-th-bg: var(--gh-white);
+    --dataframe: var(--code-text-color);
+    --df-bg: var(--gh-white);
+    --df-thead: var(--gh-blue);
+    --df-thead-border: var(--gh-dark-blue);
+    --df-tr-hover: var(--selection-background-color);
+    --df-border: var(--gh-white);
+    --df-border-right: var(--gh-grey);
+    --df-th-bg: var(--gh-white);
     /*ANSI Colours*/
     --ansi-red: var(--gh-red);
-    --ansi-green: var(--gh-green);
-    --ansi-green-intense: var(--gh-dark-grey);
-    --ansi-cyan: var(--gh-orange);
+    --ansi-green: var(--gh-dark-blue);
+    --ansi-green-intense: var(--gh-grey);
+    --ansi-cyan: var(--gh-purple);
     --ansi-blue: var(--gh-blue);
 }
