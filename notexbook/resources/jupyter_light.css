@@ -359,14 +359,49 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
     max-width: 30% !important;
 }
 
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw35,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw35 {
+    max-width: 35% !important;
+}
+
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw40,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw40 {
     max-width: 40% !important;
 }
 
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw45,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw45 {
+    max-width: 45% !important;
+}
+
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw50,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw50 {
     max-width: 50% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw55,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw55 {
+    max-width: 55% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw60,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw60 {
+    max-width: 60% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw65,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw65 {
+    max-width: 65% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw70,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw70 {
+    max-width: 70% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw75,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw75 {
+    max-width: 75% !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw80,
@@ -382,6 +417,11 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw90,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw90 {
     max-width: 90% !important;
+}
+
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw95,
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p > img.maxw95 {
+    max-width: 95% !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon img.maxw100,

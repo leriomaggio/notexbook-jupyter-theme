@@ -913,14 +913,49 @@ div.text_cell_render p > img.maxw30 {
     max-width: 30% !important;
 }
 
+div.text_cell_render img.maxw35,
+div.text_cell_render p > img.maxw35 {
+    max-width: 35% !important;
+}
+
 div.text_cell_render img.maxw40,
 div.text_cell_render p > img.maxw40 {
     max-width: 40% !important;
 }
 
+div.text_cell_render img.maxw45,
+div.text_cell_render p > img.maxw45 {
+    max-width: 45% !important;
+}
+
 div.text_cell_render img.maxw50,
 div.text_cell_render p > img.maxw50 {
     max-width: 50% !important;
+}
+
+div.text_cell_render img.maxw55,
+div.text_cell_render p > img.maxw55 {
+    max-width: 55% !important;
+}
+
+div.text_cell_render img.maxw60,
+div.text_cell_render p > img.maxw60 {
+    max-width: 60% !important;
+}
+
+div.text_cell_render img.maxw65,
+div.text_cell_render p > img.maxw65 {
+    max-width: 65% !important;
+}
+
+div.text_cell_render img.maxw70,
+div.text_cell_render p > img.maxw70 {
+    max-width: 70% !important;
+}
+
+div.text_cell_render img.maxw75,
+div.text_cell_render p > img.maxw75 {
+    max-width: 75% !important;
 }
 
 div.text_cell_render img.maxw80,
@@ -936,6 +971,11 @@ div.text_cell_render p > img.maxw85 {
 div.text_cell_render img.maxw90,
 div.text_cell_render p > img.maxw90 {
     max-width: 90% !important;
+}
+
+div.text_cell_render img.maxw95,
+div.text_cell_render p > img.maxw95 {
+    max-width: 95% !important;
 }
 
 div.text_cell_render img.maxw100,
