@@ -3,6 +3,10 @@
    ======================================================
 */
 
+/*TODO:
+   FIX MULTI-SELECTION
+   */
+
 :root {
     /* Base colors */
     --texbook-red: #d43133;
@@ -242,14 +246,6 @@ div#site {
     padding: 0;
 }
 
-.prompt {
-    font-family: var(--txbk-code-font-family) !important;
-    font-style: normal;
-    font-size: 1rem;
-    text-align: right;
-    line-height: 1rem;
-}
-
 div#notebook {
     border-top: none;
     font-size: 1rem;
@@ -311,7 +307,7 @@ div.cell {
 }
 
 div.cell .inner_cell {
-    padding-left: 5px;
+    /*padding-left: 5px;*/
     border-right: 5px solid var(--background-color);
     border-left:  0.1rem dotted var(--background-color);
 }
@@ -355,6 +351,15 @@ div.code_cell.selected, div.code_cell.selected.jupyter-soft-selected {
     top: -10px;
 }
 
+div.prompt {
+    font-family: var(--txbk-code-font-family) !important;
+    font-style: normal;
+    font-size: 1rem;
+    text-align: right;
+    line-height: 1rem;
+    min-width: 9ex;
+}
+
 div.cell.selected:before, div.cell.selected.jupyter-soft-selected:before {
     position: absolute;
     display: none;
@@ -372,10 +377,8 @@ div.cell.selected div.input:before {
     content: "\279E";
     font-size: 1.8rem;
     top: 22px;
-    /*top: 40px;*/
     width: 10px;
-    left: 45px;
-    /*left: 15px;*/
+    left: 5px;
     color: var(--cell-display-border);
     font-weight: bold !important;
 }
