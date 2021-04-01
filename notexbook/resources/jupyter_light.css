@@ -41,6 +41,11 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     overflow: hidden;
 }
 
+/* =====================
+  Jupyter Lab UI
+  ======================
+*/
+
 #jp-main-content-panel {
     top: 40px !important;
 }
@@ -53,18 +58,17 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     padding-top: 5px !important;
 }
 
-div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.lm-DockPanel-tabBar.jp-Activity {
+.lm-Widget.p-Widget.lm-TabBar.p-TabBar.lm-DockPanel-tabBar.jp-Activity {
     top: 0 !important;
 }
 
-div.lm-Widget.p-Widget.jp-MainAreaWidget.jp-NotebookPanel.jp-Document.jp-Activity.lm-DockPanel-widget.p-DockPanel-widget {
+/*.lm-DockPanel-tabBar[data-orientation='horizontal'] {*/
+/*    min-height: calc( var(--jp-private-horizontal-tab-height) + 2 * var(--jp-border-width) ) !important;*/
+/*}*/
+
+.lm-Widget.p-Widget.jp-MainAreaWidget.jp-NotebookPanel.jp-Document.jp-Activity.lm-DockPanel-widget.p-DockPanel-widget {
     top: 26px !important;
 }
-
-/* =====================
-  Jupyter Lab UI
-  ======================
-*/
 
 /*
     Left toolbar:
