@@ -123,43 +123,43 @@ class TeXbookTheme(Magics):
     @argument(
         "-cdf",
         "--code-font",
-        help="Font family used in Code Editor. Default: Fira Code",
+        help="Font family used in Code Editor. (Default: Fira Code)",
         default="Fira Code",
         dest="code_mono_font",
     )
     @argument(
         "-mdf",
         "--md-font",
-        help="Font family used in Markdown Editor. Default: Hack",
+        help="Font family used in Markdown Editor. (Default: Hack)",
         default="Hack",
         dest="md_mono_font",
     )
     @argument(
-        "-cdfs",
-        "--code-fontsize",
-        help="Font size used in Code and Markdown Editor. Default: 16px",
+        "-edfs",
+        "--editor-fontsize",
+        help="Font size used in Code and Markdown Editors. (Default: 16px)",
         default="16px",
         dest="code_mono_font_size",
     )
     @argument(
-        "-mdfs",
-        "--md-fontsize",
-        help="Font size of Rendered Markdown monospace. Default: 17px",
+        "-mofs",
+        "--mono-fontsize",
+        help="Font size of rendered (Markdown) monospace. (Default: 17px)",
         default="17px",
         dest="md_mono_font_size",
     )
     @argument(
-        "-nbfs",
-        "--notebook-font-size",
-        help="Font size of Rendered Content in Notebook. Default: 17px",
+        "-fs",
+        "--font-size",
+        help="Font size of Rendered (Markdown) notebook cell content. (Default: 17px)",
         default="17px",
         dest="nb_font_size",
     )
     @argument(
         "-lh",
         "--linespread",
-        help="Line height of Notebook Content. Default: 1.4",
-        default="1.4",
+        help="Line height. (Default: 1.4)",
+        default=1.4,
         dest="nb_line_height",
     )
     @line_magic
