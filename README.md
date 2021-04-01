@@ -2,108 +2,119 @@
 
 ## The Jupyter notebook theme for ![LaTeX](https://render.githubusercontent.com/render/math?math=\LaTeX) lovers ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit)
 
-The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme aims at combining the flexibility and interactivity of Jupyter notebooks with the unique elegance and sobriety of a `LaTeX`-generated article.  The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> project wishes to pay a tribute of gratitude (in the name, and in the content) to two of the technologies I do use and love the most as a researcher and a data scientist.
+The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme aims at combining the flexibility and interactivity of Jupyter notebooks with the unique elegance and sobriety of a `LaTeX` article.  
 
-### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme in a Nutshell
+### `noTeXbook` in a Nutshell
 
 - *Computer Modern* fonts for Markdown typesetting;
-	- *Computer Modern Typesetting* for Markdown Mono	
 - `Fira Code` (_open source_) font as the default `monospace` for the **Code** editor (with ligatures support);
 - `Hack` (_open source_) font as the default `monospace` font for **Markdown** editor (slightly better for text writing, _ed._);
-- Colour Syntax highlight themes for Code and Markdown editors based on Material Design colour scheme.
-    - Multiple Editor Themes supported: easy to change and customise (just a few CSS variables to do the trick!)
-- Special Output formatting for `stderr` and `pandas.DataFrame`
-- Extra `ad-hoc` CSS classes for extra formatting use cases (e.g. _footnotes_, _dropcap_)
-  
+- Several Colour Syntax highlighting themes for Code and Markdown editors;
+- Extra `CSS` classes for additional LaTeX-ish formatting use cases (e.g. _footnotes_, _dropcap_);
+- **Full** support for Jupyter Notebooks and JupyterLab (version `2.0x`).
 
 ### Sneak Peek?
 
 Here is a [**Preview**](https://leriomaggio.github.io/notexbook-jupyter-theme/) of what [a]   `noTeXbook` looks like!
 
-## Install <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> Theme
+### Setup `noTeXbook` Theme
 
-<a name="magic"></a>
+The  `noTeXbook` theme is available on [PyPi](https://pypi.org/project/notexbook-theme/) as a Jupyter notebook (Python) extension:
 
-### `notexbook-theme` and `%texify` 🔮
-
-The `notexbook-theme` package (on [PyPi](https://pypi.org/project/notexbook-theme/)) provides the `noTeXbook` theme as an easy-to-integrate IPython magic (i.e. `%texify`), activated via Jupyter notebook (Python) extension, `notexbook`. So, to use the `noTeXbook` theme in a notebook it will be just a matter of (1) loading the extension; (2) calling the `%texify` IPython magic.
-
-The  `%texify` custom IPython magic injects the `noTeXbook` style directly into notebooks, which results the following three unique feature: 
-
-1.  **easy-to-use**: the theme is enabled only _on demand_ in each selected notebook, without having to change the default style;
-
-2.  **portable**: the theme is injected directly into the notebook as the output of a single cell. Therefore, when *shared*, the notebook will continue to keep the `noTeXbook` style, without having to download nor install anything: just *trust* the notebook! Similarly, *disabling the theme* becomes as easy as *deleting a cell*.
-3.  **customisable** (via `magic` line arguments). All supported customisations are listed in the next [section ![arrow](https://render.githubusercontent.com/render/math?math=\Downarrow)](#magicargs) 
-
-To install the `notexbook-theme` from PyPi:
-
-```shell script
-pip install notexbook-theme
+```shell
+$ pip install notexbook-theme
 ```
 
-Once installed, just `load` the `notexbook` extension into a notebook cell:
+Once installed, just `load` the `notexbook` extension into a Jupyter notebook cell:
 
 ```
 %load_ext notexbook
 ```
 
-and activate the custom IPython magic:
+The theme can be activated via the `%texify` IPython magic 🔮:
 
 ```
 %texify  # default theme settings will be used
 ```
 
-<a name="magicargs"></a>
+#### `%texify` IPython magic
 
-#### Customising theme settings
+The  `%texify` IPython magic injects the `noTeXbook` CSS theme directly into the current  notebook, which results into the following three unique features: 
 
-The current version of the theme allows to customise the following settings:
+1.  **easy-to-use**: the theme is enabled  _on demand_ only on selected notebooks, without having to [change](https://jupyter-notebook.readthedocs.io/en/stable/security.html?highlight=custom.css#javascript-and-css-in-markdown-cells) the default Jupyter _main_ theme.
 
-- `--code-font` (`-cdf`): the font family used in Code editor (default: `Fira Code`)
-- `--md-font` (`-mdf`): the font family used in Markdown editor (default `Hack`)
-- `--code-fontsize` (`-cdfs`): the font size used in Code and Markdown editor (default `16px`)
-- `--md-fontsize` (`-mdfs`): the font size of *rendered* Markdown monospace (default `16px`)
-- `--fontsize` (`-nbfs`):  (`LaTeX` legacy) font size of *rendered* Markdown text (default: `19px`)
-- `--linespread` (`-lh`): (`LaTeX` legacy) line height of *rendered* Markdown text (default `1.4`)
-- `--code-theme` (`-cdth`):  colour theme for Code editor (default: `Material Design`)
-	- Other available theme choices: `github`, `crisp` 	
-- `--md-theme` (`-mdth`): colour theme for Markdown editor (default `Material Design`)
-	- Other available theme choices: `typora`
+2.  **portable**: the theme is injected directly into the notebook as output of a single cell. Therefore, when *shared* or *exported* (e.g. in HTML or PDF via `webpdf`), the notebook will continue to keep the `noTeXbook` style. Similarly, *disabling the theme* becomes as easy as *clearing* the ouput of a single cell.
 
-**Example**: 
+3.  **customisable**: the theme allows for extra customisation (e.g. font size or **editor themes**) provided as `magic` line arguments.
 
-Let's say you do like `noTeXbook` theme, and you want to use it in your notebooks. However, you would prefer using the favourite monospace font you are normally using in your code editor (e.g. `Monaco`). In addition, you also want to slightly reduce the notebook default `font-size` (`18px`) as well as the `line height` (`1.3`):
+#### Theme settings
 
-```shell
-%texify --code-font Monaco --linespread 1.3 -nbfs 18
+The theme supports the following customisation settings, injected via `magic` line argument:
+
 ```
+-cdth <{material,github,github2,crisp}>, --code-theme <{material,github,github2,crisp}>
+                        Colour Theme for Code Editor
+  -mdth <{material,typora}>, --md-theme <{material,typora}>
+                        Colour Theme for Markdown Editor
+  
+  -cdfs CODE_MONO_FONT_SIZE, --code-fontsize CODE_MONO_FONT_SIZE
+                        Font size used in Code and Markdown Editor. Default: 16px
+  -mdfs MD_MONO_FONT_SIZE, --md-fontsize MD_MONO_FONT_SIZE
+                        Font size of Rendered Markdown monospace. Default: 17px
+  -nbfs NB_FONT_SIZE, --notebook-font-size NB_FONT_SIZE
+                        Font size of Rendered Content in Notebook. Default: 17px
+  -lh NB_LINE_HEIGHT, --linespread NB_LINE_HEIGHT
+                        Line height of Notebook Content. Default: 1.4
+
+```
+
+- `--code-font` (`-cdf`):  Font family used in Code Editor. (Default: `Fira Code`)
+- `--md-font` (`-mdf`): Font family used in Markdown Editor. (Default: `Hack`)
+- `--editor-fontsize` (`-edfs`): Font size used in Code and Markdown Editors. (Default: `16px`)
+- `--mono-fontsize` (`-mofs`): Font size of rendered (Markdown) monospace. (Default: `17px`)
+- `--fontsize` (`-fs`): Font size of Rendered (Markdown) notebook cell content. (Default: `17px`)
+- `--linespread` (`-lh`): Line height. (Default: `1.4`)
+- `--code-theme` (`-cdth`):  Colour Theme for Code Editor (default: _Material Design_)
+	- Options: `material`,`github`,`github2`,`crisp`	
+- `--md-theme` (`-mdth`): Colour Theme for Markdown Editor (default _Material Design_)
+	- Options: `material`, `typora`
+
+**Examples**: 
+
+```
+%texify --code-font Monaco --linespread 1.3 -fs 18
+```
+
+In these settings: (1) the `Monaco` font (if available locally) will be used for code editor; (2) notebook font size will be `18px` and the line height will be `1.3`.
+
+```
+%texify --code-theme github2
+```
+In these settings, the **brand new** `github2` Code Editor theme will be used instead of the default  _Material Design_. The `github2` theme is inspired by the current code theme on GitHub.
 
 To see the **full** list of configuration options :
 
-```shell
+```
 %texify?
 ```
 
-### Project Links
-
-- [PyPi package](https://pypi.org/project/notexbook-theme/)
-- [Official GitHub Repo](https://github.com/leriomaggio/notexbook-jupyter-theme/)
-- [Documentation and GitHub Page](https://leriomaggio.github.io/notexbook-jupyter-theme/)
-- [Project Board and Issue Tracker](https://github.com/leriomaggio/notexbook-jupyter-theme/projects/1)
-
-
 ### <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="15%" /> shall by *thy* name
 
-When I had to think of a name for this project, I aimed almost immediately at finding a single word that could convey the idea of integration of the`LaTeX`-__inspired_  theme for notebooks I had in mind. So, <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" />, a unique [portmanteau](https://www.merriam-webster.com/dictionary/portmanteau)[(1)]( "Pronunciation") that blends together the words **noTe**<del>X</del>**book** (_no further explanation needed, ed._), and <del>no</del>**TeXbook**, the name of [Donald E. Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)'s [book](http://www.ctex.org/documents/shredder/src/texbook.pdf) on `TeX`.
+When I had to think to a name for this project, I aimed almost immediately at finding a single word that would convey the idea of integration between `LaTeX` and notebooks I had in mind. So <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> seemed quite an obvious choice. Moreover, this name itself is also a unique [portmanteau](https://www.merriam-webster.com/dictionary/portmanteau) (`port·man·teau | \ pȯrt-ˈman-(ˌ)tō`) that blends together the words **noTe**<del>X</del>**book**, and <del>no</del>**TeXbook**, the name of [Donald E. Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)'s [book](http://www.ctex.org/documents/shredder/src/texbook.pdf) on `TeX`.
 
 That was the omen... 🤩.
 
-> One!... Two!... Five! [(2)]("Monty Python and the Holy Grail")
+> One!... Two!... Five! 
 
----
-`[(1)]`: `port·​man·​teau | \ pȯrt-ˈman-(ˌ)tō` <br />
-`[(2)]`: [The Holy Hand Grenade](https://www.youtube.com/watch?v=xOrgLj9lOwk) - Monty Python and the Holy Grail
+(_from_:  [The Holy Hand Grenade](https://www.youtube.com/watch?v=xOrgLj9lOwk) - Monty Python and the Holy Grail)
 
+In fact, the <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> project wishes to pay a tribute of gratitude (in the name, and in the content) to two of the technologies I do use and love the most as a researcher and as a data scientist.
+
+### Project Links
+
+-   📦  [PyPi package](https://pypi.org/project/notexbook-theme/)
+- 🖌 [Official GitHub Repo](https://github.com/leriomaggio/notexbook-jupyter-theme/)
+- 🚀 [Documentation and GitHub Page](https://leriomaggio.github.io/notexbook-jupyter-theme/)
 
 #### Credits
 
@@ -114,7 +125,6 @@ That was the omen... 🤩.
 	- [Material Design Light](https://github.com/JonaDuran/Material-Light-Theme/)
 	- [GitHub Light](https://github.com/primer/github-syntax-light)
 	- [Crisp Rainglow Collection](https://github.com/rainglow/vscode/)
-
 	
 #### References
 
@@ -127,12 +137,9 @@ That was the omen... 🤩.
 - [What the heck is `pyproject.toml`](https://snarky.ca/what-the-heck-is-pyproject-toml/)
 - [Jupyter Server Extension](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html) (Particularly useful in earlier version of this project in which fonts where handled as local resources)
 
-
 #### Acknowledgments
 
 Special thanks to [cdesio](https://github.com/cdesio), [ninadicara](https://github.com/ninadicara), and [alanderex](https://github.com/alanderex) for testing earlier versions of the theme!
-
-
 
 
 
