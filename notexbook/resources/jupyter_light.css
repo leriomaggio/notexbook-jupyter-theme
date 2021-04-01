@@ -61,11 +61,21 @@ div.lm-Widget.p-Widget.jp-MainAreaWidget.jp-NotebookPanel.jp-Document.jp-Activit
     top: 26px !important;
 }
 
-/* Left toolbar */
-/* FIX: force min-width to avoid toolbar to disappear */
+/* =====================
+  Jupyter Lab UI
+  ======================
+*/
+
+/*
+    Left toolbar:
+    FIX: force min-width to avoid toolbar to disappear
+*/
 div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-child.p-BoxPanel-child {
     min-width: 33px !important;
 }
+
+/* TODO: Check why tab bar disappears */
+
 .jp-Notebook {
     background-color: var(--background-color) !important;
     font-weight: 300;
@@ -442,12 +452,13 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 
 .jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p {
     font-family: var(--txbk-code-font-family);
-    font-size: 1.3rem;
+    font-size: 1.4em;
     font-weight: normal;
 }
 
 .jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p.nomono {
     font-family: var(--txbk-content-font-family);
+    font-size: 1em;
 }
 
 
