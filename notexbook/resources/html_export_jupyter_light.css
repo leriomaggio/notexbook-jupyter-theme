@@ -8,8 +8,8 @@ License: Apache License 2.0
    ================================ */
 
 body.jp-Notebook * {
-    --txbk-content-font-size: 12px !important;
-    --txbk-code-font-size: 11px !important;
+    --txbk-content-font-size: 14px !important;
+    --txbk-code-font-size: 13px !important;
 }
 
 body.jp-Notebook .jp-CodeCell .jp-InputPrompt {
@@ -136,6 +136,11 @@ body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdow
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput  p em code {
     font-style: italic !important;
     color: var(--txbk-content-mono-color);
+}
+
+body.jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p.nomono {
+    font-family: var(--txbk-content-font-family);
+    font-size: 1em;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput  pre code {
@@ -277,97 +282,97 @@ body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdow
 /* Img MaxW classes */
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput  img.maxw10,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput  p > img.maxw10 {
-    max-width: 10% !important;
+    max-width: 5% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw15,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw15 {
-    max-width: 15% !important;
+    max-width: 5% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw20,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw20 {
-    max-width: 20% !important;
+    max-width: 10% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw25,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw25 {
-    max-width: 25% !important;
+    max-width: 15% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw30,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw30 {
-    max-width: 30% !important;
+    max-width: 20% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw35,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw35 {
-    max-width: 35% !important;
+    max-width: 25% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw40,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw40 {
-    max-width: 40% !important;
+    max-width: 30% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw45,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw45 {
-    max-width: 45% !important;
+    max-width: 35% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw50,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw50 {
-    max-width: 50% !important;
+    max-width: 40% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw55,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw55 {
-    max-width: 55% !important;
+    max-width: 45% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw60,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw60 {
-    max-width: 60% !important;
+    max-width: 50% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw65,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw65 {
-    max-width: 65% !important;
+    max-width: 55% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw70,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw70 {
-    max-width: 70% !important;
+    max-width: 60% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw75,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw75 {
-    max-width: 75% !important;
+    max-width: 65% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw80,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw80 {
-    max-width: 80% !important;
+    max-width: 70% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw85,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw85 {
-    max-width: 85% !important;
+    max-width: 75% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw90,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw90 {
-    max-width: 90% !important;
+    max-width: 80% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw95,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw95 {
-    max-width: 95% !important;
+    max-width: 85% !important;
 }
 
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput img.maxw100,
 body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdown.jp-MarkdownOutput p > img.maxw100 {
-    max-width: 100% !important;
+    max-width: 90% !important;
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
