@@ -449,7 +449,7 @@ div.output_html {
 
 
 div.output_html {
-    font-size: 1.3rem;
+    font-size: 1.4em;
     font-weight: normal;
     font-family: var(--txbk-code-font-family);
 }
