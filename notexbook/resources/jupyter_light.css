@@ -1,33 +1,33 @@
 :root {
     /* Jupyter Lab Integration (Light Theme) */
-    --jp-content-font-color1: var(--txbk-content-mono-color);
-    --jp-content-font-family: var(--txbk-content-font-family);
-    --jp-content-line-height: var(--txbk-content-line-height);
-    --jp-content-link-color: var(--link-color);
-    --jp-content-font-size: var(--txbk-content-font-size);
+    /*--jp-content-font-color1: var(--txbk-content-mono-color);*/
+    /*--jp-content-font-family: var(--txbk-content-font-family);*/
+    /*--jp-content-line-height: var(--txbk-content-line-height);*/
+    /*--jp-content-link-color: var(--link-color);*/
+    /*--jp-content-font-size: var(--txbk-content-font-size);*/
 
-    --jp-layout-color3: #efefef;
+    /*--jp-layout-color3: #efefef;*/
 
-    --jp-code-font-size: var(--txbk-code-font-size);
-    --jp-code-line-height: var(--txbk-ui-mono-line-height);
-    --jp-code-padding: 5px;
-    --jp-code-font-family-default: var(--txbk-code-font-family);
-    --jp-code-font-family: var(--jp-code-font-family-default);
-    --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
-    --jp-content-heading-font-weight: 500;
-    --jp-content-heading-line-height: 1;
+    /*--jp-code-font-size: var(--txbk-code-font-size);*/
+    /*--jp-code-line-height: var(--txbk-ui-mono-line-height);*/
+    /*--jp-code-padding: 5px;*/
+    /*--jp-code-font-family-default: var(--txbk-code-font-family);*/
+    /*--jp-code-font-family: var(--jp-code-font-family-default);*/
+    /*--jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);*/
+    /*--jp-content-heading-font-weight: 500;*/
+    /*--jp-content-heading-line-height: 1;*/
 
-    --jp-cell-prompt-font-family: var(--txbk-code-font-family);
+    /*--jp-cell-prompt-font-family: var(--txbk-code-font-family);*/
 
-    --jp-border-width: 0;
-    --jp-cell-editor-border-color: transparent;
+    /*--jp-border-width: 0;*/
+    /*--jp-cell-editor-border-color: transparent;*/
 
-    --jp-layout-color0: var(--code-background-color);
-    --jp-cell-prompt-not-active-font-color: #aba9a9;
+    /*--jp-layout-color0: var(--code-background-color);*/
+    /*--jp-cell-prompt-not-active-font-color: #aba9a9;*/
 
-    --jp-cell-editor-background: var(--code-background-color);
-    --jp-cell-editor-active-background: var(--code-background-color);
-    --jp-cell-editor-active-border-color: var(--cell-edit-border);
+    /*--jp-cell-editor-background: var(--code-background-color);*/
+    /*--jp-cell-editor-active-background: var(--code-background-color);*/
+    /*--jp-cell-editor-active-border-color: var(--cell-edit-border);*/
 
 }
 
