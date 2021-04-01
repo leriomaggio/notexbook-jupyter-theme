@@ -137,22 +137,22 @@ class TeXbookTheme(Magics):
     @argument(
         "-edfs",
         "--editor-fontsize",
-        help="Font size used in Code and Markdown Editors. (Default: 16px)",
-        default="16px",
+        help="Font size used in Code and Markdown Editors. (Default: 14px)",
+        default="14px",
         dest="code_mono_font_size",
     )
     @argument(
         "-mofs",
         "--mono-fontsize",
-        help="Font size of rendered (Markdown) monospace. (Default: 17px)",
-        default="17px",
+        help="Font size of rendered (Markdown) monospace. (Default: 16px)",
+        default="16px",
         dest="md_mono_font_size",
     )
     @argument(
         "-fs",
-        "--font-size",
-        help="Font size of Rendered (Markdown) notebook cell content. (Default: 17px)",
-        default="17px",
+        "--fontsize",
+        help="Font size of Rendered (Markdown) notebook cell content. (Default: 16px)",
+        default="16px",
         dest="nb_font_size",
     )
     @argument(
