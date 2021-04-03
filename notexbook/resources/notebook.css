@@ -31,6 +31,13 @@
     --txbk-ui-mono-font-size: 15px;
     --txbk-ui-mono-line-height: 1.4;
 
+    /* Cells */
+    --txbk-cell-selected-border-left-color: lightgrey;
+    --txbk-cell-border-color: var(--background-color);
+    --txbk-multiselect-bgcolor: var(--background-color);
+    --txbk-cell-display-border-color: #009489;
+    --txbk-cell-edit-border-color: #d43133;
+
     /* Content Formatting */
     --txbk-content-font-family: "CMU Serif", "Times New Roman", serif;
     --txbk-content-font-size: var(--template-txbk-content-font-size);
@@ -60,9 +67,6 @@
     --btn-warning: #D14187;
     --btn-danger: #d43133;
     --running-notebook: #009489;
-
-    --cell-display-border: #009489;
-    --cell-edit-border: #d43133;
 }
 
 html {
@@ -301,54 +305,54 @@ div#notebook {
 */
 
 div.cell {
-    padding: 12px 0 5px 0 !important;
     right: 2px;
-    border:  none !important;
+    border:  none;
+    margin-top: 5px;
+}
+
+div.cell.selected {
+    /* Reset all - ready for customisation */
+    border-radius: 0;
+    background: none;
 }
 
 div.cell .inner_cell {
-    /*padding-left: 5px;*/
-    border-right: 5px solid var(--background-color);
-    border-left:  0.1rem dotted var(--background-color);
+    border-right: 5px solid var(--txbk-cell-border-color);
+    border-left:  0.1rem dotted var(--txbk-cell-border-color);
 }
 
-div.cell.selected {
-    border-radius: 0;
+div.cell.selected:not(.jupyter-soft-selected) .inner_cell {
+    border-left-color:  var(--txbk-cell-selected-border-left-color);
 }
 
-
-div.cell.selected {
-    border: none;
-    background: none !important;
+.command_mode div.cell.selected:not(.jupyter-soft-selected) .inner_cell {
+    border-right-color: var(--txbk-cell-display-border-color);
 }
 
-div.cell.selected .inner_cell {
-    /* left and right border on current cell */
-    border-left:  0.1rem dotted lightgrey;
-    /* coloured and visible */
-    border-right: 5px solid var(--cell-display-border);
-    /*margin-right: -2px;*/
+.edit_mode div.cell.selected:not(.jupyter-soft-selected) .inner_cell {
+    border-right-color: var(--txbk-cell-edit-border-color);
 }
 
-div.code_cell.selected .inner_cell {
-    border-left: 0 !important;
-}
-
-.edit_mode div.code_cell.selected .inner_cell,
-div.text_cell.selected.unrendered .inner_cell {
-    border-left: none;
-    border-right: 5px solid var(--cell-edit-border);
+/* Multiple Selection */
+.command_mode div.cell.jupyter-soft-selected {
+    border: 2px dashed var(--texbook-azure);
+    background: var(--txbk-multiselect-bgcolor);
+    margin-top: 10px;
 }
 
 /*
 Overlay with Shadow for Code Cell Selected !
 */
-div.code_cell.selected, div.code_cell.selected.jupyter-soft-selected {
-    border: none;
-    background: transparent;
+div.code_cell.selected,
+.command_mode div.code_cell.jupyter-soft-selected {
     box-shadow: 0 6px 18px #aaa;
     z-index: 10;
     top: -10px;
+}
+
+div.code_cell.selected {
+    border: none;
+    background: transparent;
 }
 
 div.prompt {
@@ -357,42 +361,67 @@ div.prompt {
     font-size: 1rem;
     text-align: right;
     line-height: 1rem;
-    min-width: 9ex;
+    min-width: 8.5ex;
 }
 
-div.cell.selected:before, div.cell.selected.jupyter-soft-selected:before {
-    position: absolute;
-    display: none;
-    top: -1px;
-    left: -1px;
-    width: 0;
-    height: calc(100% + 2px);
-    content: '';
-    background: none;
+div.cell.selected:before,
+div.cell.jupyter-soft-selected:before {
+    /* Important Needed to Override */
+    width: 0 !important;
+    background: none !important;
 }
 
-div.cell.selected div.input:before {
+div.cell.selected:not(.jupyter-soft-selected) div.input:before {
     display: inline-block;
     position: absolute;
     content: "\279E";
     font-size: 1.8rem;
-    top: 22px;
+    top: 15px;
     width: 10px;
     left: 5px;
-    color: var(--cell-display-border);
+    color: var(--txbk-cell-display-border-color);
     font-weight: bold !important;
 }
 
-/* Cell Input and Output */
+.edit_mode div.cell.selected div.input:before,
+.edit_mode div.cell.selected.unrendered div.input:before {
+    color: var(--txbk-cell-edit-border-color);
+}
+
+.code_cell div.input_prompt:after,
+.code_cell div.output_prompt:after {
+    display: inline-block;
+    content: '';
+    font-size:  0.75rem;
+    font-style: normal !important;
+}
+
+.edit_mode div.cell.selected:before{
+    width: 0;
+    background: none;
+}
+
+/* ==========================
+    Cell Input and Rendering
+   ==========================
+*/
+
+div.input_area {
+    border-radius: 0;
+    border: none;
+    padding: 2px 5px 0 5px;
+}
 
 div.input_prompt {
     color: #aba9a9;
-    font-style: normal !important;
+    font-style: normal;
     font-size: 1.4rem;
     padding-top: 14px;
 }
 
-/* FIX: Fixing Empty cell output in HTML export */
+/* FIX:
+   Fixing Empty cell output in HTML export
+*/
 div.output_prompt {
     color: transparent !important;
 }
@@ -450,7 +479,6 @@ div.output_html {
     color: var(--code-text-color);
 }
 
-
 div.output_html {
     font-size: 1.4em;
     font-weight: normal;
@@ -459,14 +487,16 @@ div.output_html {
 
 div.output_html p.nomono {
     font-family: var(--txbk-content-font-family);
+    margin-top: 0;
+    font-size: 1em;
 }
 
 div.output_html > iframe, div.output_area {
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 div.output_subarea {
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 div.output_svg div {
@@ -474,54 +504,55 @@ div.output_svg div {
     margin-left: 0 !important;
 }
 
-/* -----------------------------------
-    EDIT MODE
-   -----------------------------------
-*/
-
-div.input_area {
-    border-radius: 0;
-    border: none;
-    padding: 0 5px;
+/* ----------------------------
+    Override default CSS rules
+   ---------------------------- */
+.rendered_html code {
+    background-color: transparent !important;
 }
 
-div.cell.edit_mode {
-    border-radius: 0;
-    border: thin solid var(--cell-edit-border);
+.rendered_html h1:first-child,
+.rendered_html h2:first-child,
+.rendered_html h3:first-child,
+.rendered_html h4:first-child,
+.rendered_html h5:first-child,
+.rendered_html h6:first-child {
+    margin-top: 0.25em;
 }
 
-.edit_mode div.cell.selected div.input:before,
-.edit_mode div.cell.selected.unrendered div.input:before {
-    color: var(--cell-edit-border);
+.rendered_html h1 {
+    margin-top: 0.48em;
 }
 
-.code_cell div.input_prompt:after,
-.code_cell div.output_prompt:after {
-    display: inline-block;
-    content: '';
-    font-size:  0.75rem;
-    font-style: normal !important;
+.rendered_html h2 {
+    margin-top: 0.57em;
 }
 
-.edit_mode div.cell.selected {
-    border: none;
-    background: none !important;
+.rendered_html h3 {
+    margin-top: 0.85em;
 }
 
-.edit_mode div.cell.selected:before{
-    width: 0;
-    background: none;
+.rendered_html h4 {
+    margin-top: 1.3em;
 }
 
+.rendered_html h5 {
+    margin-top: 1.2em;
+}
 
-/* -----------------------------------
+.rendered_html h6 {
+    margin-top: 1.1em;
+}
+
+/* ===============
     CELLS Render
-   -----------------------------------
+   =============== */
+
+/*  -------------------------
+    (1) CODE CELLS
+    Display + Edit modes
+    -------------------------
 */
-
-/* -- CODE CELLS -- */
-
-/* Display + Edit modes */
 div.code_cell pre, div.CodeMirror, div.CodeMirror-linenumber {
     font-family: var(--txbk-code-font-family);
     font-size: var(--txbk-code-font-size);
@@ -549,11 +580,11 @@ div.text_cell.unrendered pre {
 }
 
 /* ------------------------------------------------------------------
-        MARKDOWN CELLS (DISPLAY MODE)
+    (2) MARKDOWN CELLS (DISPLAY MODE)
 
-        Notes: Font-families to use here:
-            computer-modern --> general text (Computer Modern Typeface, CMU)
-            md-display-monospace --> Monospace output (CMU Typewriter)
+    Notes: Font-families to use here:
+    computer-modern --> general text (Computer Modern Typeface, CMU)
+    md-display-monospace --> Monospace output (CMU Typewriter)
    ------------------------------------------------------------------
  */
 
@@ -576,36 +607,36 @@ div.text_cell_render h1, div.text_cell_render h2,
 div.text_cell_render h3, div.text_cell_render h4,
 div.text_cell_render h5, div.text_cell_render h6 {
     font-family:  var(--txbk-content-font-family);
-    font-style: normal !important;
+    font-style: normal;
 }
 
 /* Font-sizes for headers */
 div.text_cell_render h1 {
-    font-size: 2.2em !important;
-    text-align: center !important;
+    font-size: 2.2em;
+    text-align: center;
     padding-top:  3rem;
     padding-bottom: 3rem;
 }
 
 div.text_cell_render h2 {
-    font-size: 1.9em !important;
+    font-size: 1.9em;
 }
 
 div.text_cell_render h3 {
-    font-size: 1.7em !important;
+    font-size: 1.7em;
 }
 
 div.text_cell_render h4 {
-    font-size: 1.5em !important;
+    font-size: 1.5em;
 }
 
 div.text_cell_render h5 {
-    font-size: 1.3em !important;
+    font-size: 1.3em;
     border-bottom: 1px solid rgb(204, 204, 204);
 }
 
 div.text_cell_render h6 {
-    font-size: 1.1em !important;
+    font-size: 1.1em;
 }
 
 div.text_cell_render p,
@@ -633,14 +664,12 @@ div.text_cell_render p {
 
 /* Monospace inline rendered markdown */
 div.text_cell_render p code {
-
     /*Re-defining variables for Mono using Code Editor's settings*/
-    --txbk-content-mono-font-family: var(--txbk-code-font-family);
-    --txbk-content-mono-font-size: var(--txbk-code-font-size);
-
-    background-color: var(--txbk-content-mono-bgcolor) !important;
+    /*--txbk-content-mono-font-family: var(--txbk-code-font-family);*/
+    /*--txbk-content-mono-font-size: var(--txbk-code-font-size);*/
     font-size: var(--txbk-content-mono-font-size) !important;
-    color: var(--txbk-content-mono-color)
+    color: var(--txbk-content-mono-color);
+    font-family: var(--txbk-content-mono-font-family);
 }
 
 div.text_cell_render p strong code {
@@ -665,11 +694,13 @@ div.text_cell_render pre code {
 }
 
 div.text_cell_render blockquote {
-    --txbk-ui-color: #6f6f6f !important;
+    --txbk-ui-color: #6f6f6f;
 
-    margin: 2rem .2rem !important;
-    padding: .3rem .5rem !important;
+    margin: 2rem .2rem;
+    padding: .3rem .5rem;
     border-left: .3rem solid #a7a7a7;
+    background-color: var(--txbk-content-mono-bgcolor);
+
 }
 
 div.text_cell_render blockquote p {
@@ -723,15 +754,15 @@ div.text_cell_render ul {
 
 div.text_cell_render ul li, div.text_cell_render ol li {
     /*white-space: pre-wrap;*/
-    padding: .8rem !important;
+    padding: .6rem !important;
 }
 
 div.text_cell_render ul li > code, div.text_cell_render ol li > code {
-    font-size: .9em !important;
+    font-size: .7em !important;
 }
 
 div.text_cell_render ul li a code, div.text_cell_render ol li a code {
-    font-size: .9em !important;
+    font-size: .7em !important;
 }
 
 div.text_cell_render ul ul {
@@ -742,28 +773,28 @@ div.text_cell_render ul ul,
 div.text_cell_render ul ol,
 div.text_cell_render ol ul,
 div.text_cell_render ol ol {
-    padding-top: .5rem !important;
+    padding-top: .3rem !important;
 }
 
 div.text_cell_render ul li > ul li,
 div.text_cell_render ul li > ol li,
 div.text_cell_render ol li > ul li,
 div.text_cell_render ol li > ol li {
-    padding: .5rem !important;
+    padding: .3rem !important;
 }
 
 div.text_cell_render ul li > ul li code,
 div.text_cell_render ul li > ol li code,
 div.text_cell_render ol li > ul li code,
 div.text_cell_render ol li > ol li code {
-    font-size: .9em !important;
+    font-size: .7em !important;
 }
 
 div.text_cell_render ul li > ul li a code,
 div.text_cell_render ul li > ol li a code,
 div.text_cell_render ol li > ul li a code,
 div.text_cell_render ol li > ol li a code {
-    font-size: .9em !important;
+    font-size: .7em !important;
     color: var(--link-color);
 }
 
@@ -781,21 +812,14 @@ div.text_cell_render img {
     max-width: 70%;
 }
 
-.rendered_html code {
-    background-color: transparent !important;
-}
-
 /*
     ===================================
-
     New CSS Classes and Styles
-
     ===================================
-*/
 
-/* ------------
-    Footnotes
-   ------------
+    --------------
+    1. Footnotes
+    --------------
 */
 [id^='fn'], [class^='fn'] {
     font-size: small !important;
@@ -819,13 +843,14 @@ p > [class^='fn']:not(:first-child) {
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
-div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] > code {
+div.text_cell_render p [id^='fn'] > code,
+div.text_cell_render p [class^='fn'] > code {
     font-size: 1em !important;
 }
 
-/* ------------
-    Drop cap
-   ------------
+/* --------------
+    2. Drop cap
+   --------------
 */
 .drop {
     color: var(--drop-cap-color);
@@ -835,9 +860,8 @@ div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] >
     margin-top: 0.2rem;
 }
 
-
 /* -----------------------------
-    TexBook Text colors classes
+    3. noTeXbook Text colours
    -----------------------------
 */
 .texbook-red {
@@ -869,22 +893,11 @@ div.text_cell_render p [id^='fn'] > code, div.text_cell_render p [class^='fn'] >
 }
 
 /* ---------------------------------------------------------
-    IMG MaxWidthXX
+    4. IMG MaxWidthXX
+
     CSS classes to control the max-width property of images
     when the default 70% is not enough.
     This is when images need to be enlarged or shrunk.
-    Percentage of max-width supported are:
-    - 10%
-    - 15%
-    - 20%
-    - 25%
-    - 30%
-    - 40%
-    - 50%
-    - 80%
-    - 85%
-    - 90%
-    - 100%
    ---------------------------------------------------------
 */
 
@@ -983,6 +996,10 @@ div.text_cell_render p > img.maxw100 {
     max-width: 100% !important;
 }
 
+/*  ------------
+     4. Badges
+    ------------
+*/
 .badges img, .badges p img {
     margin: 0 !important;  /* Override margins */
     display: inline !important;

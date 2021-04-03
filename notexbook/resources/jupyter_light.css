@@ -1,33 +1,38 @@
 :root {
     /* Jupyter Lab Integration (Light Theme) */
-    /*--jp-content-font-color1: var(--txbk-content-mono-color);*/
-    /*--jp-content-font-family: var(--txbk-content-font-family);*/
-    /*--jp-content-line-height: var(--txbk-content-line-height);*/
-    /*--jp-content-link-color: var(--link-color);*/
-    /*--jp-content-font-size: var(--txbk-content-font-size);*/
 
-    /*--jp-layout-color3: #efefef;*/
+    --jp-ui-font-family: var(--txbk-ui-font-family);
+    --jp-ui-font-color1: var(--txbk-ui-color);
+    --jp-ui-font-size1: var(--txbk-ui-font-size);
 
-    /*--jp-code-font-size: var(--txbk-code-font-size);*/
-    /*--jp-code-line-height: var(--txbk-ui-mono-line-height);*/
-    /*--jp-code-padding: 5px;*/
-    /*--jp-code-font-family-default: var(--txbk-code-font-family);*/
-    /*--jp-code-font-family: var(--jp-code-font-family-default);*/
-    /*--jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);*/
-    /*--jp-content-heading-font-weight: 500;*/
-    /*--jp-content-heading-line-height: 1;*/
+    --jp-content-font-color1: var(--txbk-content-mono-color);
+    --jp-content-font-family: var(--txbk-content-font-family);
+    --jp-content-line-height: var(--txbk-content-line-height);
+    --jp-content-link-color: var(--link-color);
+    --jp-content-font-size: var(--txbk-content-font-size);
 
-    /*--jp-cell-prompt-font-family: var(--txbk-code-font-family);*/
+    --jp-layout-color3: #efefef;
+    --jp-notebook-multiselected-color: var(--txbk-multiselect-bgcolor);
 
-    /*--jp-border-width: 0;*/
-    /*--jp-cell-editor-border-color: transparent;*/
+    --jp-code-font-size: var(--txbk-code-font-size);
+    --jp-code-line-height: var(--txbk-ui-mono-line-height);
+    --jp-code-padding: 5px;
+    --jp-code-font-family-default: var(--txbk-code-font-family);
+    --jp-code-font-family: var(--jp-code-font-family-default);
+    --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
+    --jp-content-heading-font-weight: 500;
+    --jp-content-heading-line-height: 1;
 
-    /*--jp-layout-color0: var(--code-background-color);*/
-    /*--jp-cell-prompt-not-active-font-color: #aba9a9;*/
+    --jp-cell-prompt-font-family: var(--txbk-code-font-family);
 
-    /*--jp-cell-editor-background: var(--code-background-color);*/
-    /*--jp-cell-editor-active-background: var(--code-background-color);*/
-    /*--jp-cell-editor-active-border-color: var(--cell-edit-border);*/
+    --jp-cell-editor-border-color: transparent;
+
+    --jp-layout-color0: var(--code-background-color);
+    --jp-cell-prompt-not-active-font-color: #aba9a9;
+
+    --jp-cell-editor-background: var(--code-background-color);
+    --jp-cell-editor-active-background: var(--code-background-color);
+    --jp-cell-editor-active-border-color: var(--txbk-cell-edit-border-color);
 
 }
 
@@ -40,45 +45,6 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     padding: 0;
     overflow: hidden;
 }
-
-/* =====================
-  Jupyter Lab UI
-  ======================
-*/
-
-#jp-main-content-panel {
-    top: 40px !important;
-}
-
-#jp-top-panel {
-    top: 5px !important;
-}
-
-#jp-menu-panel {
-    padding-top: 5px !important;
-}
-
-.lm-Widget.p-Widget.lm-TabBar.p-TabBar.lm-DockPanel-tabBar.jp-Activity {
-    top: 0 !important;
-}
-
-/*.lm-DockPanel-tabBar[data-orientation='horizontal'] {*/
-/*    min-height: calc( var(--jp-private-horizontal-tab-height) + 2 * var(--jp-border-width) ) !important;*/
-/*}*/
-
-.lm-Widget.p-Widget.jp-MainAreaWidget.jp-NotebookPanel.jp-Document.jp-Activity.lm-DockPanel-widget.p-DockPanel-widget {
-    top: 26px !important;
-}
-
-/*
-    Left toolbar:
-    FIX: force min-width to avoid toolbar to disappear
-*/
-div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-child.p-BoxPanel-child {
-    min-width: 33px !important;
-}
-
-/* TODO: Check why tab bar disappears */
 
 .jp-Notebook {
     background-color: var(--background-color) !important;
@@ -191,14 +157,12 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 
 /* Monospace inline rendered markdown */
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p code {
-
     /*Re-defining variables for Mono using Code Editor's settings*/
-    --txbk-content-mono-font-family: var(--txbk-code-font-family);
-    --txbk-content-mono-font-size: var(--txbk-code-font-size);
-
-    background-color: var(--txbk-content-mono-bgcolor) !important;
+    /*--txbk-content-mono-font-family: var(--txbk-code-font-family);*/
+    /*--txbk-content-mono-font-size: var(--txbk-code-font-size);*/
     font-size: var(--txbk-content-mono-font-size) !important;
     color: var(--txbk-content-mono-color);
+    font-family: var(--txbk-content-mono-font-family);
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p strong code {
@@ -215,19 +179,21 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
     padding: 1rem 1.5rem;
     display: block;
     color: var(--txbk-content-mono-color);
-    background-color: var(--txbk-content-mono-bgcolor) !important;
     font-family: var(--txbk-content-mono-font-family);
-    font-size: var(--txbk-content-mono-font-size) !important;
     word-wrap: break-word;
     word-break: normal;
+    /* Important Override rules */
+    background-color: var(--txbk-content-mono-bgcolor) !important;
+    font-size: var(--txbk-content-mono-font-size) !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote {
-    --txbk-ui-color: #6f6f6f !important;
+    --txbk-ui-color: #6f6f6f;
 
-    margin: 2rem .2rem !important;
-    padding: .3rem .5rem !important;
-    border-left: .3rem solid #a7a7a7 !important;
+    margin: 2rem .2rem;
+    padding: .3rem .5rem;
+    border-left: .3rem solid #a7a7a7;
+    background-color: var(--txbk-content-mono-bgcolor);
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote p {
@@ -286,17 +252,17 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li {
     /*white-space: pre-wrap;*/
-    padding: .8rem !important;
+    padding: .6rem !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > code {
-    font-size: .9em !important
+    font-size: .7em !important
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li a code {
-    font-size: .9em !important
+    font-size: .7em !important
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul {
@@ -307,28 +273,28 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ol,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ul,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ol {
-    padding-top: .5rem !important;
+    padding-top: .3rem !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li {
-    padding: .5rem !important;
+    padding: .3rem !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li code {
-    font-size: .9em !important;
+    font-size: .7em !important;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li a code {
-    font-size: .9em !important;
+    font-size: .7em !important;
     color: var(--link-color);
 }
 
@@ -463,31 +429,45 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
 .jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p.nomono {
     font-family: var(--txbk-content-font-family);
     font-size: 1em;
+    margin-top: 0;
 }
 
-
-.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+.jp-Notebook .jp-Cell {
     background: transparent;
-    border: none !important;
-    border-left: 0 !important;
-    border-right: 5px solid var(--cell-display-border) !important;
-
+    border: none;
 }
-
-.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-MarkdownOutput.jp-RenderedHTMLCommon {
-    border-left: 0.1rem dotted lightgrey;
-}
-
-.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
-    border-right: 5px solid var(--cell-edit-border) !important;
-}
-
 
 /* Code Cell Editor */
-.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active .jp-InputArea-editor {
-    box-shadow: none;
+
+.jp-InputArea-editor {
     background-color: var(--jp-cell-editor-active-background);
-    border: none;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.jp-Notebook .jp-Cell .jp-Cell-inputWrapper {
+    border-right: 5px solid var(--txbk-cell-border-color);
+}
+
+.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-editor,
+.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-prompt {
+    border-left: 0.2rem dotted var(--txbk-cell-selected-border-left-color) !important;
+}
+
+.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-Cell-inputWrapper {
+    border-right-color: var(--txbk-cell-display-border-color);
+}
+
+.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-Cell-inputWrapper {
+    border-right-color: var(--txbk-cell-edit-border-color);
+}
+
+/* Cell Multiple Selection */
+.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-selected:not(.jp-mod-active),
+.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-multiSelected {
+    border: 2px dashed var(--texbook-azure);
+    background: var(--txbk-multiselect-bgcolor);
+    margin-top: 10px;
 }
 
 /*
@@ -495,7 +475,7 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
     ============================================
 */
 /* Overlay limited to CodeCells */
-.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+.jp-Notebook .jp-CodeCell.jp-mod-selected {
     border: none;
     background: transparent;
     box-shadow: 0 6px 18px #aaa;
@@ -543,31 +523,42 @@ div.lm-Widget.p-Widget.lm-TabBar.p-TabBar.jp-SideBar.jp-mod-left.lm-BoxPanel-chi
     color: transparent;
     left: -10000px;
     content: "\21E2";
+}
 
+.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+    display: inline-block;
+    position: absolute;
+    content: "\279E";
+    font-size: 2.3rem;
+    top: 2px;
+    width: 10px;
+    left: 6px;
+    font-weight: bold !important;
 }
 
 .jp-Notebook.jp-mod-commandMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
-    display: inline-block;
-    position: absolute;
-    content: "\279E";
-    font-size: 2.3rem;
-    top: 2px;
-    width: 10px;
-    left: 6px;
-    color: var(--cell-display-border);
-    font-weight: bold !important;
+    color: var(--txbk-cell-display-border-color);
 }
 
 .jp-Notebook.jp-mod-editMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
-    display: inline-block;
-    position: absolute;
-    content: "\279E";
-    font-size: 2.3rem;
-    top: 2px;
-    width: 10px;
-    left: 6px;
-    font-weight: bold !important;
-    color: var(--cell-edit-border);
+    color: var(--txbk-cell-edit-border-color);
+}
+
+/* =============
+   Code Editors
+   ============= */
+
+.jp-Notebook.jp-mod-editMode .jp-Cell .CodeMirror * {
+    font-size: var(--txbk-code-font-size);
+    line-height: var(--txbk-code-line-height);
+}
+
+.jp-Notebook.jp-mod-editMode .jp-CodeCell .CodeMirror * {
+    font-family: var(--txbk-code-font-family);
+}
+
+.jp-Notebook.jp-mod-editMode .jp-MarkdownCell .CodeMirror * {
+    font-family: var(--txbk-md-font-family);
 }
 
 /* Cell Output rendering (.output_area in Notebook HTML) */
