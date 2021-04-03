@@ -449,8 +449,8 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right: 5px solid var(--txbk-cell-border-color);
 }
 
-.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-editor,
-.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-prompt {
+.jp-Notebook .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-editor,
+.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-MarkdownOutput {
     border-left: 0.2rem dotted var(--txbk-cell-selected-border-left-color) !important;
 }
 
@@ -462,6 +462,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right-color: var(--txbk-cell-edit-border-color);
 }
 
+/* Cell Multiple Selection */
 /* Cell Multiple Selection */
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-selected:not(.jp-mod-active),
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-multiSelected {
@@ -509,7 +510,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     opacity: 1 !important;
     font-weight: normal;
     padding-right: 7px;
-    padding-top: 8px;
+    padding-top: 5px;
 }
 
 .jp-OutputPrompt {
@@ -530,7 +531,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     position: absolute;
     content: "\279E";
     font-size: 2.3rem;
-    top: 2px;
+    top: -2px;
     width: 10px;
     left: 6px;
     font-weight: bold !important;
