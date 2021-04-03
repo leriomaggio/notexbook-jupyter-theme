@@ -56,17 +56,17 @@
     --txbk-code-color: var(--code-text-color);
     --txbk-code-bgcolor: var(--code-background-color);
 
-    --link-color: #2875d9;
-    --del-color: #d43133;
-    --drop-cap-color: #d43133;
+    --link-color: var(--texbook-blue);
+    --del-color: var(--texbook-red);
+    --drop-cap-color: var(--texbook-red);;
 
-    --kernel-name-color: #00afde;
-    --kernel-idle: #009489;
-    --kernel-busy: #D14187;
-    --kernel-disconnected: #d43133;
-    --btn-warning: #D14187;
-    --btn-danger: #d43133;
-    --running-notebook: #009489;
+    --kernel-name-color: var(--texbook-azure);
+    --kernel-idle: var(--texbook-turquoise);
+    --kernel-busy: var(--texbook-pink);
+    --kernel-disconnected: var(--texbook-red);
+    --btn-warning: var(--texbook-pink);
+    --btn-danger: var(--texbook-red);
+    --running-notebook: var(--texbook-turquoise);
 }
 
 html {
