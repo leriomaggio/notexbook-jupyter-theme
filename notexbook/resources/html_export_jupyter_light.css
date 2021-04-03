@@ -7,11 +7,6 @@ License: Apache License 2.0
 /* HTML Export (Jupyter Light Theme)
    ================================ */
 
-body.jp-Notebook * {
-    --txbk-content-font-size: 14px !important;
-    --txbk-code-font-size: 13px !important;
-}
-
 body.jp-Notebook .jp-CodeCell .jp-InputPrompt {
     margin-top: 7px;
     overflow: initial;
