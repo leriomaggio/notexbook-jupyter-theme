@@ -27,37 +27,37 @@ Repo: https://github.com/rainglow/vscode/
 
 
     /* Editor Theme */
-    --cl-code-background-color: var(--cl-white);
-    --cl-gutter-background: var(--cl-white);
-    --cl-selection-background-color: var(--cl-yellow);
-    --cl-line-numbers: var(--cl-grey);
-    --cl-cursor: var(--cl-black);
-    --cl-bracket: var(--cl-purple);
-    --cl-matching-bracket: var(--cl-selection-background-color);
-    --cl-code-text-color: var(--cl-black);
-    --cl-keywords: var(--cl-purple);
-    --cl-types: var(--cl-purple);
-    --cl-variables: var(--cl-code-text-color);
-    --cl-variables2: var(--cl-dark-purple);
-    --cl-def: var(--cl-dark-orange);
-    --cl-property: var(--cl-light-purple);
-    --cl-meta: var(--cl-light-purple);
-    --cl-builtin: var(--cl-dark-purple);
-    --cl-attribute: var(--cl-code-text-color);
-    --cl-strings: var(--cl-yellow);
-    --cl-strings2: var(--cl-lilac);
-    --cl-comments: var(--cl-lilac);
-    --cl-operator: var(--cl-blue);
-    --cl-numbers: var(--cl-dark-orange);
+    --code-background-color: var(--cl-white);
+    --gutter-background: var(--cl-white);
+    --selection-background-color: var(--cl-yellow);
+    --line-numbers: var(--cl-grey);
+    --cursor: var(--cl-black);
+    --bracket: var(--cl-purple);
+    --matching-bracket: var(--cl-selection-background-color);
+    --code-text-color: var(--cl-black);
+    --keywords: var(--cl-purple);
+    --types: var(--cl-purple);
+    --variables: var(--cl-code-text-color);
+    --variables2: var(--cl-dark-purple);
+    --def: var(--cl-dark-orange);
+    --property: var(--cl-light-purple);
+    --meta: var(--cl-light-purple);
+    --builtin: var(--cl-dark-purple);
+    --attribute: var(--cl-code-text-color);
+    --strings: var(--cl-yellow);
+    --strings2: var(--cl-lilac);
+    --comments: var(--cl-lilac);
+    --operator: var(--cl-blue);
+    --numbers: var(--cl-dark-orange);
     /* Dataframe */
-    --cl-dataframe: var(--cl-code-text-color);
-    --cl-df-bg: var(--cl-white);
-    --cl-df-thead: var(--cl-light-purple);
-    --cl-df-thead-border: var(--cl-purple);
-    --cl-df-tr-hover: var(--cl-selection-background-color);
-    --cl-df-border: var(--cl-white);
-    --cl-df-border-right: var(--cl-grey);
-    --cl-df-th-bg: var(--cl-white);
+    --dataframe: var(--cl-code-text-color);
+    --df-bg: var(--cl-white);
+    --df-thead: var(--cl-light-purple);
+    --df-thead-border: var(--cl-purple);
+    --df-tr-hover: var(--cl-selection-background-color);
+    --df-border: var(--cl-white);
+    --df-border-right: var(--cl-grey);
+    --df-th-bg: var(--cl-white);
     /*ANSI Colours*/
     --ansi-red: var(--cl-red);
     --ansi-green: var(--cl-yellow);

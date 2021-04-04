@@ -48,7 +48,6 @@ the **new** GitHub Code Editor theme
     --operator: var(--gh-blue);
     --numbers: var(--gh-blue);
 
-    /*TODO: To be completed!*/
     /* Dataframe */
     --dataframe: var(--code-text-color);
     --df-bg: var(--gh-white);
