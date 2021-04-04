@@ -41,5 +41,5 @@ MD_EDITOR_THEME_CHOICES = list(EDITOR_THEMES["markdown"].keys())
 # -------------------
 # TeXbook Templates
 # -------------------
-TEXBOOK_CSS = "noTeXbook_theme_template.jinja2"
-TEXBOOK_HTML_TEMPLATE = "noTeXbook_theme.html"
+NOTEXBOOK_THEME_FILE = "noTeXbook_theme_template.jinja2"
+NOTEXBOOK_HTML_TEMPLATE = "noTeXbook_theme.html"

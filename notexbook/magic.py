@@ -171,7 +171,7 @@ class TeXbookTheme(Magics):
         args = parse_argstring(self.texify, line)
         config = create_config_from(args)
         theme_css = self._load_texbook_theme_template(config)
-        template = self.template_env.get_template(settings.TEXBOOK_HTML_TEMPLATE)
+        template = self.template_env.get_template(settings.NOTEXBOOK_HTML_TEMPLATE)
         theme_style_tag = template.render(
             version=VERSION,
             textbook_css=theme_css,
@@ -186,7 +186,7 @@ class TeXbookTheme(Magics):
         with open(md_theme_css) as md_theme_file, open(cd_theme_css) as cd_theme_file:
             md_theme = md_theme_file.read()
             code_theme = cd_theme_file.read()
-            t = self.template_env.get_template(settings.TEXBOOK_CSS)
+            t = self.template_env.get_template(settings.NOTEXBOOK_THEME_FILE)
             return t.render(
                 code_theme=code_theme,
                 md_theme=md_theme,
