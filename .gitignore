@@ -5,6 +5,9 @@
 .idea
 .idea/*
 
+# Exclude any notebook in test_folder
+test_notebooks/*.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -134,6 +137,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# Exclude any notebook
-*.ipynb
