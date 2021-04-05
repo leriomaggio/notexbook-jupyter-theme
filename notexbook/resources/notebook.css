@@ -3,10 +3,6 @@
    ======================================================
 */
 
-/*TODO:
-   FIX MULTI-SELECTION
-   */
-
 :root {
     /* Base colors */
     --texbook-red: #d43133;
@@ -16,6 +12,8 @@
     --texbook-blue: #2875d9;
     --texbook-light-grey: #828282;
     --texbook-dark-grey: rgb(56, 56, 56);
+    --texbook-yellow: #f9ab00;
+    --texbook-orange: #e8710a;
 
     /* Font formatting */
     --background-color: #ffffff;
@@ -45,13 +43,14 @@
     --txbk-content-line-height: var(--template-txbk-content-line-height);
 
     --txbk-content-mono-font-family: var(--template-txbk-content-mono-font-family);
-    --txbk-content-mono-font-size: var(--template-txbk-content-mono-font-size);
+    --txbk-content-mono-font-size: var(--txbk-content-font-size);
     --txbk-content-mono-color: var(--texbook-dark-grey);
     --txbk-content-mono-bgcolor: var(--code-background-color);
 
     --txbk-code-font-family: var(--template-txbk-code-font-family);
-    --txbk-md-font-family: var(--template-txbk-md-font-family);
     --txbk-code-font-size: var(--template-txbk-code-font-size);
+    --txbk-md-font-family: var(--template-txbk-md-font-family);
+    --txbk-md-font-size: var(--template-txbk-md-font-size);
     --txbk-code-line-height: 1.6;
     --txbk-code-color: var(--code-text-color);
     --txbk-code-bgcolor: var(--code-background-color);
@@ -485,7 +484,7 @@ div.output_html {
     font-family: var(--txbk-code-font-family);
 }
 
-div.output_html p.nomono {
+div.output_html .nomono {
     font-family: var(--txbk-content-font-family);
     margin-top: 0;
     font-size: 1em;
@@ -569,7 +568,8 @@ div.CodeMirror-linenumber {
 div.text_cell.unrendered pre {
     /* general font rule */
     font-family: var(--txbk-md-font-family);
-    font-size: var(--txbk-code-font-size);
+    font-size: var(--txbk-md-font-size);
+    line-height: var(--txbk-code-line-height);
 }
 
 /* md cell headers (edit) */
@@ -662,6 +662,10 @@ div.text_cell_render p {
     text-align: justify !important;
 }
 
+div.text_cell_render code {
+    font-family: var(--txbk-content-mono-font-family);
+}
+
 /* Monospace inline rendered markdown */
 div.text_cell_render p code {
     /*Re-defining variables for Mono using Code Editor's settings*/
@@ -695,8 +699,7 @@ div.text_cell_render pre code {
 
 div.text_cell_render blockquote {
     --txbk-ui-color: #6f6f6f;
-
-    margin: 2rem .2rem;
+    margin: .2rem .2rem;
     padding: .3rem .5rem;
     border-left: .3rem solid #a7a7a7;
     background-color: var(--txbk-content-mono-bgcolor);
@@ -757,14 +760,6 @@ div.text_cell_render ul li, div.text_cell_render ol li {
     padding: .6rem !important;
 }
 
-div.text_cell_render ul li > code, div.text_cell_render ol li > code {
-    font-size: .7em !important;
-}
-
-div.text_cell_render ul li a code, div.text_cell_render ol li a code {
-    font-size: .7em !important;
-}
-
 div.text_cell_render ul ul {
     list-style-type: circle !important;
 }
@@ -783,18 +778,10 @@ div.text_cell_render ol li > ol li {
     padding: .3rem !important;
 }
 
-div.text_cell_render ul li > ul li code,
-div.text_cell_render ul li > ol li code,
-div.text_cell_render ol li > ul li code,
-div.text_cell_render ol li > ol li code {
-    font-size: .7em !important;
-}
-
 div.text_cell_render ul li > ul li a code,
 div.text_cell_render ul li > ol li a code,
 div.text_cell_render ol li > ul li a code,
 div.text_cell_render ol li > ol li a code {
-    font-size: .7em !important;
     color: var(--link-color);
 }
 
@@ -890,6 +877,14 @@ div.text_cell_render p [class^='fn'] > code {
 
 .texbook-dark-grey {
     color: var(--texbook-dark-grey);
+}
+
+.texbook-orange {
+    color: var(--texbook-orange);
+}
+
+.texbook-yellow {
+    color: var(--texbook-yellow);
 }
 
 /* ---------------------------------------------------------
@@ -1019,7 +1014,18 @@ div.text_cell_render p > img.maxw100 {
      5. Inline Math
     ----------------
 */
-
 .inline-math {
     display: inline-block;
+}
+
+/*  --------------------
+     6. Inline Mono Font
+    --------------------
+*/
+.codemono code, .codemono pre, .codemono pre code {
+    font-family: var(--txbk-code-font-family) !important;
+}
+
+.mdmono code, .mdmono pre, .mdmono pre code {
+    font-family: var(--txbk-md-font-family) !important;
 }
