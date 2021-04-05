@@ -77,8 +77,17 @@ $([IPython.events]).on("rendered.MarkdownCell", function () {
 });
 </script>
 
-<p class="nomono">
+<div class="nomono">
    The notebook is using the $\text{no}\TeX\text{book}$ Jupyter
         <a href="https://github.com/leriomaggio/notexbook-jupyter-theme" title="noTeXbook Theme">
             Theme</a> <code>v {{ version }}</code>
-</p>
+{% if verbose %}
+    <br />
+    <b>Enabled Theme Settings</b>:
+    <ul style="margin-top: 0.2em">
+        <li>Notebook: Computer Modern {{ nb_font_size }}, Line spread {{ nb_line_height }}.</li>
+        <li>Code Editor: <span class="codemono"><code>{{ code_mono_font }}</code></span> {{ code_mono_font_size }}; {{ code_theme_name|title }} Theme.</li>
+        <li>Markdown Editor: <span class="mdmono"><code>{{ md_mono_font }}</code></span>  {{ md_mono_font_size }}; {{ md_theme_name|title }} Theme.</li>
+    </ul>
+{% endif %}
+</div>

@@ -121,36 +121,36 @@ class TeXbookTheme(Magics):
         dest="md_theme",
     )
     @argument(
-        "-cdf",
-        "--code-font",
+        "-cdff",
+        "--code-font-family",
         help="Font family used in Code Editor. (Default: Fira Code)",
         default="Fira Code",
         dest="code_mono_font",
     )
     @argument(
-        "-mdf",
-        "--md-font",
+        "-cdfs",
+        "--code-font-size",
+        help="Font size used in Code Editor. (Default: 14px)",
+        default="14px",
+        dest="code_mono_font_size",
+    )
+    @argument(
+        "-mdff",
+        "--md-font-family",
         help="Font family used in Markdown Editor. (Default: Hack)",
         default="Hack",
         dest="md_mono_font",
     )
     @argument(
-        "-edfs",
-        "--editor-fontsize",
-        help="Font size used in Code and Markdown Editors. (Default: 14px)",
+        "-mdfs",
+        "--md-font-size",
+        help="Font size used in Markdown Editor. (Default: 14px)",
         default="14px",
-        dest="code_mono_font_size",
-    )
-    @argument(
-        "-mofs",
-        "--mono-fontsize",
-        help="Font size of rendered (Markdown) monospace. (Default: 16px)",
-        default="16px",
         dest="md_mono_font_size",
     )
     @argument(
         "-fs",
-        "--fontsize",
+        "--font-size",
         help="Font size of Rendered (Markdown) notebook cell content. (Default: 16px)",
         default="16px",
         dest="nb_font_size",
@@ -161,6 +161,13 @@ class TeXbookTheme(Magics):
         help="Line height. (Default: 1.4)",
         default=1.4,
         dest="nb_line_height",
+    )
+    @argument(
+        "-v",
+        "--verbose",
+        help="Verbose mode: Display Configuration Settings when Theme is enabled",
+        dest="verbose",
+        action="store_true",
     )
     @line_magic
     def texify(self, line):
@@ -175,6 +182,8 @@ class TeXbookTheme(Magics):
         theme_style_tag = template.render(
             version=VERSION,
             textbook_css=theme_css,
+            verbose=args.verbose,
+            **config.as_dict(),
         )
 
         return HTML(theme_style_tag)
