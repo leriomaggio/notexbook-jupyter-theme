@@ -24,6 +24,7 @@
     --jp-content-heading-line-height: 1;
 
     --jp-cell-prompt-font-family: var(--txbk-code-font-family);
+    --jp-cell-prompt-width: 80px;
 
     --jp-cell-editor-border-color: transparent;
 
@@ -35,6 +36,61 @@
     --jp-cell-editor-active-border-color: var(--txbk-cell-edit-border-color);
 
 }
+
+/* ================
+    Jupyter Lab UI
+   ================
+*/
+
+.jp-DirListing-item.jp-mod-running .jp-DirListing-itemIcon:before {
+    color: var(--btn-danger);
+}
+
+.jp-DirListing-item.jp-mod-selected {
+    background-color: var(--texbook-blue);
+    color: white;
+}
+
+button.jp-RunningSessions-shutdownAll.jp-mod-styled {
+    color: var(--btn-warning)
+}
+
+button.jp-RunningSessions-shutdownAll.jp-mod-styled {
+    color: var(--btn-warning);
+}
+
+.jp-icon-warn0[fill] {
+    fill: var(--texbook-turquoise);
+}
+
+#jp-MainLogo .jp-icon-warn0[fill] {
+    /* Set default not to override logo colour */
+    fill: var(--jp-warn-color0);
+}
+
+/* Change Colour only of Icons on the left-hand side toolbar */
+.jp-SideBar.lm-TabBar.jp-mod-left .jp-icon3[fill] {
+    fill: var(--texbook-yellow);
+}
+
+.jp-SideBar.lm-TabBar.jp-mod-left.lm-TabBar-tab.lm-mod-current .jp-icon3[fill] {
+    fill: var(--texbook-orangex);
+}
+
+/*Kernel*/
+div.f14jk5uf[title="Kernel Busy"] .jp-icon3[fill] {
+    fill: var(--kernel-busy);
+}
+
+div.f14jk5uf[title="Kernel Idle"] .jp-icon3[fill] {
+    fill: var(--kernel-idle);
+}
+
+div.f14jk5uf[title="Kernel Unknown"] .jp-icon3[fill],
+div.f14jk5uf[title="Kernel Restarting"] .jp-icon3[fill] {
+    fill: var(--kernel-disconnected);
+}
+
 
 /* body class*/
 
@@ -67,6 +123,14 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 
 .jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code {
     background-color: transparent !important;
+}
+
+.jp-RenderedHTMLCommon p {
+    margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon * + p {
+    margin-top: 1em;
 }
 
 
@@ -140,6 +204,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon code {
     color: var(--txbk-content-mono-color);
+    font-family: var(--txbk-content-mono-font-family);
 }
 
 
@@ -147,7 +212,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon pre {
     /* hack: using code background colour here to allow for compatibility */
     background-color: var(--code-background-color) !important;
-    font-family: var(--txbk-content-mono-font-family) !important;
+    font-family: var(--txbk-content-mono-font-family);
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p {
@@ -158,9 +223,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 /* Monospace inline rendered markdown */
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon p code {
     /*Re-defining variables for Mono using Code Editor's settings*/
-    /*--txbk-content-mono-font-family: var(--txbk-code-font-family);*/
-    /*--txbk-content-mono-font-size: var(--txbk-code-font-size);*/
-    font-size: var(--txbk-content-mono-font-size) !important;
+    font-size: var(--txbk-content-mono-font-size);
     color: var(--txbk-content-mono-color);
     font-family: var(--txbk-content-mono-font-family);
 }
@@ -189,8 +252,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote {
     --txbk-ui-color: #6f6f6f;
-
-    margin: 2rem .2rem;
+    margin: .2rem .2rem;
     padding: .3rem .5rem;
     border-left: .3rem solid #a7a7a7;
     background-color: var(--txbk-content-mono-bgcolor);
@@ -255,16 +317,6 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     padding: .6rem !important;
 }
 
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > code,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > code {
-    font-size: .7em !important
-}
-
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li a code,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li a code {
-    font-size: .7em !important
-}
-
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul {
     list-style-type: circle !important;
 }
@@ -283,18 +335,11 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     padding: .3rem !important;
 }
 
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li code,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li code,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li code,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li code {
-    font-size: .7em !important;
-}
-
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li a code {
-    font-size: .7em !important;
+    /*font-size: .7em !important;*/
     color: var(--link-color);
 }
 
@@ -426,13 +471,13 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     font-weight: normal;
 }
 
-.jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon p.nomono {
+.jp-Notebook .jp-CodeCell .jp-RenderedHTMLCommon .nomono {
     font-family: var(--txbk-content-font-family);
     font-size: 1em;
     margin-top: 0;
 }
 
-.jp-Notebook .jp-Cell {
+.jp-Notebook .jp-Cell:not(.jp-mod-dropTarget) {
     background: transparent;
     border: none;
 }
@@ -441,17 +486,33 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 
 .jp-InputArea-editor {
     background-color: var(--jp-cell-editor-active-background);
-    border: none !important;
-    box-shadow: none !important;
+}
+
+/*.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active .jp-InputArea-editor*/
+
+.jp-Notebook .jp-Cell .jp-InputArea-editor,
+.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell .jp-MarkdownOutput {
+    /* Set default LEFT border as transparent - to avoid change in paddings when selected */
+    border-left: 0.2rem dotted var(--txbk-cell-border-color);
+    box-shadow: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .jp-Notebook .jp-Cell .jp-Cell-inputWrapper {
+    /* Set default RIGHT border as transparent - to avoid change in paddings when selected */
     border-right: 5px solid var(--txbk-cell-border-color);
 }
 
 .jp-Notebook .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea-editor,
 .jp-Notebook.jp-mod-commandMode .jp-MarkdownCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-MarkdownOutput {
-    border-left: 0.2rem dotted var(--txbk-cell-selected-border-left-color) !important;
+    /* Force border redefinition to override default Jupyter theme rules */
+    border-left: 0.2rem dotted var(--txbk-cell-selected-border-left-color);
+    box-shadow: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-Cell-inputWrapper {
@@ -462,7 +523,6 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right-color: var(--txbk-cell-edit-border-color);
 }
 
-/* Cell Multiple Selection */
 /* Cell Multiple Selection */
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-selected:not(.jp-mod-active),
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-multiSelected {
@@ -506,15 +566,15 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 .jp-Notebook .jp-CodeCell .jp-InputPrompt {
     color: var(--texbook-light-grey) !important;
     font-style: normal !important;
-    font-size: 1.4rem;
+    font-size: 1em;
     opacity: 1 !important;
     font-weight: normal;
-    padding-right: 7px;
-    padding-top: 5px;
+    min-width: 9.5ex;
 }
 
 .jp-OutputPrompt {
     color: transparent !important;
+    min-width: 9.5ex;  /* Aligns with Input Prompt */
 }
 
 .jp-Notebook .jp-CodeCell .jp-InputPrompt bdi,
@@ -526,22 +586,23 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     content: "\21E2";
 }
 
-.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+/*.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {*/
+.jp-Notebook .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea:before {
     display: inline-block;
     position: absolute;
     content: "\279E";
-    font-size: 2.3rem;
-    top: -2px;
+    font-size: 1.75rem;
+    top: 4px;
     width: 10px;
-    left: 6px;
+    left: 0;
     font-weight: bold !important;
 }
 
-.jp-Notebook.jp-mod-commandMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+.jp-Notebook.jp-mod-commandMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea:before {
     color: var(--txbk-cell-display-border-color);
 }
 
-.jp-Notebook.jp-mod-editMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputPrompt:before {
+.jp-Notebook.jp-mod-editMode .jp-CodeCell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-InputArea:before {
     color: var(--txbk-cell-edit-border-color);
 }
 
@@ -549,17 +610,18 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
    Code Editors
    ============= */
 
-.jp-Notebook.jp-mod-editMode .jp-Cell .CodeMirror * {
-    font-size: var(--txbk-code-font-size);
+.jp-Notebook .jp-Cell .CodeMirror * {
     line-height: var(--txbk-code-line-height);
 }
 
-.jp-Notebook.jp-mod-editMode .jp-CodeCell .CodeMirror * {
-    font-family: var(--txbk-code-font-family);
+.jp-Notebook .jp-CodeCell .CodeMirror * {
+    font-family: var(--txbk-code-font-family) !important;
+    font-size: var(--txbk-code-font-size) !important;
 }
 
-.jp-Notebook.jp-mod-editMode .jp-MarkdownCell .CodeMirror * {
-    font-family: var(--txbk-md-font-family);
+.jp-Notebook .jp-MarkdownCell .CodeMirror * {
+    font-family: var(--txbk-md-font-family) !important;
+    font-size: var(--txbk-md-font-size) !important;
 }
 
 /* Cell Output rendering (.output_area in Notebook HTML) */
