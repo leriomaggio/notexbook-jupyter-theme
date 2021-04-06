@@ -83,11 +83,15 @@ $([IPython.events]).on("rendered.MarkdownCell", function () {
             Theme</a> <code>v {{ version }}</code>
 {% if verbose %}
     <br />
-    <b>Enabled Theme Settings</b>:
+    <b>Theme Settings</b>:
     <ul style="margin-top: 0.2em">
-        <li>Notebook: Computer Modern {{ nb_font_size }}, Line spread {{ nb_line_height }}.</li>
-        <li>Code Editor: <span class="codemono"><code>{{ code_mono_font }}</code></span> {{ code_mono_font_size }}; {{ code_theme_name|title }} Theme.</li>
-        <li>Markdown Editor: <span class="mdmono"><code>{{ md_mono_font }}</code></span>  {{ md_mono_font_size }}; {{ md_theme_name|title }} Theme.</li>
+        <li>Notebook: Computer Modern font; {{ nb_font_size }}; Line spread {{ nb_line_height }}.</li>
+        <li>Code Editor: <span class="codemono">
+            <code>{{ code_mono_font }}</code> font; <code>{{ code_mono_font_size }}</code>; {{ code_theme_name|title }} Theme.
+        </span></li>
+        <li>Markdown Editor:<span class="mdmono">
+            <code>{{ md_mono_font }}</code> font; <code>{{ md_mono_font_size }}</code>; {{ md_theme_name|title }} Theme.
+        </span></li>
     </ul>
 {% endif %}
 </div>
