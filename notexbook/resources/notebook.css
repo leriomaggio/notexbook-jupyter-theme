@@ -703,7 +703,6 @@ div.text_cell_render blockquote {
     padding: .3rem .5rem;
     border-left: .3rem solid #a7a7a7;
     background-color: var(--txbk-content-mono-bgcolor);
-
 }
 
 div.text_cell_render blockquote p {
@@ -822,17 +821,33 @@ p > [class^='fn']:not(:first-child) {
     border-top: 0 !important;
 }
 
-[id^='fn'] i, [class^='fn'] i, p > strong > strong {
+[id^='fn'] i, [class^='fn'] i,
+[id^='fn'] b, [class^='fn'] b,
+[id^='fn'] strong, [class^='fn'] strong,
+p > strong > strong {
     background-color: var(--txbk-content-mono-bgcolor);
     font-style: normal !important;
     font-weight: bold !important;
-    text-transform: capitalize;
 }
 
 /* FIX Forcing monospace code to adhere with footnotes rules!*/
 div.text_cell_render p [id^='fn'] > code,
 div.text_cell_render p [class^='fn'] > code {
     font-size: 1em !important;
+}
+
+/* CSS Anchors link as superscript (like footnotes) */
+a[target="_self"][href^="#fn"], a[target="_self"][href^="fn"] {
+    font-size: 60%;
+    vertical-align: top;
+}
+/* Surround Footnotes by Square brackets */
+a[target="_self"][href^="#fn"]:before, a[target="_self"][href^="fn"]:before {
+    content: "[";
+}
+
+a[target="_self"][href^="#fn"]:after, a[target="_self"][href^="fn"]:after {
+    content: "]";
 }
 
 /* --------------
