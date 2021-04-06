@@ -258,6 +258,10 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     background-color: var(--txbk-content-mono-bgcolor);
 }
 
+.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote:not(:first-child) {
+    margin: 2rem .2rem;
+}
+
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon blockquote p {
     padding: .2rem 1.5rem;
 }

@@ -705,6 +705,10 @@ div.text_cell_render blockquote {
     background-color: var(--txbk-content-mono-bgcolor);
 }
 
+div.text_cell_render blockquote:not(:first-child) {
+    margin: 2rem .2rem;
+}
+
 div.text_cell_render blockquote p {
     padding: .2rem 1.5rem;
 }
