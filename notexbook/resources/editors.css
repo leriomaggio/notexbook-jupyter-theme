@@ -144,7 +144,15 @@ Markdown MathJax Customisation
 }
 
 .MathJax_Display, .MathJax span {
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color);
+}
+
+a .MathJax span {
+    color: var(--link-color);
+}
+
+a:hover .MathJax span {
+    text-decoration: underline;
 }
 
 .MathJax span[style*="STIXMathJax_Normal"],
