@@ -714,20 +714,19 @@ div.text_cell_render blockquote p {
 }
 
 div.text_cell_render table {
-    font-size: var(--txbk-content-font-size);
+    font-size: var(--txbk-content-font-size) !important;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
     overflow: auto;
     break-inside: auto;
-    text-align: left;
     margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 div.text_cell_render table thead {
     display: table-header-group;
-    vertical-align: middle !important;
-    border-bottom: none !important;
+    vertical-align: middle;
+    border-bottom: none;
 }
 
 div.text_cell_render table thead tr,
@@ -738,9 +737,8 @@ div.text_cell_render table tbody tr th,
 div.text_cell_render table tbody tr td {
     break-inside: avoid;
     break-after: auto;
-    text-align: left !important;
-    vertical-align: middle !important;
-    padding: 0 !important;
+    vertical-align: middle;
+    padding: 5px 5px;
 }
 
 div.text_cell_render table tr th {
