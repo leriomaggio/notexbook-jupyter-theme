@@ -492,10 +492,8 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     background-color: var(--jp-cell-editor-active-background);
 }
 
-/*.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active .jp-InputArea-editor*/
-
 .jp-Notebook .jp-Cell .jp-InputArea-editor,
-.jp-Notebook.jp-mod-commandMode .jp-MarkdownCell .jp-MarkdownOutput {
+.jp-Notebook .jp-MarkdownCell .jp-MarkdownOutput {
     /* Set default LEFT border as transparent - to avoid change in paddings when selected */
     border-left: 0.2rem dotted var(--txbk-cell-border-color);
     box-shadow: none;
