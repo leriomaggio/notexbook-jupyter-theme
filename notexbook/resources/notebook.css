@@ -841,16 +841,16 @@ div.text_cell_render p [class^='fn'] > code {
 }
 
 /* CSS Anchors link as superscript (like footnotes) */
-a[target="_self"][href^="#fn"], a[target="_self"][href^="fn"] {
+a[target="_self"][href^="#fn"], a[target="_self"][href*="fn"] {
     font-size: 60%;
     vertical-align: top;
 }
 /* Surround Footnotes by Square brackets */
-a[target="_self"][href^="#fn"]:before, a[target="_self"][href^="fn"]:before {
+a[target="_self"][href^="#fn"]:before, a[target="_self"][href*="fn"]:before {
     content: "[";
 }
 
-a[target="_self"][href^="#fn"]:after, a[target="_self"][href^="fn"]:after {
+a[target="_self"][href^="#fn"]:after, a[target="_self"][href*="fn"]:after {
     content: "]";
 }
 
