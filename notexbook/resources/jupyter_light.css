@@ -494,6 +494,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right: none;
     border-top: none;
     border-bottom: none;
+    overflow: hidden;
 }
 
 .jp-Notebook .jp-Cell .jp-Cell-inputWrapper {
@@ -509,6 +510,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right: none;
     border-top: none;
     border-bottom: none;
+    overflow: hidden;
 }
 
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-Cell-inputWrapper {
