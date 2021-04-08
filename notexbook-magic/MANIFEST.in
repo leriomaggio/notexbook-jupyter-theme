@@ -1,3 +1,0 @@
-include LICENSE
-recursive-include notexbook/resources *
-include notexbook/templates/*
