@@ -1,6 +1,6 @@
 /*
 Author: Valerio Maggio < @leriomaggio >
-Code: https://github.com/leriomaggio/texbook-jupyter-theme
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
 License: Apache License 2.0
 
    ---------------------------------------
@@ -21,7 +21,7 @@ table.dataframe {
     border-collapse: collapse;
     border: none;
     margin-left: 20px !important;
-    font-size: 14px !important;
+    font-size: var(--txbk-code-font-size) !important;
 }
 
 table.dataframe thead {
@@ -51,8 +51,10 @@ table.dataframe tbody tr {
 }
 
 table.dataframe tbody tr th {
-    text-align: left;
-    font-style: italic
+    text-align: left !important;
+    font-style: italic;
+    font-weight: normal;
+    margin-right: 5px;
 }
 
 table.dataframe tbody tr td {
@@ -95,7 +97,6 @@ table.dataframe thead tr th:not(:empty) {
     font-style: normal;
     padding: 5px 10px;
 }
-
 
 /* Hacking Font-weight bold capped at 500 */
 .rendered_html th {
