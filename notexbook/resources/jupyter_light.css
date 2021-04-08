@@ -311,33 +311,17 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li {
-    /*white-space: pre-wrap;*/
-    padding: .6rem !important;
+    padding: .25em;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul {
     list-style-type: circle !important;
 }
 
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ol,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ul,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ol {
-    padding-top: .3rem !important;
-}
-
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li {
-    padding: .3rem !important;
-}
-
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li a code {
-    /*font-size: .7em !important;*/
     color: var(--link-color);
 }
 

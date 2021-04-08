@@ -768,26 +768,11 @@ div.text_cell_render ul {
 }
 
 div.text_cell_render ul li, div.text_cell_render ol li {
-    /*white-space: pre-wrap;*/
-    padding: .6rem !important;
+    padding: .25em;
 }
 
 div.text_cell_render ul ul {
     list-style-type: circle !important;
-}
-
-div.text_cell_render ul ul,
-div.text_cell_render ul ol,
-div.text_cell_render ol ul,
-div.text_cell_render ol ol {
-    padding-top: .3rem !important;
-}
-
-div.text_cell_render ul li > ul li,
-div.text_cell_render ul li > ol li,
-div.text_cell_render ol li > ul li,
-div.text_cell_render ol li > ol li {
-    padding: .3rem !important;
 }
 
 div.text_cell_render ul li > ul li a code,
