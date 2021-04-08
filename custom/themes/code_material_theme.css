@@ -59,9 +59,10 @@ Repo: https://github.com/JonaDuran/Material-Light-Theme/
     --df-border: var(--ml-white);
     --df-border-right: var(--ml-grey);
     --df-th-bg: var(--ml-white);
-    /* ANSI Term Colours */
+    /*ANSI Colours*/
     --ansi-red: var(--ml-red);
-    --ansi-green: var(--texbook-dark-grey);
+    --ansi-green: var(--ml-green);
+    --ansi-green-intense: var(--ml-grey);
     --ansi-cyan: var(--ml-cyan);
     --ansi-blue: var(--ml-blue);
 }
