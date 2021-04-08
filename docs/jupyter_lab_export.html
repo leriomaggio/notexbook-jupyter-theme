@@ -14276,7 +14276,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">texify</span> -v -fs 19
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">texify</span> -v
 </pre></div>
 
      </div>
@@ -14636,7 +14636,16 @@ Markdown MathJax Customisation
 }
 
 .MathJax_Display, .MathJax span {
-    color: var(--code-text-color) !important;
+    color: var(--code-text-color);
+}
+
+a .MathJax span {
+    color: var(--link-color);
+}
+
+a:hover .MathJax span {
+    text-decoration: underline;
+    color: var(--link-color);
 }
 
 .MathJax span[style*="STIXMathJax_Normal"],
@@ -15197,6 +15206,8 @@ table.dataframe thead tr th:not(:empty) {
     --jp-content-line-height: var(--txbk-content-line-height);
     --jp-content-link-color: var(--link-color);
     --jp-content-font-size: var(--txbk-content-font-size);
+    --jp-content-heading-font-weight: bold;
+    --jp-content-heading-line-height: 1;
 
     --jp-layout-color3: #efefef;
     --jp-notebook-multiselected-color: var(--txbk-multiselect-bgcolor);
@@ -15207,8 +15218,6 @@ table.dataframe thead tr th:not(:empty) {
     --jp-code-font-family-default: var(--txbk-code-font-family);
     --jp-code-font-family: var(--jp-code-font-family-default);
     --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
-    --jp-content-heading-font-weight: 500;
-    --jp-content-heading-line-height: 1;
 
     --jp-cell-prompt-font-family: var(--txbk-code-font-family);
     --jp-cell-prompt-width: 80px;
@@ -15498,33 +15507,17 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li {
-    /*white-space: pre-wrap;*/
-    padding: .6rem !important;
+    padding: .25em;
 }
 
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul {
     list-style-type: circle !important;
 }
 
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ul,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul ol,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ul,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol ol {
-    padding-top: .3rem !important;
-}
-
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li,
-.jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li {
-    padding: .3rem !important;
-}
-
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ul li > ol li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ul li a code,
 .jp-Notebook .jp-MarkdownCell .jp-RenderedHTMLCommon ol li > ol li a code {
-    /*font-size: .7em !important;*/
     color: var(--link-color);
 }
 
@@ -15681,6 +15674,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right: none;
     border-top: none;
     border-bottom: none;
+    overflow: hidden;
 }
 
 .jp-Notebook .jp-Cell .jp-Cell-inputWrapper {
@@ -15696,6 +15690,7 @@ body[data-jp-theme-light="true"]:not(.jp-Notebook) {
     border-right: none;
     border-top: none;
     border-bottom: none;
+    overflow: hidden;
 }
 
 .jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) .jp-Cell-inputWrapper {
@@ -16223,7 +16218,7 @@ body.jp-Notebook .jp-Cell-inputWrapper .jp-RenderedHTMLCommon.jp-RenderedMarkdow
 
 
 :root {
-    --template-txbk-content-font-size: 19px;
+    --template-txbk-content-font-size: 16px;
     --template-txbk-content-line-height: 1.4;
     --template-txbk-content-mono-font-family: "CMU Typewriter Text", "Fira Code", monospace;
     --template-txbk-code-font-family: "Fira Code", "Fira Code", monospace;
@@ -16398,7 +16393,7 @@ del {
     font-style: normal;
 }
 
-a.item_link {
+a.item_link, a:hover.item_link {
     color: var(--link-color);
     font-weight: 300;
 }
@@ -16604,7 +16599,7 @@ div.cell.jupyter-soft-selected:before {
     background: none !important;
 }
 
-div.cell.selected:not(.jupyter-soft-selected) div.input:before {
+div.cell div.input:before {
     display: inline-block;
     position: relative;
     content: "\279E";
@@ -16612,8 +16607,15 @@ div.cell.selected:not(.jupyter-soft-selected) div.input:before {
     top: 11px;
     width: 10px;
     left: 3px;
+    font-weight: bold;
+}
+
+div.cell:not(.selected) div.input:before {
+    color: var(--background-color);
+}
+
+div.cell.selected:not(.jupyter-soft-selected) div.input:before {
     color: var(--txbk-cell-display-border-color);
-    font-weight: bold !important;
 }
 
 .edit_mode div.cell.selected div.input:before,
@@ -16710,6 +16712,10 @@ div.out_prompt_overlay:hover {
 /* Output HTML after cell code - e.g. Pandas DataFrame */
 div.output_html {
     color: var(--code-text-color);
+}
+
+div.output_html a, div.output_html a:hover {
+    color: var(--link-color);
 }
 
 div.output_html {
@@ -16833,7 +16839,7 @@ div.text_cell_render {
     word-wrap: break-word;
 }
 
-div.text_cell_render a {
+div.text_cell_render a, div.text_cell_render a:hover {
     color: var(--link-color);
 }
 
@@ -16948,20 +16954,19 @@ div.text_cell_render blockquote p {
 }
 
 div.text_cell_render table {
-    font-size: var(--txbk-content-font-size);
+    font-size: var(--txbk-content-font-size) !important;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
     overflow: auto;
     break-inside: auto;
-    text-align: left;
     margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 div.text_cell_render table thead {
     display: table-header-group;
-    vertical-align: middle !important;
-    border-bottom: none !important;
+    vertical-align: middle;
+    border-bottom: none;
 }
 
 div.text_cell_render table thead tr,
@@ -16972,8 +16977,8 @@ div.text_cell_render table tbody tr th,
 div.text_cell_render table tbody tr td {
     break-inside: avoid;
     break-after: auto;
-    vertical-align: middle !important;
-    padding: 0 !important;
+    vertical-align: middle;
+    padding: 5px 5px;
 }
 
 div.text_cell_render table tr th {
@@ -16992,26 +16997,11 @@ div.text_cell_render ul {
 }
 
 div.text_cell_render ul li, div.text_cell_render ol li {
-    /*white-space: pre-wrap;*/
-    padding: .6rem !important;
+    padding: .25em;
 }
 
 div.text_cell_render ul ul {
     list-style-type: circle !important;
-}
-
-div.text_cell_render ul ul,
-div.text_cell_render ul ol,
-div.text_cell_render ol ul,
-div.text_cell_render ol ol {
-    padding-top: .3rem !important;
-}
-
-div.text_cell_render ul li > ul li,
-div.text_cell_render ul li > ol li,
-div.text_cell_render ol li > ul li,
-div.text_cell_render ol li > ol li {
-    padding: .3rem !important;
 }
 
 div.text_cell_render ul li > ul li a code,
@@ -17074,16 +17064,16 @@ div.text_cell_render p [class^='fn'] > code {
 }
 
 /* CSS Anchors link as superscript (like footnotes) */
-a[target="_self"][href^="#fn"], a[target="_self"][href*="fn"] {
+a[href^="#fn"], a[href*="fn"] {
     font-size: 60%;
     vertical-align: top;
 }
 /* Surround Footnotes by Square brackets */
-a[target="_self"][href^="#fn"]:before, a[target="_self"][href*="fn"]:before {
+a[href^="#fn"]:before, a[href*="fn"]:before {
     content: "[";
 }
 
-a[target="_self"][href^="#fn"]:after, a[target="_self"][href*="fn"]:after {
+a[href^="#fn"]:after, a[href*="fn"]:after {
     content: "]";
 }
 
@@ -17365,14 +17355,14 @@ window.onload = function() {
 </script>
 
 <div class="nomono">
-   The notebook is using the $\text{no}\TeX\text{book}$ Jupyter
-        <a href="https://github.com/leriomaggio/notexbook-jupyter-theme" title="noTeXbook Theme">
-            Theme</a> <code>v 2.0.0-pre1</code>
+   The notebook is using
+    <a href="https://github.com/leriomaggio/notexbook-jupyter-theme" title="noTeXbook Theme">
+        <b>no$\TeX$book</b></a> Jupyter Theme (release <code>2.0.0</code>).
 
     <br />
     <b>Theme Settings</b>:
     <ul style="margin-top: 0.2em">
-        <li>Notebook: Computer Modern font; 19px; Line spread 1.4.</li>
+        <li>Notebook: Computer Modern font; 16px; Line spread 1.4.</li>
         <li>Code Editor: <span class="codemono">
             <code>Fira Code</code> font; <code>14px</code>; Material Theme.
         </span></li>
@@ -17450,34 +17440,52 @@ writing, ed.</em>);</li>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Project-Links">Project Links<a class="anchor-link" href="#Project-Links">&#182;</a></h2><ul>
+<li>📦 <strong>PyPi package</strong>: <a href="https://pypi.org/project/notexbook-theme/">pypi.org/project/notexbook-theme/</a> </li>
+<li>🐍🎨 <strong>Official GitHub Repo</strong>: <a href="https://github.com/leriomaggio/notexbook-jupyter-theme/">github.com/leriomaggio/notexbook-jupyter-theme/</a> </li>
+<li>🚀 <strong>Documentation and GitHub Page</strong>: <a href="https://leriomaggio.github.io/notexbook-jupyter-theme/">leriomaggio.github.io/notexbook-jupyter-theme/</a> </li>
+</ul>
+<hr>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="The-$\text{no}\TeX\text{book}$-Theme">The $\text{no}\TeX\text{book}$ Theme<a class="anchor-link" href="#The-$\text{no}\TeX\text{book}$-Theme">&#182;</a></h1><p><a name="toc"></a></p>
 <h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h2><ul>
 <li><a href="#colours">Colour Palette</a></li>
 <li><a href="#fonts">Fonts and Typeface</a></li>
-<li><a href="#Markdown">Markdown</a><ul>
-<li><a href="#mdcode">Code and Syntaxt Highlithing</a>  </li>
+<li><p><a href="#Markdown">Markdown</a></p>
+<ul>
+<li><a href="#mdcode">Code Highlithing</a>  </li>
 <li><a href="#Math">Math</a></li>
 <li><a href="#Extras">Extras</a><ul>
 <li><a href="#Footnotes">Footnotes</a></li>
 <li><a href="#dropcap">Drop Cap</a></li>
 <li><a href="#imgwidth">Image Widths</a></li>
+<li><a href="#badges">Badges</a></li>
+<li><a href="#inlinemath">Inline Math</a></li>
+<li><a href="#inlinemono">Inline Mono</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#code">Code</a><ul>
+<li><p><a href="#code">Code</a></p>
+<ul>
 <li><a href="#material">Code Editor</a></li>
-<li><a href="#errors">Errors</a></li>
 <li><a href="#dataframe">Dataframe</a></li>
+<li><a href="#errors">Errors</a></li>
 </ul>
 </li>
-<li><a href="#Extensions">Extensions</a><ul>
+<li><p><a href="#Extensions">Extensions</a></p>
+<ul>
 <li><a href="#jupyterlab">JupyterLab</a></li>
+<li><a href="#customcss"><code>custom.css</code> Jupyter theme</a></li>
 <li><a href="#colab">Google Colaboratory</a></li>
 </ul>
 </li>
-<li><a href="#Project-Links">Project Links</a></li>
-<li><a href="#Credits">Credits</a></li>
+<li><p><a href="#Credits">Credits</a></p>
+</li>
 </ul>
 
 </div>
@@ -17775,9 +17783,12 @@ specifically designed for source code, combining a clean and elegant style with 
 </tr>
 </tbody>
 </table>
+<p><strong>Blockquotes and <code>Monospace Paragraphs</code></strong></p>
 <blockquote><p>Blockquotes are very handy in email to emulate reply text.
 This line is part of the same quote.</p>
 </blockquote>
+
+<pre><code>This paragraph will be using monospace font.</code></pre>
 <p><a href="#toc">$\uparrow$ top</a></p>
 
 </div>
@@ -17785,7 +17796,9 @@ This line is part of the same quote.</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="mdcode"></a></p>
-<h3 id="Code-and-Syntax-Highlighting">Code and Syntax Highlighting<a class="anchor-link" href="#Code-and-Syntax-Highlighting">&#182;</a></h3><p>Syntax highlighting is supported: it uses the <code>CMUTypewriter</code> as for the font face, and the colour scheme is the very same used for <strong>code</strong> cells (<em>more on this later</em>).</p>
+<h3 id="Code-Highlighting">Code Highlighting<a class="anchor-link" href="#Code-Highlighting">&#182;</a></h3><p>Special mention goes to code syntax highlighting support in Markdown cells: they will still be using the default <code>CMUTypewriter</code> monospace font, 
+but they will also share the <strong>same</strong> colour scheme used for <strong>code</strong> cells (more on this in the <a href="#material">Code Editor</a> Section).</p>
+<p>For example:</p>
 <div class="highlight"><pre><span></span><span class="c1">// Javascript Highlighting</span>
 <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>    <span class="c1">// A number with decimals</span>
 <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>       <span class="c1">// A number without decimals</span>
@@ -17802,7 +17815,7 @@ This line is part of the same quote.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Math">Math<a class="anchor-link" href="#Math">&#182;</a></h3><p>Math and $LaTeX$ text style integration is supported (via MathJax) both in <strong>inline</strong> and <strong>block</strong> modes.</p>
+<h3 id="Math">Math<a class="anchor-link" href="#Math">&#182;</a></h3><p>Math and $LaTeX$ text style integration is supported (via <code>MathJax</code>) both in <strong>inline</strong> and <strong>block</strong> modes.</p>
 <p><strong>Inline math</strong>:  $ X^2 + 1 = 1 $ works fine.</p>
 <p><strong>Math block</strong>:</p>
 $$
@@ -17891,7 +17904,7 @@ $$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h4><p>Any HTML link targeting a bookmark or an anchor including <code>fn</code> (as in <em>footnote</em>) in their name will be automatically interpreted as links to a footnote. For example:</p>
+<h4 id="1.-Footnotes">1. Footnotes<a class="anchor-link" href="#1.-Footnotes">&#182;</a></h4><p>Any HTML link targeting a bookmark or an anchor including <code>fn</code> (as in <em>footnote</em>) in their name will be automatically interpreted as links to a footnote. For example:</p>
 <div class="highlight"><pre><span></span>[<span class="nt">1</span>](<span class="na">#fnlink</span>)
 </pre></div>
 <p>The above link will be automatically rendered as superscript and within square-brackets<a href="#fnlink">1</a></p>
@@ -17899,46 +17912,99 @@ $$</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fnlink&quot;</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>[1]:<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> This is an example of a footnote<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </pre></div>
 <p><span id="fnlink"><b>[1]:</b> This is an example of a footnote</span></p>
-<p><a href="#toc">$\uparrow$ top</a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="dropcap"></a></p>
-<h3 id="Drop-Cap"><span class="drop">D</span>rop Cap<a class="anchor-link" href="#Drop-Cap">&#182;</a></h3><p>A special class to display a <a href="https://en.wiktionary.org/wiki/drop_cap"><strong>drop cap</strong></a> could not be missing in the $\text{no}\TeX\text{book}$ theme.</p>
+<h3 id="2-Drop-Cap"><span class="drop">2</span> Drop Cap<a class="anchor-link" href="#2-Drop-Cap">&#182;</a></h3><p>A special class to display a <a href="https://en.wiktionary.org/wiki/drop_cap"><strong>drop cap</strong></a> could not be missing in the $\text{no}\TeX\text{book}$ theme.</p>
 <p>It is just required to use the <code>drop</code> <code>CSS</code> class:</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;drop&quot;</span><span class="p">&gt;</span>D<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>rop
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;drop&quot;</span><span class="p">&gt;</span>O<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>nce upone a time...
 </pre></div>
-<p><a href="#toc">$\uparrow$ top</a></p>
+<p><span class="drop">O</span>nce upone a time...</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a name="imgwidth"></a></p>
-<h5 id="Image-Width">Image Width<a class="anchor-link" href="#Image-Width">&#182;</a></h5><p>As default, the <code>max-width</code> of images (and SVG) is automatically capped at the <code>70%</code> to allow for a 
+<h3 id="3.-Image-Width">3. Image Width<a class="anchor-link" href="#3.-Image-Width">&#182;</a></h3><p><a name="imgwidth"></a></p>
+<p>As default, the <code>max-width</code> of images (and SVG) is automatically capped at the <code>70%</code> to allow for a 
 proper rendering of large images, whilst avoiding any potential overflow.</p>
 <p>Nonetheless, there may be cases in which it would be required to control the <code>max-width</code> parameter in order to enlarge or 
 shrink an image. Special <code>CSS</code> classes are available controlling the <code>max-width</code> attribute of displaying images.</p>
-<p><strong>List of Available CSS Classes</strong>:</p>
-<div class="highlight"><pre><span></span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;maxw</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<p><strong>All this classes</strong> share the same name prefix (i.e. <strong><code>.maxw</code></strong>) followed by the corresponding ma-width expressed as percentage value.
+The list of available CSS Classes is:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;maxw</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="p">[</span><span class="s1">&#39;maxw10&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw15&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw20&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw25&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw30&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw35&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw40&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw45&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw50&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;maxw55&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw60&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw65&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw70&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw75&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw80&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw85&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw90&#39;</span><span class="p">,</span> <span class="s1">&#39;maxw95&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;maxw100&#39;</span><span class="p">]</span>
 </pre></div>
 <p><strong>Examples</strong>:</p>
 <div class="highlight"><pre><span></span><span class="c">&lt;!-- max-width: 10% --&gt;</span>
 <span class="p">&lt;</span><span class="nt">img</span> <span class="err">[...]</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;maxw10&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 <p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw10" /></p>
-<div class="highlight"><pre><span></span><span class="c">&lt;!-- max-width: 40% --&gt;</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="err">[...]</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;maxw40&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="c">&lt;!-- max-width: 35% --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="err">[...]</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;maxw35&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
-<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw40" /></p>
-<p><a href="#toc">$\uparrow$ top</a></p>
+<p><img src="https://www.softwareheritage.org/wp-content/uploads/2020/05/BibLaTEX-swh_3-768x682.png" class="maxw35" /></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="4.-Badges">4. Badges<a class="anchor-link" href="#4.-Badges">&#182;</a></h3><p><a name="badges"></a></p>
+<p>The theme also defines special classes to include <a href="https://shields.io/">badges</a>.</p>
+<p>This may turn out to be particularly useful in notebooks to include links to external services like <a href="https://colab.research.google.com">Google Colab</a>, <a href="https://mybinder.org">MyBinder</a>, or <a href="https://nbviewer.jupyter.org">NBViewer</a>,</p>
+<p>In order to do so, the theme provides the <code>CSS</code> class <strong><code>.badges</code></strong> that can be used in a Markdown cell:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badges&quot;</span><span class="p">&gt;</span> ... <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+<p>Here is an example:</p>
+<div class="badges">
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+
+[![myBinder](https://mybinder.org/badge_logo.svg)]()
+
+[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)]()
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a name="inlinemath"></a></p>
+<h3 id="5.-Inline-Math">5. Inline Math<a class="anchor-link" href="#5.-Inline-Math">&#182;</a></h3><p>The <code>inline-math</code> <code>CSS</code> class forces to display <code>inline</code> Math blocks. This may be particularly useful in cases we do want to use the $\LaTeX$ Math-block environment to write equation, but we do not want to have it displayed in a separate paragraph:</p>
+$$
+\sum_{i=1}^{N} x_i^2
+$$<p>To do so, let's just wrap the equation with a <code>span</code> HTML tag with class <strong><code>.inline-math</code></strong>:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-math&quot;</span><span class="p">&gt;</span>... <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+<p>This equation will be displayed <strong>inline</strong>: 
+<span class="inline-math">
+$$
+\sum_{i=1}^{N} x_i^2
+$$
+</span></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a name="inlinemono"></a></p>
+<h3 id="6.-Inline-Mono">6. Inline Mono<a class="anchor-link" href="#6.-Inline-Mono">&#182;</a></h3><p>The default <code>monospace</code> font used in Markdown Cell rendering is <code>CMUTypewriter</code>, that is the monospace font of the <strong>Computer Modern Family</strong>.
+However, the $\text{no}\TeX\text{book}$ theme also utilises two additional monospace fonts (for Code and Markdown editors), and sometimes it may also be required to use any of these fonts in rendered text.</p>
+<p>To do so, the theme provides two special <code>CSS</code> classes, namely <strong><code>.codemono</code></strong> and <strong><code>.mdmono</code></strong> that will serve exactly this purpose.</p>
+<p>The example below demonstrates how to <em>force</em> the rendering of the following inline mono using code editor font</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codemono&quot;</span><span class="p">&gt;</span>`Code Monospace Font` with Ligatures **support** `--&gt; &gt;= !=`<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+<p><span class="codemono">`Code Monospace Font` with Ligatures **support** `--> >= !=`</span></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="#toc">$\uparrow$ top</a></p>
 <hr>
 
 </div>
@@ -18014,8 +18080,7 @@ In addition, other editor themes are bundled with the $\text{no}\TeX\text{book}$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="material"></a></p>
-<h4 id="Material-Design-Light-Theme-(material)">Material Design Light Theme (<code>material</code>)<a class="anchor-link" href="#Material-Design-Light-Theme-(material)">&#182;</a></h4><p>(available for <strong>Code</strong> \&amp; <strong>Markdown</strong> editors)</p>
-<p>The <strong>default</strong> colour palette used for both Code and Markdown editors is inspired by the 
+<h3 id="(Code-&amp;-Markdown)-Material-Design-Light-Theme-(material)"><strong>(Code &amp; Markdown)</strong> Material Design Light Theme (<code>material</code>)<a class="anchor-link" href="#(Code-&amp;-Markdown)-Material-Design-Light-Theme-(material)">&#182;</a></h3><p>The <strong>default</strong> colour palette used for both Code and Markdown editors is inspired by the 
 Material Design <a href="https://github.com/JonaDuran/Material-Light-Theme/">Light Theme</a>.</p>
 <p>The colour palette is declined on <code>12</code> colours, reported below:</p>
 
@@ -18136,8 +18201,7 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="GitHub-Theme-(github)">GitHub Theme (<code>github</code>)<a class="anchor-link" href="#GitHub-Theme-(github)">&#182;</a></h4><p>(only available for the <ins>**Code** editor</ins>)</p>
-<p>This theme builds on the <strong>new</strong> code editor theme available on <strong>GitHub</strong>.</p>
+<h3 id="(Code-only)-GitHub-Theme-(github)"><strong>(Code only)</strong> GitHub Theme (<code>github</code>)<a class="anchor-link" href="#(Code-only)-GitHub-Theme-(github)">&#182;</a></h3><p>This theme builds on the <strong>new</strong> code editor theme available on <strong>GitHub</strong>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -18198,8 +18262,7 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="GitHub-Light-Theme-(github-light)">GitHub Light Theme (<code>github-light</code>)<a class="anchor-link" href="#GitHub-Light-Theme-(github-light)">&#182;</a></h4><p>(only available for the <ins>**Code** editor</ins>)</p>
-<p>The <strong>GitHub Light</strong> theme is an <em>alternative</em> theme inspired by the (previous) GitHub light theme.</p>
+<h3 id="(Code-only)-GitHub-Light-Theme-(github-light)"><strong>(Code only)</strong> GitHub Light Theme (<code>github-light</code>)<a class="anchor-link" href="#(Code-only)-GitHub-Light-Theme-(github-light)">&#182;</a></h3><p>The <strong>GitHub Light</strong> theme is an <em>alternative</em> theme inspired by the (previous) GitHub light theme.</p>
 <p><strong>Reference</strong>: <a href="https://github.com/primer/github-syntax-light">Github Syntax Highlighting</a></p>
 
 </div>
@@ -18264,8 +18327,7 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Crisp-Light-Theme-(crisp)">Crisp Light Theme (<code>crisp</code>)<a class="anchor-link" href="#Crisp-Light-Theme-(crisp)">&#182;</a></h4><p>(only available for the <ins>**Code** editor</ins>)</p>
-<p>The colour palette of the <strong>Crisp Light</strong> editor theme is inspired by the 
+<h3 id="(Code-only)-Crisp-Light-Theme-(crisp)"><strong>(Code only)</strong> Crisp Light Theme (<code>crisp</code>)<a class="anchor-link" href="#(Code-only)-Crisp-Light-Theme-(crisp)">&#182;</a></h3><p>The colour palette of the <strong>Crisp Light</strong> editor theme is inspired by the 
 Crisp light theme included in the <strong>Rainglow</strong> collection of VSCode Themes</p>
 <p><strong>Reference</strong>: <a href="https://github.com/rainglow/vscode/">https://github.com/rainglow/vscode/</a></p>
 
@@ -18326,10 +18388,9 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Typora-Theme-(typora)">Typora Theme (<code>typora</code>)<a class="anchor-link" href="#Typora-Theme-(typora)">&#182;</a></h4><p>(only available for the <strong>Markdown</strong> editor)</p>
-<p>This theme is inspired by the default (markdown) source code visualiser 
-available built-in in <a href="https://typora.io/">Typora</a><a href="#fn_md">$^{*}$</a></p>
-<p><span id="fn_md" class="fn"><i>[*]</i>: Typora is definitely my default editor for Markdown! 
+<h3 id="(Markdown-only)-Typora-Theme-(typora)"><strong>(Markdown only)</strong> Typora Theme (<code>typora</code>)<a class="anchor-link" href="#(Markdown-only)-Typora-Theme-(typora)">&#182;</a></h3><p>This theme is inspired by the default (markdown) source code visualiser 
+available built-in in <a href="https://typora.io/">Typora</a><a href="#fn_md">*</a></p>
+<p><span id="fn_md" class="fn"><i>*</i>: Typora is definitely my default editor for Markdown! 
     Highly recommended $\rightarrow$ [typora.io](http://typora.io)</span></p>
 
 </div>
@@ -18395,101 +18456,6 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a name="errors"></a></p>
-<h3 id="Errors-and-Exceptions">Errors and Exceptions<a class="anchor-link" href="#Errors-and-Exceptions">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">wherever</span> <span class="kn">import</span> <span class="n">non_existing_module</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-13-40a1e5a99230&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> wherever <span class="ansi-green-fg">import</span> non_existing_module
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;wherever&#39;</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
-<span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-5162a496210c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> scipy <span class="ansi-green-fg">import</span> linalg
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>linalg<span class="ansi-blue-fg">.</span>det<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>ones<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/notexbook-test/lib/python3.9/site-packages/scipy/linalg/basic.py</span> in <span class="ansi-cyan-fg">det</span><span class="ansi-blue-fg">(a, overwrite_a, check_finite)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1018</span>     a1 <span class="ansi-blue-fg">=</span> _asarray_validated<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> check_finite<span class="ansi-blue-fg">=</span>check_finite<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1019</span>     <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">!=</span> <span class="ansi-cyan-fg">2</span> <span class="ansi-green-fg">or</span> a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">!=</span> a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1020</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;expected square matrix&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1021</span>     overwrite_a <span class="ansi-blue-fg">=</span> overwrite_a <span class="ansi-green-fg">or</span> _datacopied<span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">,</span> a<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1022</span>     fdet<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">=</span> get_flinalg_funcs<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;det&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ValueError</span>: expected square matrix</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="dataframe"></a></p>
 <h3 id="Dataframe">Dataframe<a class="anchor-link" href="#Dataframe">&#182;</a></h3>
 </div>
@@ -18503,7 +18469,7 @@ height=92
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
@@ -18511,8 +18477,8 @@ height=92
 
 
 <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">iris_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]],</span>
-                     <span class="n">columns</span><span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]],</span> 
+                       <span class="n">columns</span><span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
 <span class="n">iris_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -18529,7 +18495,7 @@ height=92
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -18614,6 +18580,101 @@ height=92
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a name="errors"></a></p>
+<h3 id="Errors-and-Exceptions">Errors and Exceptions<a class="anchor-link" href="#Errors-and-Exceptions">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">wherever</span> <span class="kn">import</span> <span class="n">non_existing_module</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-14-40a1e5a99230&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> wherever <span class="ansi-green-fg">import</span> non_existing_module
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;wherever&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-15-5162a496210c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> scipy <span class="ansi-green-fg">import</span> linalg
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>linalg<span class="ansi-blue-fg">.</span>det<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>ones<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/anaconda3/envs/notexbook-test/lib/python3.9/site-packages/scipy/linalg/basic.py</span> in <span class="ansi-cyan-fg">det</span><span class="ansi-blue-fg">(a, overwrite_a, check_finite)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1018</span>     a1 <span class="ansi-blue-fg">=</span> _asarray_validated<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> check_finite<span class="ansi-blue-fg">=</span>check_finite<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1019</span>     <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">!=</span> <span class="ansi-cyan-fg">2</span> <span class="ansi-green-fg">or</span> a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">!=</span> a1<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1020</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;expected square matrix&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1021</span>     overwrite_a <span class="ansi-blue-fg">=</span> overwrite_a <span class="ansi-green-fg">or</span> _datacopied<span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">,</span> a<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1022</span>     fdet<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">=</span> get_flinalg_funcs<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;det&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>a1<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: expected square matrix</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="#toc">$\uparrow$ top</a></p>
 
 </div>
@@ -18635,6 +18696,13 @@ height=92
 <h3 id="JupyterLab-(and-HTML-export)">JupyterLab (and HTML export)<a class="anchor-link" href="#JupyterLab-(and-HTML-export)">&#182;</a></h3><p><strong>Jupyter Lab</strong> is <strong>fully</strong> supported!</p>
 <p>Moreover: the latest versions of <a href="https://nbconvert.readthedocs.io/en/latest/"><code>jupyter-nbconvert</code></a> apply the <code>lab</code> template as <a href="https://nbconvert.readthedocs.io/en/latest/customizing.html?highlight=template#where-are-nbconvert-templates-installed"><strong>default HTML</strong></a> template for export. This generates a DOM structure which is compliant with Jupyter Lab.</p>
 <p>Here is an example of this notebook exported with <code>lab</code> template $\Rightarrow$ <a href="./jupyter_lab_export.html">Jupyter Lab Light</a></p>
+<p><a name="customcss"></a></p>
+<h3 id="custom.css-Jupyter-theme"><code>custom.css</code> Jupyter theme<a class="anchor-link" href="#custom.css-Jupyter-theme">&#182;</a></h3><p>The $\text{no}\TeX\text{book}$ theme is <strong>also</strong> available as a <strong>full-fledged</strong> <em>custom</em> Jupyter notebook theme (HTML/CSS).
+This is useful in case one would prefer to enable the theme as <strong>the</strong> global custom default Jupyter theme.</p>
+<p>The <code>noTeXbook</code> theme package is available for <a href="https://github.com/leriomaggio/notexbook-jupyter-theme/releases">download</a>, 
+along with its corresponding <a href="https://github.com/leriomaggio/notexbook-jupyter-theme/blob/custom-css/README.md">documentation</a>.</p>
+<p>The documentation also contains details on the original CSS design, and instructions on how to define 
+your own CSS Editor Colour theme.</p>
 <p><a name="colab"></a></p>
 <h3 id="Google-Colaboratory">Google Colaboratory<a class="anchor-link" href="#Google-Colaboratory">&#182;</a></h3><p>The HTML of a Colaboratory notebook is nothing similar to the standard Jupyter notebook/lab HTML structure (so the <code>custom-css</code> cannot work). In addition, every single Colaboratory notebook cell generates a new <code>HTML iframe</code>, so making the <code>texify</code> IPython magic pretty much useless too.</p>
 <p>Therefore, the <em>only</em> solution I could resort to was using the <a href="https://en.wikipedia.org/wiki/Stylus_(browser_extension">Stylus</a>) browser extension.
@@ -18654,16 +18722,6 @@ Unfortunately this is not as customisable and portable as the IPython magic, but
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Project-Links">Project Links<a class="anchor-link" href="#Project-Links">&#182;</a></h2><ul>
-<li>📦 <strong>PyPi package</strong>: <a href="https://pypi.org/project/notexbook-theme/">pypi.org/project/notexbook-theme/</a> </li>
-<li>🐍🎨 <strong>Official GitHub Repo</strong>: <a href="https://github.com/leriomaggio/notexbook-jupyter-theme/">github.com/leriomaggio/notexbook-jupyter-theme/</a> </li>
-<li>🚀 <strong>Documentation and GitHub Page</strong>: <a href="https://leriomaggio.github.io/notexbook-jupyter-theme/">leriomaggio.github.io/notexbook-jupyter-theme/</a> </li>
-</ul>
 
 </div>
 </div>
