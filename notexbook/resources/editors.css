@@ -153,6 +153,7 @@ a .MathJax span {
 
 a:hover .MathJax span {
     text-decoration: underline;
+    color: var(--link-color);
 }
 
 .MathJax span[style*="STIXMathJax_Normal"],

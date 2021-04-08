@@ -164,7 +164,7 @@ del {
     font-style: normal;
 }
 
-a.item_link {
+a.item_link, a:hover.item_link {
     color: var(--link-color);
     font-weight: 300;
 }
@@ -370,7 +370,7 @@ div.cell.jupyter-soft-selected:before {
     background: none !important;
 }
 
-div.cell.selected:not(.jupyter-soft-selected) div.input:before {
+div.cell div.input:before {
     display: inline-block;
     position: relative;
     content: "\279E";
@@ -378,8 +378,15 @@ div.cell.selected:not(.jupyter-soft-selected) div.input:before {
     top: 11px;
     width: 10px;
     left: 3px;
+    font-weight: bold;
+}
+
+div.cell:not(.selected) div.input:before {
+    color: var(--background-color);
+}
+
+div.cell.selected:not(.jupyter-soft-selected) div.input:before {
     color: var(--txbk-cell-display-border-color);
-    font-weight: bold !important;
 }
 
 .edit_mode div.cell.selected div.input:before,
@@ -476,6 +483,10 @@ div.out_prompt_overlay:hover {
 /* Output HTML after cell code - e.g. Pandas DataFrame */
 div.output_html {
     color: var(--code-text-color);
+}
+
+div.output_html a, div.output_html a:hover {
+    color: var(--link-color);
 }
 
 div.output_html {
@@ -599,7 +610,7 @@ div.text_cell_render {
     word-wrap: break-word;
 }
 
-div.text_cell_render a {
+div.text_cell_render a, div.text_cell_render a:hover {
     color: var(--link-color);
 }
 
@@ -839,16 +850,16 @@ div.text_cell_render p [class^='fn'] > code {
 }
 
 /* CSS Anchors link as superscript (like footnotes) */
-a[target="_self"][href^="#fn"], a[target="_self"][href*="fn"] {
+a[href^="#fn"], a[href*="fn"] {
     font-size: 60%;
     vertical-align: top;
 }
 /* Surround Footnotes by Square brackets */
-a[target="_self"][href^="#fn"]:before, a[target="_self"][href*="fn"]:before {
+a[href^="#fn"]:before, a[href*="fn"]:before {
     content: "[";
 }
 
-a[target="_self"][href^="#fn"]:after, a[target="_self"][href*="fn"]:after {
+a[href^="#fn"]:after, a[href*="fn"]:after {
     content: "]";
 }
 
