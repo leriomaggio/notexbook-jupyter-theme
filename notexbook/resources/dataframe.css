@@ -1,0 +1,104 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+   ---------------------------------------
+    CODE CELL OUTPUT (DISPLAY MODE)
+
+    Pandas DataFrame - as HTML Table
+        (includes also HTML tables)
+
+
+   Note: This stylesheet does NOT include
+   any color nor background color for tables,
+   as those are assumed to be part of the
+   Coding colourisation theme.
+
+   ---------------------------------------
+*/
+table.dataframe {
+    border-collapse: collapse;
+    border: none;
+    margin-left: 20px !important;
+    font-size: var(--txbk-code-font-size) !important;
+}
+
+table.dataframe thead {
+    padding-bottom: 10px;
+}
+
+table.dataframe thead tr {
+    font-style: normal;
+    padding: 5px 10px;
+    border-bottom:  1px solid;
+    vertical-align: middle;
+    text-align: center;
+    empty-cells: hide;
+}
+
+table.dataframe thead tr th,
+table.dataframe thead tr:only-child th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.dataframe tbody {
+    padding-top:  5px;
+}
+
+table.dataframe tbody tr {
+}
+
+table.dataframe tbody tr th {
+    text-align: left !important;
+    font-style: italic;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+table.dataframe tbody tr td {
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+}
+
+table.dataframe tr {
+    border: none;
+}
+
+table.dataframe td,
+table.dataframe th {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+table.dataframe > th:not(:empty) {
+    text-align: left;
+    padding: 0 10px;
+    font-style: italic
+}
+
+table.dataframe tr:nth-child(2) th:empty,
+table.dataframe tr:nth-child(2) th:empty {
+    border-left: none;
+}
+
+table.dataframe td {
+    padding: 0.375em 1em;
+}
+
+table.dataframe thead {
+	padding: 10px 0;
+	font-weight: bold;
+}
+
+table.dataframe thead tr th:not(:empty) {
+    text-align: left;
+    font-style: normal;
+    padding: 5px 10px;
+}
+
+/* Hacking Font-weight bold capped at 500 */
+.rendered_html th {
+    font-weight: 500 !important;
+}

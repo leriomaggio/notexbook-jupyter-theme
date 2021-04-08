@@ -1,0 +1,67 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+The color palette is inspired by the Crisp light theme
+included in the Rainglow collection of VS Code Themes
+
+Repo: https://github.com/rainglow/vscode/
+*/
+
+:root {
+    /* Color Palette */
+    --cl-lilac: #c6a7c6;
+    --cl-black: #221a22;
+    --cl-grey: #b8b8b8;
+    --cl-white: #ffffff;
+    --cl-yellow: #fc9a0f;
+    --cl-dark-orange: #fc6a0f;
+    --cl-purple: #765478;
+    --cl-dark-purple: #4f3c4f;
+    --cl-light-purple: #99769b;
+    --cl-red: #cf433e;
+    --cl-blue: #1565C0;
+
+
+    /* Editor Theme */
+    --code-background-color: var(--cl-white);
+    --gutter-background: var(--cl-white);
+    --selection-background-color: var(--cl-yellow);
+    --line-numbers: var(--cl-grey);
+    --cursor: var(--cl-black);
+    --bracket: var(--cl-purple);
+    --matching-bracket: var(--cl-selection-background-color);
+    --code-text-color: var(--cl-black);
+    --keywords: var(--cl-purple);
+    --types: var(--cl-purple);
+    --variables: var(--cl-code-text-color);
+    --variables2: var(--cl-dark-purple);
+    --def: var(--cl-dark-orange);
+    --property: var(--cl-light-purple);
+    --meta: var(--cl-light-purple);
+    --builtin: var(--cl-dark-purple);
+    --attribute: var(--cl-code-text-color);
+    --strings: var(--cl-yellow);
+    --strings2: var(--cl-lilac);
+    --comments: var(--cl-lilac);
+    --operator: var(--cl-blue);
+    --numbers: var(--cl-dark-orange);
+    /* Dataframe */
+    --dataframe: var(--cl-code-text-color);
+    --df-bg: var(--cl-white);
+    --df-thead: var(--cl-light-purple);
+    --df-thead-border: var(--cl-purple);
+    --df-tr-hover: var(--cl-selection-background-color);
+    --df-border: var(--cl-white);
+    --df-border-right: var(--cl-grey);
+    --df-th-bg: var(--cl-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--cl-red);
+    --ansi-green: var(--cl-yellow);
+    --ansi-green-intense: var(--cl-grey);
+    --ansi-cyan: var(--cl-purple);
+    --ansi-blue: var(--cl-blue);
+}

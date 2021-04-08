@@ -1,0 +1,68 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+The color palette is inspired by Light
+ Material Design theme
+Repo: https://github.com/JonaDuran/Material-Light-Theme/
+*/
+
+:root {
+    /* Color Palette */
+    --ml-white: #ffffff;
+    --ml-light-white: #FAFAFA;
+    --ml-black: #24292E;
+    --ml-dark-blue : #01579B11;
+    --ml-dark-blue-2: #01579B22;
+    --ml-blue: #1565C0;
+    --ml-green: #2E7D32;
+    --ml-yellow: #A8601A;
+    --ml-cyan: #00838f;
+    --ml-magenta: #9C00B0;
+    --ml-red: #C0392B;
+    --ml-grey: #9E9E9E;
+    --ml-light-blue: #78909c;
+
+
+    /* Editor Theme */
+    --code-background-color: var(--ml-light-white);
+    --gutter-background: var(--ml-light-white);
+    --selection-background-color: var(--ml-dark-blue-2);
+    --line-numbers: var(--ml-grey);
+    --cursor: var(--ml-black);
+    --bracket: var(--ml-black);
+    --matching-bracket: var(--ml-blue);
+    --code-text-color: var(--ml-black);
+    --keywords: var(--ml-magenta);
+    --types: var(--ml-magenta);
+    --variables: var(--code-text-color);
+    --variables2: var(--ml-green);
+    --def: var(--ml-blue);
+    --property: var(--ml-blue);
+    --meta: var(--ml-light-blue);
+    --builtin: var(--ml-blue);
+    --attribute: var(--ml-blue);
+    --strings: var(--ml-yellow);
+    --strings2: var(--ml-grey);
+    --comments: var(--ml-grey);
+    --operator: var(--ml-magenta);
+    --numbers: var(--ml-red);
+    /* Dataframe */
+    --dataframe: var(--code-text-color);
+    --df-bg: var(--ml-light-white);
+    --df-thead: var(--ml-blue);
+    --df-thead-border: var(--ml-black);
+    --df-tr-hover: var(--selection-background-color);
+    --df-border: var(--ml-white);
+    --df-border-right: var(--ml-grey);
+    --df-th-bg: var(--ml-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--ml-red);
+    --ansi-green: var(--ml-green);
+    --ansi-green-intense: var(--ml-grey);
+    --ansi-cyan: var(--ml-cyan);
+    --ansi-blue: var(--ml-blue);
+}

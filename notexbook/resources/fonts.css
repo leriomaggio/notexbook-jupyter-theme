@@ -1,0 +1,42 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+                         FONTS
+
+    FONT WEIGHT MAP:
+    ----------------
+    100: Ultra Light
+    200: Thin
+    300: Light
+    400: Regular (normal)
+    500: Medium
+    600: Semi-bold
+    700: Bold
+    800: Heavy
+    900: Black
+
+    Font faces:
+        - ====================================|=======================
+        -              Scope                  | Font Family Name
+        - ====================================| ======================
+        - Markdown Display (Computer Modern)    (CMU Serif)
+        - Markdown Display monospace            (CMU Typewriter Text)
+        - Markdown Edit    monospace            (Hack)
+        - Source Code      monospace            (Fira Code)
+        - ====================================| =======================
+
+ ======================================================  */
+
+/* Roboto Slab */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*md-display-computer-modern --> CMU Serif*/
+@import url("https://fonts.cdnfonts.com/css/cmu-serif?styles=30038,30039,30037,30036");
+/*md-display-monospace --> CMU Typewriter Text*/
+@import url("https://fonts.cdnfonts.com/css/cmu-typewriter-text?styles=24833,24829,24830,24831,24832,24834");
+/*code-monospace --> Fira Code*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap");
+/*md-edit-monospace --> Hack*/
+@import url("https://fonts.cdnfonts.com/css/hack?styles=20708,20707,20705,20706");

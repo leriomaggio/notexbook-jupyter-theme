@@ -1,0 +1,30 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+*/
+
+{% include "fonts.css" %}
+{% include "editors_template.jinja2" %}
+{% include "dataframe.css" %}
+{% include "jupyter_light.css" %}
+{% include "html_export_jupyter_light.css" %}
+
+
+/* ======================================================
+              GLOBALS (with vars integration)
+   ======================================================
+*/
+
+
+:root {
+    --template-txbk-content-font-size: {{ nb_font_size }};
+    --template-txbk-content-line-height: {{ [nb_line_height, 1.2]|max }};
+    --template-txbk-content-mono-font-family: "CMU Typewriter Text", "{{ code_mono_font }}", monospace;
+    --template-txbk-code-font-family: "{{ code_mono_font }}", "Fira Code", monospace;
+    --template-txbk-md-font-family: "{{ md_mono_font }}", "Hack", monospace;
+    --template-txbk-code-font-size: {{ code_mono_font_size }};
+    --template-txbk-md-font-size: {{ md_mono_font_size }};
+}
+
+{% include "notebook.css" %}

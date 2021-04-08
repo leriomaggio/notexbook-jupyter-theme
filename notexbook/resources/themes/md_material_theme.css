@@ -1,0 +1,36 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+    Custom Theme for Markdown Editor
+    based on Material Clear Theme.
+
+ */
+
+:root {
+    /* Color Palette */
+    --md-ml-red: #C0392B;
+    --md-ml-yellow: #A8601A;
+    --md-ml-black: #24292E;
+    --md-ml-grey: #9E9E9E;
+    --md-ml-blue: #1565C0;
+    --md-ml-dark-blue: #01579B;
+    --md-ml-light-blue: #78909c;
+
+    /*  Editor Theme  */
+    --editor-text: var(--md-ml-black);
+    --header: var(--md-ml-dark-blue);
+    --quote: var(--md-ml-grey);
+    --link: var(--md-ml-blue);
+    --attribute: var(--md-ml-red);
+    --tag: var(--md-ml-yellow);
+    --string: var(--md-ml-yellow);
+    --delimiter: var(--md-ml-black);
+    --monospace: var(--md-ml-light-blue);
+}
+
+
+

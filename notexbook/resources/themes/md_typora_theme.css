@@ -1,0 +1,38 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+    Custom Theme for Markdown Editor
+    based on Source code visualiser
+    built-in Typora.
+ */
+
+:root {
+    /* Color Palette */
+    --md-ty-pink: #d14187;
+    --md-ty-dark-grey: rgb(56, 56, 56);
+    --md-ty-darker-grey: rgb(51, 51, 51);
+    --md-ty-taupe: #a99f9f;
+    --md-ty-light-orange: #be7716;
+    --md-ty-light-red: #a34343;
+    --md-ty-grey-blue: #48599b;
+    --md-ty-dark-bg: #252a2f;
+    --md-ty-dirty-white: #8d8e8f;
+
+    /*  Editor Theme  */
+    --editor-text: var(--md-ty-darker-grey);
+    --header: var(--md-ty-pink);
+    --quote: var(--md-ty-taupe);
+    --link: var(--md-ty-light-orange);
+    --attribute: var(--md-ty-darker-grey);
+    --tag: var(--md-ty-light-red);
+    --delimiter: var(--md-ty-grey-blue);
+    --monospace: var(--md-ty-dark-grey);
+    --string: var(--md-ty-grey-blue)
+}
+
+
+

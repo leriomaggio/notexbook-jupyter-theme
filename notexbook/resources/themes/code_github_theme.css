@@ -1,0 +1,66 @@
+/*
+Author: Valerio Maggio < @leriomaggio >
+Code: https://github.com/leriomaggio/notexbook-jupyter-theme
+License: Apache License 2.0
+
+ ======================================================
+
+The color palette is inspired by
+the **new** GitHub Code Editor theme
+*/
+
+:root {
+    /* Color Palette */
+    --gh-white: #fafafa;
+    --gh-red: #d65b67;
+    --gh-orange: #df7b41;
+    --gh-yellow: #f5e17b;
+    --gh-blue: #0259be;
+    --gh-dark-blue: #053060;
+    --gh-black: #24292e;
+    --gh-azure: #c0d8f4;
+    --gh-grey: #868c94;
+    --gh-light-grey: #b3b4b6;
+    --gh-purple: #724abd;
+
+
+    /* Editor Theme */
+    --code-background-color: var(--gh-white);
+    --gutter-background: var(--gh-white);
+    --selection-background-color: var(--gh-azure);
+    --line-numbers: var(--gh-light-grey);
+    --cursor: var(--gh-black);
+    --bracket: var(--gh-black);
+    --matching-bracket: var(--gh-dark-blue);
+    --code-text-color: var(--gh-black);
+    --keywords: var(--gh-red);
+    --types: var(--gh-orange);
+    --variables: var(--code-text-color);
+    --variables2: var(--gh-blue);
+    --def: var(--gh-purple);
+    --property: var(--gh-purple);
+    --meta: var(--gh-purple);
+    --builtin: var(--gh-purple);
+    --attribute: var(--code-text-color);
+    --strings: var(--gh-dark-blue);
+    --strings2: var(--gh-dark-blue);
+    --comments: var(--gh-light-grey);
+    --operator: var(--gh-blue);
+    --numbers: var(--gh-blue);
+
+    /* Dataframe */
+    --dataframe: var(--code-text-color);
+    --df-bg: var(--gh-white);
+    --df-thead: var(--gh-blue);
+    --df-thead-border: var(--gh-dark-blue);
+    --df-tr-hover: var(--selection-background-color);
+    --df-border: var(--gh-white);
+    --df-border-right: var(--gh-grey);
+    --df-th-bg: var(--gh-white);
+    /*ANSI Colours*/
+    --ansi-red: var(--gh-red);
+    --ansi-green: var(--gh-dark-blue);
+    --ansi-green-intense: var(--gh-grey);
+    --ansi-cyan: var(--gh-purple);
+    --ansi-blue: var(--gh-blue);
+}
