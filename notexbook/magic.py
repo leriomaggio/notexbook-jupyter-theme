@@ -165,7 +165,7 @@ class TeXbookTheme(Magics):
     @argument(
         "-v",
         "--verbose",
-        help="Verbose mode: Display Configuration Settings when Theme is enabled",
+        help="Verbose mode: Display the list of enabled Theme settings.",
         dest="verbose",
         action="store_true",
     )
