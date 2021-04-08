@@ -10,6 +10,8 @@
     --jp-content-line-height: var(--txbk-content-line-height);
     --jp-content-link-color: var(--link-color);
     --jp-content-font-size: var(--txbk-content-font-size);
+    --jp-content-heading-font-weight: bold;
+    --jp-content-heading-line-height: 1;
 
     --jp-layout-color3: #efefef;
     --jp-notebook-multiselected-color: var(--txbk-multiselect-bgcolor);
@@ -20,8 +22,6 @@
     --jp-code-font-family-default: var(--txbk-code-font-family);
     --jp-code-font-family: var(--jp-code-font-family-default);
     --jp-code-presentation-font-size: var(--txbk-ui-mono-font-size);
-    --jp-content-heading-font-weight: 500;
-    --jp-content-heading-line-height: 1;
 
     --jp-cell-prompt-font-family: var(--txbk-code-font-family);
     --jp-cell-prompt-width: 80px;
