@@ -74,7 +74,7 @@ button.jp-RunningSessions-shutdownAll.jp-mod-styled {
 }
 
 .jp-SideBar.lm-TabBar.jp-mod-left.lm-TabBar-tab.lm-mod-current .jp-icon3[fill] {
-    fill: var(--texbook-orangex);
+    fill: var(--texbook-orange);
 }
 
 /*Kernel*/

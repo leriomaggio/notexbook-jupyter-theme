@@ -257,7 +257,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 
 /* @ Generic.Deleted */
 .highlight .gd {
-    color: var(--red);
+    color: var(--ansi-red);
 }
 
 /* Generic.Emph */
@@ -452,7 +452,7 @@ mpl.rcParams <- rcParams will be highlighted as property (as in codemirror)
 
 /* Literal.String.Escape */
 .highlight .se {
-    color: var(--red);
+    color: var(--ansi-red);
 }
 
 /* Name.Builtin.Pseudo */
