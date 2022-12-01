@@ -1,8 +1,8 @@
-# <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="34%" />
+# <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/main/docs/logo/notexbook.png" width="34%" />
 
 ## The Jupyter notebook theme for ![LaTeX](https://render.githubusercontent.com/render/math?math=\LaTeX) lovers ![heart](https://render.githubusercontent.com/render/math?math=\heartsuit)
 
-The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/master/docs/logo/notexbook.png" width="10%" /> theme aims at combining the flexibility and interactivity of Jupyter notebooks with the unique elegance and sobriety of a `LaTeX` article.  
+The <img src="https://github.com/leriomaggio/notexbook-jupyter-theme/raw/main/docs/logo/notexbook.png" width="10%" /> theme aims at combining the flexibility and interactivity of Jupyter notebooks with the unique elegance and sobriety of a `LaTeX` article.  
 
 ### `noTeXbook` in a Nutshell
 
